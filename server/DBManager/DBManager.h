@@ -9,8 +9,9 @@
 #ifndef KINGSLANDING_ONLINEWHITEBOARD_SERVER_DBMANAGER_DBMANAGER_H_
 #define KINGSLANDING_ONLINEWHITEBOARD_SERVER_DBMANAGER_DBMANAGER_H_
 
-#include <string>
 #include <mysql/mysql.h>
+#include <string>
+
 #include "../common.h"
 
 namespace Kingslanding {
@@ -53,6 +54,7 @@ public:
     DocumentInfo* GetHistoryDocuments(const std::string&, int&);
     DocumentInfo GetDocument(const std::string&, int);
     UserInfo* GetUserList(const std::string&, int&);
+
 private:
     DBManager();
     ~DBManager();

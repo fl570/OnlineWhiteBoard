@@ -1,0 +1,4 @@
+Log file created at: 2013/04/21 15:05:48
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0421 15:05:48.960587 16134 DBManagerTest.cc:38] File '/root/Kingslanding/OnlineWhiteBoard/server/DBManager/Meeting.    txt' not found (Errcode: 2)
