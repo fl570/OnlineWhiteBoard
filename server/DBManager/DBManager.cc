@@ -91,6 +91,7 @@ bool DBManager::SetMeetingID(const std::string& meeting_id, int id) {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "update Meeting set MeetingID = '%s' where \
   id = %d", meeting_id.c_str(), id);
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
     LOG(ERROR) << mysql_error(conn);
     result = false;
@@ -108,6 +109,7 @@ bool DBManager::AddMeetingPort(const std::string& meeting_id, int port) {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "update Meeting set Port = %d where \
   MeetingID = '%s'", port, meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
     LOG(ERROR) << mysql_error(conn);
     result = false;
@@ -127,6 +129,7 @@ int DBManager::GetMeetingPort(const std::string& meeting_id) {
   int res = -1;
   snprintf(sql, sizeof(sql), "select Port from Meeting where \
   MeetingID = '%s'", meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
   } else {
@@ -148,6 +151,7 @@ bool DBManager::SetMeetingState(const std::string& meeting_id, int state) {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "update Meeting set state = %d where \
   MeetingID = '%s'", state, meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
     LOG(ERROR) << mysql_error(conn);
     result = false;
@@ -165,6 +169,7 @@ bool DBManager::SetDataRef(const std::string& meeting_id, int data_ref) {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "update Meeting set DataRef = %d where \
   MeetingID = '%s'", data_ref, meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
     LOG(ERROR) << mysql_error(conn);
     result = false;
@@ -184,6 +189,7 @@ int DBManager::GetDataRef(const std::string& meeting_id) {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "select DataRef from Meeting where \
   MeetingID = '%s'", meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
   } else {
@@ -206,6 +212,7 @@ bool DBManager::AddDocument(const std::string& meeting_id,
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "insert into MeetingDocument (MeetingID, path) \
   values ('%s','%s')", meeting_id.c_str(), path.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
     LOG(ERROR) << mysql_error(conn);
     result = false;
@@ -225,6 +232,7 @@ DocumentInfo DBManager::GetCurrentDocument(const std::string& meeting_id) {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "SELECT max(DocumentID), path FROM \
   MeetingDocument where MeetingID = '%s'", meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
      res.serial_number = -1;
@@ -254,6 +262,7 @@ DocumentInfo DBManager::GetDocument(const std::string& meeting_id,
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "SELECT path FROM MeetingDocument where MeetingID \
   = '%s' and DocumentID = %d", meeting_id.c_str(), document_id);
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
      res.serial_number = -1;
@@ -283,6 +292,7 @@ DocumentInfo* DBManager::GetHistoryDocuments(const std::string& meeting_id, int&
   snprintf(sql, sizeof(sql), "SELECT DocumentID,path FROM \
   MeetingDocument where \
   MeetingID = '%s' order by DocumentID", meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
      size = -1;
@@ -316,6 +326,7 @@ int DBManager::AddMeetingUser(const std::string& meeting_id,
   time_t now = time(NULL);
   snprintf(sql, sizeof(sql), "select state from Meeting where \
   MeetingID = '%s'", meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
      result = 0;
@@ -336,6 +347,7 @@ int DBManager::AddMeetingUser(const std::string& meeting_id,
          snprintf(sql, sizeof(sql), "insert into MeetingUser(MeetingID, UserID,\
          State, HBTime)  values('%s', '%s', %d, %ld)",
          meeting_id.c_str(), user_id.c_str(), state, now);
+	 LOG(INFO) << sql;
           if (mysql_query(conn, sql)) {
             LOG(ERROR) << mysql_error(conn);
             result = 0;
@@ -366,6 +378,7 @@ int DBManager::GetUserState(const std::string& meeting_id,
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "select State from MeetingUser where \
   MeetingID = '%s' and UserID = '%s'", meeting_id.c_str(), user_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
   } else {
@@ -410,6 +423,7 @@ int DBManager::UpdateUserState(const std::string& meeting_id,
   if(state == 4) {
     snprintf(sql, sizeof(sql), "update MeetingUser set State = 1 where MeetingID = '%s'\
     and  State = 3 ", meeting_id.c_str());
+    LOG(INFO) << sql;
     if (mysql_query(conn, sql)) {
       LOG(ERROR) << mysql_error(conn);
       result = -1;
@@ -421,6 +435,7 @@ int DBManager::UpdateUserState(const std::string& meeting_id,
     snprintf(sql, sizeof(sql), "update MeetingUser set State = %d where \
     MeetingID = '%s' and UserID = '%s'", state,
     meeting_id.c_str(), user_id.c_str());
+    LOG(INFO) << sql;
     if (mysql_query(conn, sql)) {
       LOG(ERROR) << mysql_error(conn);
       result = 0;
@@ -441,6 +456,7 @@ UserInfo* DBManager::GetUserList(const std::string& meeting_id, int& size) {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "SELECT UserID, State FROM MeetingUser where \
   MeetingID = '%s' order by id", meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
      size = -1;
@@ -471,6 +487,7 @@ bool DBManager::UpdateUserTime(const std::string& meeting_id,
   snprintf(sql, sizeof(sql), "update MeetingUser set HBTime = %ld where \
   MeetingID = '%s' and UserID = '%s'",
   now, meeting_id.c_str(), user_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
      result = false;
@@ -490,6 +507,7 @@ bool DBManager::DeleteDeadUser() {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "delete from MeetingUser where \
   HBTime < %ld", now);
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
      result = false;
@@ -510,6 +528,7 @@ std::string* DBManager::GetDeadMeeting(int& size) {
   snprintf(sql, sizeof(sql), "select m.MeetingID from Meeting m where \
   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser\
   group by MeetingID) order by id");
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
     LOG(ERROR) << mysql_error(conn);
     size = -1;
@@ -527,6 +546,7 @@ std::string* DBManager::GetDeadMeeting(int& size) {
     snprintf(sql, sizeof(sql), "update Meeting set state = 2 where \
     state = 1 and MeetingID not in (select MeetingID from MeetingUser\
     group by MeetingID)");
+    LOG(INFO) << sql;
     if (mysql_query(conn, sql)) {
       LOG(ERROR) << mysql_error(conn);
       LOG(ERROR) << "delete dead meeting failed";
@@ -547,6 +567,7 @@ std::string* DBManager::GetDeadHostMeeting(int& size) {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "select MeetingID from MeetingUser where \
   State = 3 and HBTime < %ld order by id", now);
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
      LOG(ERROR) << mysql_error(conn);
      size = -1;
@@ -563,6 +584,7 @@ std::string* DBManager::GetDeadHostMeeting(int& size) {
            case -3:
              snprintf(sql, sizeof(sql), "update MeetingUser set State = 1 where \
              State = 4 and MeetingID = '%s'", res[i].c_str());
+	     LOG(INFO) << sql;
              if (mysql_query(conn, sql)) {
                 LOG(ERROR) << "transferAuth" << mysql_error(conn);
              }
@@ -570,6 +592,7 @@ std::string* DBManager::GetDeadHostMeeting(int& size) {
            case -4:
              snprintf(sql, sizeof(sql), "update MeetingUser set State = 3 where \
              State = 4 and MeetingID = '%s'", res[i].c_str());
+	     LOG(INFO) << sql;
               if (mysql_query(conn, sql)) {
                  LOG(ERROR) << "transferAuth" << mysql_error(conn);
               }
@@ -598,12 +621,14 @@ int DBManager::TransferAuth(const std::string& meeting_id) {
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "update MeetingUser set State = 4 where \
   State = 3 and MeetingID = '%s'", meeting_id.c_str());
+  LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
     LOG(ERROR) << "transferAuth" << mysql_error(conn);
     result = -2;
   } else {
     snprintf(sql, sizeof(sql), "select UserID from MeetingUser where \
     State = 2 and MeetingID = '%s' and HBTime > %ld", meeting_id.c_str(), now);
+    LOG(INFO) << sql;
     if (mysql_query(conn, sql)) {
       LOG(ERROR) << mysql_error(conn);
       result = -1;
@@ -615,6 +640,7 @@ int DBManager::TransferAuth(const std::string& meeting_id) {
        sscanf(row_[0], "%s", res);
        snprintf(sql, sizeof(sql), "update MeetingUser set State = 3 where \
   UserID = '%s' and MeetingID = '%s'", res, meeting_id.c_str());
+       LOG(INFO) << sql;
         if (mysql_query(conn, sql)) {
            LOG(ERROR) << "transferAuth failed" << mysql_error(conn);
            result = -1;
@@ -624,6 +650,7 @@ int DBManager::TransferAuth(const std::string& meeting_id) {
       } else {
        snprintf(sql, sizeof(sql), "select UserID from MeetingUser where \
     State = 1 and MeetingID = '%s' and HBTime > %ld", meeting_id.c_str(), now);
+       LOG(INFO) << sql;
         if (mysql_query(conn, sql)) {
            LOG(ERROR) << mysql_error(conn);
            result = -1;
@@ -635,6 +662,7 @@ int DBManager::TransferAuth(const std::string& meeting_id) {
             sscanf(row_[0], "%s", res);
             snprintf(sql, sizeof(sql), "update MeetingUser set State = 3 where \
             UserID='%s' and MeetingID= '%s'", res, meeting_id.c_str());
+	    LOG(INFO) << sql;
              if (mysql_query(conn, sql)) {
                LOG(ERROR) << "transferAuth failed" << mysql_error(conn);
                result =-1;
@@ -651,6 +679,7 @@ int DBManager::TransferAuth(const std::string& meeting_id) {
     if(result == 1) {
       snprintf(sql, sizeof(sql), "update MeetingUser set State = 1 where \
       State = 4 and MeetingID = '%s'", meeting_id.c_str());
+      LOG(INFO) << sql;
       if (mysql_query(conn, sql)) {
 	LOG(ERROR) << "transferAuth" << mysql_error(conn);
 	result = -3;
@@ -659,6 +688,7 @@ int DBManager::TransferAuth(const std::string& meeting_id) {
     if(result == 0 || result == -1) {
       snprintf(sql, sizeof(sql), "update MeetingUser set State = 3 where \
       State = 4 and MeetingID = '%s'", meeting_id.c_str());
+      LOG(INFO) << sql;
       if (mysql_query(conn, sql)) {
 	LOG(ERROR) << "transferAuth" << mysql_error(conn);
 	result = -4;
