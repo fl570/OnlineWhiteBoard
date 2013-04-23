@@ -259,7 +259,7 @@ TEST_F(DBManagerTest, UpdateUserState) {
   EXPECT_EQ(1, result);
   EXPECT_EQ(1, db_instance->UpdateUserState(
   "FC490CA45C00B1249BBE3554A4FDF6FB", "cd2", 3));
-    snprintf(sql, sizeof(sql), "select State  from MeetingUser  where id = 15");
+  snprintf(sql, sizeof(sql), "select State  from MeetingUser  where id = 15");
   if (mysql_query(conn_, sql)) {
      LOG(ERROR) << mysql_error(conn_);
   } else {
@@ -273,7 +273,21 @@ TEST_F(DBManagerTest, UpdateUserState) {
   EXPECT_EQ(3, result);
   EXPECT_EQ(2, db_instance->UpdateUserState(
   "FC490CA45C00B1249BBE3554A4FDF6FB", "cd1", 3));
-    snprintf(sql, sizeof(sql), "select State  from MeetingUser  where id = 14");
+  snprintf(sql, sizeof(sql), "select State  from MeetingUser  where id = 14");
+  if (mysql_query(conn_, sql)) {
+     LOG(ERROR) << mysql_error(conn_);
+  } else {
+     MYSQL_RES *res_ = mysql_store_result(conn_);
+     if (0 != mysql_num_rows(res_)) {
+       MYSQL_ROW row_ = mysql_fetch_row(res_);
+       sscanf(row_[0], "%d", &result);
+     }
+     mysql_free_result(res_);
+  }
+  EXPECT_EQ(1, result);
+  EXPECT_EQ(4, db_instance->UpdateUserState(
+  "FC490CA45C00B1249BBE3554A4FDF6FB", "", 4));
+  snprintf(sql, sizeof(sql), "select State  from MeetingUser  where id = 16");
   if (mysql_query(conn_, sql)) {
      LOG(ERROR) << mysql_error(conn_);
   } else {
@@ -380,7 +394,7 @@ TEST_F(DBManagerTest, GetDeadHostMeeting) {
 }
 
 TEST_F(DBManagerTest, TransferAuth) {
-  EXPECT_TRUE(db_instance->TransferAuth(
+  EXPECT_EQ(0, db_instance->TransferAuth(
   "7F39F8317FBDB1988EF4C628EBA02591"));
   char result[100];
   char sql[500];
@@ -391,12 +405,13 @@ TEST_F(DBManagerTest, TransferAuth) {
   } else {
       MYSQL_RES *res_ = mysql_store_result(conn_);
       if (0 != mysql_num_rows(res_)) {
-        EXPECT_TRUE(false);
+        MYSQL_ROW row_ = mysql_fetch_row(res_);
+        sscanf(row_[0], "%s", result);
       }
       mysql_free_result(res_);
   }
-  
-  EXPECT_TRUE(db_instance->TransferAuth(
+  EXPECT_EQ(0, strcmp(result, "van3"));
+  EXPECT_EQ(1, db_instance->TransferAuth(
   "44F683A84163B3523AFE57C2E008BC8C"));
   snprintf(sql, sizeof(sql), "select UserID  from MeetingUser  where State = 3\
   and MeetingID = '44F683A84163B3523AFE57C2E008BC8C' ");
@@ -411,7 +426,7 @@ TEST_F(DBManagerTest, TransferAuth) {
       mysql_free_result(res_);
   }
   EXPECT_EQ(0, strcmp(result, "fl1"));
-  EXPECT_TRUE(db_instance->TransferAuth(
+  EXPECT_EQ(1, db_instance->TransferAuth(
   "03AFDBD66E7929B125F8597834FA83A4"));
   snprintf(sql, sizeof(sql), "select UserID  from MeetingUser  where State = 3\
   and MeetingID = '03AFDBD66E7929B125F8597834FA83A4' ");
@@ -426,7 +441,7 @@ TEST_F(DBManagerTest, TransferAuth) {
       mysql_free_result(res_);
   }
   EXPECT_EQ(0, strcmp(result, "ab2"));
-  EXPECT_TRUE(db_instance->TransferAuth(
+  EXPECT_EQ(1, db_instance->TransferAuth(
   "EA5D2F1C4608232E07D3AA3D998E5135"));
   snprintf(sql, sizeof(sql), "select UserID  from MeetingUser  where State = 3\
   and MeetingID = 'EA5D2F1C4608232E07D3AA3D998E5135' ");
@@ -441,7 +456,7 @@ TEST_F(DBManagerTest, TransferAuth) {
       mysql_free_result(res_);
   }
   EXPECT_EQ(0, strcmp(result, "bc2"));
-  EXPECT_TRUE(db_instance->TransferAuth(
+  EXPECT_EQ(1, db_instance->TransferAuth(
   "FC490CA45C00B1249BBE3554A4FDF6FB"));
   snprintf(sql, sizeof(sql), "select UserID  from MeetingUser  where State = 3\
   and MeetingID = 'FC490CA45C00B1249BBE3554A4FDF6FB' ");

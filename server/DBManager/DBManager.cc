@@ -407,7 +407,17 @@ int DBManager::UpdateUserState(const std::string& meeting_id,
       }
     }
   }
-  if (result != -1 && result != 2) {
+  if(state == 4) {
+    snprintf(sql, sizeof(sql), "update MeetingUser set State = 1 where MeetingID = '%s'\
+    and  State = 3 ", meeting_id.c_str());
+    if (mysql_query(conn, sql)) {
+      LOG(ERROR) << mysql_error(conn);
+      result = -1;
+    } else {
+      result = 4;
+    }
+  }
+  if (result != -1 && result != 2 && result != 4) {
     snprintf(sql, sizeof(sql), "update MeetingUser set State = %d where \
     MeetingID = '%s' and UserID = '%s'", state,
     meeting_id.c_str(), user_id.c_str());
@@ -548,7 +558,25 @@ std::string* DBManager::GetDeadHostMeeting(int& size) {
       for (int i = 0; i < size; i++) {
         row_ = mysql_fetch_row(res_);
         res[i] = row_[0];
-  TransferAuth(res[i]);
+        int back = TransferAuth(res[i]);
+        switch (back) {
+           case -3:
+             snprintf(sql, sizeof(sql), "update MeetingUser set State = 1 where \
+             State = 4 and MeetingID = '%s'", res[i].c_str());
+             if (mysql_query(conn, sql)) {
+                LOG(ERROR) << "transferAuth" << mysql_error(conn);
+             }
+             break;
+           case -4:
+             snprintf(sql, sizeof(sql), "update MeetingUser set State = 3 where \
+             State = 4 and MeetingID = '%s'", res[i].c_str());
+              if (mysql_query(conn, sql)) {
+                 LOG(ERROR) << "transferAuth" << mysql_error(conn);
+              }
+              break;
+           default:
+              break;
+         }
       }
     }
     mysql_free_result(res_);
@@ -557,9 +585,9 @@ std::string* DBManager::GetDeadHostMeeting(int& size) {
   return res;
 }
 
-bool DBManager::TransferAuth(const std::string& meeting_id) {
+int DBManager::TransferAuth(const std::string& meeting_id) {
   char sql[500];
-  bool result;
+  int result;
   char res[50];
   MYSQL *conn;
   MYSQL_RES *res_;
@@ -568,17 +596,17 @@ bool DBManager::TransferAuth(const std::string& meeting_id) {
   time_t now = time(NULL);
   now = now - 5;
   conn = InitConnection();
-  snprintf(sql, sizeof(sql), "update MeetingUser set State = 1 where \
+  snprintf(sql, sizeof(sql), "update MeetingUser set State = 4 where \
   State = 3 and MeetingID = '%s'", meeting_id.c_str());
   if (mysql_query(conn, sql)) {
     LOG(ERROR) << "transferAuth" << mysql_error(conn);
-    result = false;
+    result = -2;
   } else {
     snprintf(sql, sizeof(sql), "select UserID from MeetingUser where \
     State = 2 and MeetingID = '%s' and HBTime > %ld", meeting_id.c_str(), now);
     if (mysql_query(conn, sql)) {
       LOG(ERROR) << mysql_error(conn);
-      result = false;
+      result = -1;
     } else {
       res_ = mysql_store_result(conn);
       size = mysql_num_rows(res_);
@@ -589,16 +617,16 @@ bool DBManager::TransferAuth(const std::string& meeting_id) {
   UserID = '%s' and MeetingID = '%s'", res, meeting_id.c_str());
         if (mysql_query(conn, sql)) {
            LOG(ERROR) << "transferAuth failed" << mysql_error(conn);
-           result = false;
+           result = -1;
         } else {
-           result = true;
+           result = 1;
         }
       } else {
        snprintf(sql, sizeof(sql), "select UserID from MeetingUser where \
     State = 1 and MeetingID = '%s' and HBTime > %ld", meeting_id.c_str(), now);
         if (mysql_query(conn, sql)) {
            LOG(ERROR) << mysql_error(conn);
-           result = false;
+           result = -1;
         } else {
            res_ = mysql_store_result(conn);
            size = mysql_num_rows(res_);
@@ -606,19 +634,35 @@ bool DBManager::TransferAuth(const std::string& meeting_id) {
              row_ = mysql_fetch_row(res_);
             sscanf(row_[0], "%s", res);
             snprintf(sql, sizeof(sql), "update MeetingUser set State = 3 where \
-  UserID='%s' and MeetingID= '%s'", res, meeting_id.c_str());
+            UserID='%s' and MeetingID= '%s'", res, meeting_id.c_str());
              if (mysql_query(conn, sql)) {
                LOG(ERROR) << "transferAuth failed" << mysql_error(conn);
-               result = false;
+               result =-1;
              } else {
-               result = true;
+               result = 1;
              }
            } else {
-       result = true;
+              result = 0;
           }
         }
       }
       mysql_free_result(res_);
+    }
+    if(result == 1) {
+      snprintf(sql, sizeof(sql), "update MeetingUser set State = 1 where \
+      State = 4 and MeetingID = '%s'", meeting_id.c_str());
+      if (mysql_query(conn, sql)) {
+	LOG(ERROR) << "transferAuth" << mysql_error(conn);
+	result = -3;
+      }
+    }
+    if(result == 0 || result == -1) {
+      snprintf(sql, sizeof(sql), "update MeetingUser set State = 3 where \
+      State = 4 and MeetingID = '%s'", meeting_id.c_str());
+      if (mysql_query(conn, sql)) {
+	LOG(ERROR) << "transferAuth" << mysql_error(conn);
+	result = -4;
+      }
     }
   }
   DestoryConnection(conn);

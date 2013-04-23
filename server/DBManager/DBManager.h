@@ -41,7 +41,7 @@ public:
     bool AddMeetingPort(const std::string&, int);
     bool DeleteDeadUser();
     int UpdateUserState(const std::string&, const std::string&, int);
-    bool TransferAuth(const std::string&);
+    int TransferAuth(const std::string&);
     bool SetDataRef(const std::string&, int);
     int GetUserState(const std::string&, const std::string&);
     bool UpdateUserTime(const std::string&, const std::string&);
