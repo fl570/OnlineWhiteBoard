@@ -1,4 +1,0 @@
-Log file created at: 2013/04/25 17:45:26
-Running on machine: ubuntu
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0425 17:45:26.780498 27096 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366882826

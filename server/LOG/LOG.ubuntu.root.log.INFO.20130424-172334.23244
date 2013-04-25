@@ -1,4 +1,0 @@
-Log file created at: 2013/04/24 17:23:34
-Running on machine: ubuntu
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0424 17:23:34.479421 23244 DBManager.cc:94] update Meeting set MeetingID = 'dd0d17a740ad18a772594458670b0450' where   id = 137
