@@ -14,6 +14,7 @@ namespace Server {
 namespace DataProvider {
 
 MemoryCache::MemoryCache(int capacity) {
+  boost:: unique_lock<boost::shared_mutex> lock(g_mutex);
   state_ = false;
   capacity_ = capacity;
   front_[0]=0;
@@ -38,9 +39,11 @@ MemoryCache::MemoryCache(int capacity) {
       LOG(ERROR) << "ERROR: cann't create operation_ set !";
     }
   }
+  lock.unlock();;
 }
 
 MemoryCache::~MemoryCache() {
+  boost:: unique_lock<boost::shared_mutex> lock(g_mutex);
   if (operation_[0]) {
     for (int i = 0; i < size_[0]; i++) {
       index_ = front_[0];
@@ -57,21 +60,23 @@ MemoryCache::~MemoryCache() {
     }
     delete []operation_[1];
   }
+  lock.unlock();
 }
 
-int MemoryCache::IsEmpty() const {
+bool MemoryCache::IsEmpty() const {
     return 0 == (state_ ? size_[1] : size_[0]);
 }
 
-int MemoryCache::GetCount() const {
+bool MemoryCache::GetCount() const {
     return state_ ? size_[1] : size_[0];
 }
 
-int MemoryCache::IsFull() const {
+bool MemoryCache::IsFull() const {
     return capacity_ == (state_ ? size_[1] : size_[0]);
 }
 
 bool MemoryCache::SetState() {
+    boost:: unique_lock<boost::shared_mutex> lock(g_mutex);
     if (state_) {
       for (int i = 0; i < size_[0]; i++) {
         index_ = front_[0];
@@ -96,11 +101,12 @@ bool MemoryCache::SetState() {
       rear_id_[1] = 0;
     }
     state_ = state_ ? false : true;
+    lock.unlock();
     return true;
 }
 
 
-bool MemoryCache::AddOperation(const Operation* oper) {
+bool MemoryCache::AddOperation(const Operation& oper) {
   if (state_) {
     AddOperationToSet(1, oper);
   } else {
@@ -110,17 +116,18 @@ bool MemoryCache::AddOperation(const Operation* oper) {
   return true;
 }
 
-bool MemoryCache::AddOperationToSet(int set, const Operation* oper) {
+bool MemoryCache::AddOperationToSet(int set, const Operation& oper) {
+    boost:: unique_lock<boost::shared_mutex> lock(g_mutex);
     if (IsEmpty()) {
       rear_[set] = -1;
-      front_id_[set] = oper->serial_number();
-      rear_id_[set] = oper->serial_number();
+      front_id_[set] = oper.serial_number();
+      rear_id_[set] = oper.serial_number();
     }
     if (IsFull()) {
       index_ = front_[set];
       rear_[set] = index_;
       delete operation_[set][index_];
-      operation_[set][index_] = oper;
+      operation_[set][index_] = new Operation(oper);
 
       front_[set]++;
       front_[set] %= capacity_;
@@ -131,10 +138,11 @@ bool MemoryCache::AddOperationToSet(int set, const Operation* oper) {
       rear_[set]++;
       rear_[set] %= capacity_;
       index_ = rear_[set];
-      operation_[set][index_] = oper;
+      operation_[set][index_] = new Operation(oper);
     }
 
-    rear_id_[set] = oper->serial_number();
+    rear_id_[set] = oper.serial_number();
+    lock.unlock();
     return true;
 }
 
@@ -150,6 +158,7 @@ Operations MemoryCache::GetOperationFromStoreAfter(int operation_id) {
 
 
 Operations MemoryCache::GetOperationFromSet(int set, int operation_id) {
+  boost:: unique_lock<boost::shared_mutex> lock(g_mutex);
   Operations opers;
   Operation *oper;
   if ((operation_id+1) < front_id_[set]) {
@@ -163,6 +172,7 @@ Operations MemoryCache::GetOperationFromSet(int set, int operation_id) {
       index_++;
     }
   }
+  lock.unlock();
   return opers;
 }
 }  // DataProvider

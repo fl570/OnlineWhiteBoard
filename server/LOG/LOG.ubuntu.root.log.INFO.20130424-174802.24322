@@ -1,0 +1,5 @@
+Log file created at: 2013/04/24 17:48:02
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0424 17:48:02.752720 24322 DBManager.cc:94] update Meeting set MeetingID = '8ffe4ff594e85d8ea5a161b9052b09c1' where   id = 143
+I0424 17:49:42.766188 24322 DBManager.cc:329] select state from Meeting where   MeetingID = '143'

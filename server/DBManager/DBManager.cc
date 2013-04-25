@@ -74,6 +74,7 @@ int DBManager::AddMeeting() {
   MYSQL *conn;
   conn = InitConnection();
   std::string sql = "insert into Meeting (state) values (0)";
+  LOG(INFO) << sql;
   int res = -1;
   if (mysql_query(conn, sql.c_str())) {
     LOG(ERROR) << mysql_error(conn);
@@ -162,12 +163,12 @@ bool DBManager::SetMeetingState(const std::string& meeting_id, int state) {
   return result;
 }
 
-bool DBManager::SetDataRef(const std::string& meeting_id, int data_ref) {
+bool DBManager::SetDataRef(const std::string& meeting_id, int64_t data_ref) {
   char sql[500];
   bool result;
   MYSQL *conn;
   conn = InitConnection();
-  snprintf(sql, sizeof(sql), "update Meeting set DataRef = %d where \
+  snprintf(sql, sizeof(sql), "update Meeting set DataRef = %ld where \
   MeetingID = '%s'", data_ref, meeting_id.c_str());
   LOG(INFO) << sql;
   if (mysql_query(conn, sql)) {
@@ -180,12 +181,12 @@ bool DBManager::SetDataRef(const std::string& meeting_id, int data_ref) {
   return result;
 }
 
-int DBManager::GetDataRef(const std::string& meeting_id) {
+int64_t DBManager::GetDataRef(const std::string& meeting_id) {
   char sql[500];
   MYSQL *conn;
   MYSQL_RES *res_;
   MYSQL_ROW row_;
-  int res = -1;
+  int64_t res = -1;
   conn = InitConnection();
   snprintf(sql, sizeof(sql), "select DataRef from Meeting where \
   MeetingID = '%s'", meeting_id.c_str());
@@ -196,7 +197,7 @@ int DBManager::GetDataRef(const std::string& meeting_id) {
     res_ = mysql_store_result(conn);
     if (0 != mysql_num_rows(res_)) {
       row_ = mysql_fetch_row(res_);
-      sscanf(row_[0], "%d", &res);
+      sscanf(row_[0], "%ld", &res);
     }
     mysql_free_result(res_);
   }
@@ -543,9 +544,9 @@ std::string* DBManager::GetDeadMeeting(int& size) {
       }
     }
     mysql_free_result(res_);
-    snprintf(sql, sizeof(sql), "update Meeting set state = 2 where \
-    state = 1 and MeetingID not in (select MeetingID from MeetingUser\
-    group by MeetingID)");
+    snprintf(sql, sizeof(sql), "update Meeting set state = 2,\
+    DataRef = NULL where state = 1 and MeetingID not in (select \
+    MeetingID from MeetingUser group by MeetingID)");
     LOG(INFO) << sql;
     if (mysql_query(conn, sql)) {
       LOG(ERROR) << mysql_error(conn);

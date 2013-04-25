@@ -1,0 +1,90 @@
+Log file created at: 2013/04/25 17:12:59
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0425 17:12:59.324759 24243 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366880879
+I0425 17:12:59.331150 24243 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 17:12:59.334221 24243 DBManager.cc:95] update Meeting set MeetingID = '373' where   id = 373
+I0425 17:12:59.337476 24243 DBManager.cc:173] update Meeting set DataRef = 34866464 where   MeetingID = '373'
+I0425 17:12:59.339997 24243 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '373'
+I0425 17:12:59.342288 24243 DBManager.cc:113] update Meeting set Port = 10249 where   MeetingID = '373'
+I0425 17:12:59.344348 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '373'
+I0425 17:12:59.346987 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '373'
+I0425 17:12:59.347189 24243 MeetingHandler.cc:138] delete server
+I0425 17:12:59.347201 24243 MeetingHandler.cc:140] 0
+I0425 17:12:59.349077 24243 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366880879
+I0425 17:12:59.350975 24243 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 17:12:59.353225 24243 DBManager.cc:95] update Meeting set MeetingID = '374' where   id = 374
+I0425 17:12:59.355125 24243 DBManager.cc:173] update Meeting set DataRef = 34866416 where   MeetingID = '374'
+I0425 17:12:59.357213 24243 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '374'
+I0425 17:12:59.359093 24243 DBManager.cc:173] update Meeting set DataRef = 34865856 where   MeetingID = '374'
+I0425 17:12:59.361291 24243 DBManager.cc:193] select DataRef from Meeting where   MeetingID = '374'
+I0425 17:12:59.363227 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '374'
+I0425 17:12:59.363482 24243 MeetingHandler.cc:138] delete server
+I0425 17:12:59.363493 24243 MeetingHandler.cc:140] 0
+I0425 17:12:59.365275 24243 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366880879
+I0425 17:12:59.367068 24243 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 17:12:59.369552 24243 DBManager.cc:95] update Meeting set MeetingID = '375' where   id = 375
+I0425 17:12:59.371628 24243 DBManager.cc:173] update Meeting set DataRef = 34866416 where   MeetingID = '375'
+I0425 17:12:59.373610 24243 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '375'
+I0425 17:12:59.375789 24243 DBManager.cc:193] select DataRef from Meeting where   MeetingID = '375'
+I0425 17:12:59.377671 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '375'
+I0425 17:12:59.377948 24243 MeetingHandler.cc:138] delete server
+I0425 17:12:59.377960 24243 MeetingHandler.cc:140] 0
+I0425 17:12:59.379688 24243 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366880879
+I0425 17:12:59.382465 24243 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 17:12:59.384595 24243 DBManager.cc:95] update Meeting set MeetingID = '376' where   id = 376
+I0425 17:12:59.386574 24243 DBManager.cc:173] update Meeting set DataRef = 34866416 where   MeetingID = '376'
+I0425 17:12:59.388639 24243 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '376'
+I0425 17:12:59.390797 24243 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 17:12:59.392706 24243 DBManager.cc:95] update Meeting set MeetingID = 'e419920c78c7c0108307c7f96ca73eb5' where   id = 377
+I0425 17:12:59.394582 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = 'e419920c78c7c0108307c7f96ca73eb5'
+I0425 17:12:59.396589 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '376'
+I0425 17:12:59.396946 24243 MeetingHandler.cc:138] delete server
+I0425 17:12:59.396965 24243 MeetingHandler.cc:140] 0
+I0425 17:12:59.398895 24243 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366880879
+I0425 17:12:59.401178 24243 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 17:12:59.403125 24243 DBManager.cc:95] update Meeting set MeetingID = '378' where   id = 378
+I0425 17:12:59.405237 24243 DBManager.cc:173] update Meeting set DataRef = 34866416 where   MeetingID = '378'
+I0425 17:12:59.407763 24243 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '378'
+I0425 17:12:59.409888 24243 DBManager.cc:330] select state from Meeting where   MeetingID = '378'
+I0425 17:12:59.410526 24243 DBManager.cc:155] update Meeting set state = 1 where   MeetingID = '378'
+I0425 17:12:59.410995 24243 DBManager.cc:351] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('378', 'abc', 1, 1366881179)
+I0425 17:12:59.412966 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '378'
+I0425 17:12:59.414911 24243 DBManager.cc:382] select State from MeetingUser where   MeetingID = '378' and UserID = 'abc'
+I0425 17:12:59.416678 24243 DBManager.cc:330] select state from Meeting where   MeetingID = '123'
+I0425 17:12:59.418658 24243 DBManager.cc:382] select State from MeetingUser where   MeetingID = '378' and UserID = 'abcd'
+I0425 17:12:59.420640 24243 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 17:12:59.422642 24243 DBManager.cc:95] update Meeting set MeetingID = '1db15b13ed730b5796b0172497a0279c' where   id = 379
+I0425 17:12:59.424548 24243 DBManager.cc:330] select state from Meeting where   MeetingID = '1db15b13ed730b5796b0172497a0279c'
+I0425 17:12:59.425062 24243 DBManager.cc:155] update Meeting set state = 1 where   MeetingID = '1db15b13ed730b5796b0172497a0279c'
+I0425 17:12:59.425443 24243 DBManager.cc:351] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('1db15b13ed730b5796b0172497a0279c', 'cccc', 3, 1366881179)
+I0425 17:12:59.427152 24243 DBManager.cc:173] update Meeting set DataRef = 34953104 where   MeetingID = '1db15b13ed730b5796b0172497a0279c'
+I0425 17:12:59.429774 24243 DBManager.cc:113] update Meeting set Port = 10249 where   MeetingID = '1db15b13ed730b5796b0172497a0279c'
+I0425 17:12:59.432415 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '1db15b13ed730b5796b0172497a0279c'
+I0425 17:12:59.434888 24243 DBManager.cc:382] select State from MeetingUser where   MeetingID = '1db15b13ed730b5796b0172497a0279c' and UserID = 'cccc'
+I0425 17:12:59.437353 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '378'
+I0425 17:12:59.437669 24243 MeetingHandler.cc:138] delete server
+I0425 17:12:59.437680 24243 MeetingHandler.cc:140] 0
+I0425 17:12:59.439494 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '1db15b13ed730b5796b0172497a0279c'
+I0425 17:12:59.439646 24243 MeetingHandler.cc:138] delete server
+I0425 17:12:59.439657 24243 MeetingHandler.cc:140] 0x213a0e0
+I0425 17:12:59.441414 24243 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366880879
+I0425 17:12:59.443225 24243 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 17:12:59.445161 24243 DBManager.cc:95] update Meeting set MeetingID = '380' where   id = 380
+I0425 17:12:59.447046 24243 DBManager.cc:173] update Meeting set DataRef = 34976272 where   MeetingID = '380'
+I0425 17:12:59.448860 24243 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '380'
+I0425 17:12:59.450981 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '380'
+I0425 17:12:59.451231 24243 MeetingHandler.cc:138] delete server
+I0425 17:12:59.451244 24243 MeetingHandler.cc:140] 0
+I0425 17:12:59.452857 24243 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366880879
+I0425 17:12:59.454548 24243 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 17:12:59.456270 24243 DBManager.cc:95] update Meeting set MeetingID = '381' where   id = 381
+I0425 17:12:59.459641 24243 DBManager.cc:173] update Meeting set DataRef = 34976272 where   MeetingID = '381'
+I0425 17:12:59.462877 24243 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '381'
+I0425 17:12:59.463415 24243 MeetingHandler.cc:149] 1
+I0425 17:12:59.466229 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '381'
+I0425 17:12:59.468917 24243 DBManager.cc:193] select DataRef from Meeting where   MeetingID = '381'
+I0425 17:12:59.469332 24243 MeetingHandlerTest.cc:133] UpdaterResume Complete
+I0425 17:12:59.471210 24243 DBManager.cc:133] select Port from Meeting where   MeetingID = '381'
+I0425 17:12:59.471431 24243 MeetingHandler.cc:138] delete server
+I0425 17:12:59.471498 24243 MeetingHandler.cc:140] 0x21391f0

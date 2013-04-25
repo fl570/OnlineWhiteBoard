@@ -15,7 +15,7 @@
 
 namespace Kingslanding {
 namespace OnlineWhiteBoard {
-namespace server {
+namespace Server {
 namespace Monitor {
 
 class HbHandler : public MsgHandler {

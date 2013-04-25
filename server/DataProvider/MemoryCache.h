@@ -11,6 +11,10 @@
 #define KINGSLANDING_ONLINEWHITEBOARD_SERVER_DATAPROVIDER_MEMORYCACHE_H_
 
 #define QUEUESIZE 128
+
+#include <boost/thread/shared_mutex.hpp>
+#include <boost/thread/locks.hpp>
+
 #include "../message.pb.h"
 #include "../common.h"
 
@@ -26,16 +30,16 @@ public:
       ~MemoryCache();
 
 public:
-      int IsEmpty() const;
-      int IsFull() const;
-      int GetCount() const;
-      bool AddOperation(const Operation* oper);
+      bool AddOperation(const Operation& oper);
       bool SetState();
       Operations GetOperationAfter(int operation_id);
       Operations GetOperationFromStoreAfter(int operation_id);
 
 private:
-      bool AddOperationToSet(int set, const Operation* oper);
+      bool IsEmpty() const;
+      bool IsFull() const;
+      bool GetCount() const;
+      bool AddOperationToSet(int set, const Operation& oper);
       Operations GetOperationFromSet(int set, int operation_id);
       FORBIDDEN_EVIL_CONSTRUCTORS(MemoryCache);
 
@@ -54,6 +58,7 @@ private:
       int front_id_[2];
       int rear_id_[2];
       int index_;
+      boost::shared_mutex g_mutex;
       const Operation** operation_[2];
 };
 }  // DataProvider

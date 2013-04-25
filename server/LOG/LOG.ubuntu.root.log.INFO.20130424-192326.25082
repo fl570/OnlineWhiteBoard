@@ -1,0 +1,19 @@
+Log file created at: 2013/04/24 19:23:26
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0424 19:23:26.950191 25082 DBManager.cc:77] insert into Meeting (state) values (0)
+I0424 19:23:26.952534 25082 DBManager.cc:95] update Meeting set MeetingID = 'fe4e16cbc7ed8ae17c6fb7d9585f6161' where   id = 153
+I0424 19:23:26.955390 25082 DBManager.cc:330] select state from Meeting where   MeetingID = 'fe4e16cbc7ed8ae17c6fb7d9585f6161'
+I0424 19:23:26.956091 25082 DBManager.cc:155] update Meeting set state = 1 where   MeetingID = 'fe4e16cbc7ed8ae17c6fb7d9585f6161'
+I0424 19:23:26.956356 25082 DBManager.cc:351] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('fe4e16cbc7ed8ae17c6fb7d9585f6161', 'abc', 3, 1366802606)
+I0424 19:23:26.958166 25082 DBManager.cc:173] update Meeting set DataRef = 17240224 where   MeetingID = 'fe4e16cbc7ed8ae17c6fb7d9585f6161'
+I0424 19:23:26.960072 25082 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = 'fe4e16cbc7ed8ae17c6fb7d9585f6161'
+I0424 19:23:26.963125 25082 DBManager.cc:133] select Port from Meeting where   MeetingID = 'fe4e16cbc7ed8ae17c6fb7d9585f6161'
+I0424 19:23:26.965188 25082 DBManager.cc:330] select state from Meeting where   MeetingID = 'fe4e16cbc7ed8ae17c6fb7d9585f6161'
+I0424 19:23:26.965459 25082 DBManager.cc:351] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('fe4e16cbc7ed8ae17c6fb7d9585f6161', 'abcd', 1, 1366802606)
+I0424 19:23:26.967782 25082 DBManager.cc:133] select Port from Meeting where   MeetingID = 'fe4e16cbc7ed8ae17c6fb7d9585f6161'
+I0424 19:23:26.968091 25082 MeetingHandler.cc:185] 1
+I0424 19:23:26.968106 25082 MeetingHandler.cc:186] 1
+I0424 19:23:26.968114 25082 MeetingHandler.cc:187] fe4e16cbc7ed8ae17c6fb7d9585f6161
+I0424 19:23:26.971150 25082 DBManager.cc:133] select Port from Meeting where   MeetingID = 'fe4e16cbc7ed8ae17c6fb7d9585f6161'
+I0424 19:23:26.971534 25082 MeetingHandler.cc:189] 1

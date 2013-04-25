@@ -42,11 +42,11 @@ public:
     bool DeleteDeadUser();
     int UpdateUserState(const std::string&, const std::string&, int);
     int TransferAuth(const std::string&);
-    bool SetDataRef(const std::string&, int);
+    bool SetDataRef(const std::string&, int64_t);
     int GetUserState(const std::string&, const std::string&);
     bool UpdateUserTime(const std::string&, const std::string&);
     DocumentInfo GetCurrentDocument(const std::string&);
-    int GetDataRef(const std::string&);
+    int64_t GetDataRef(const std::string&);
     int GetMeetingPort(const std::string&);
     std::string* GetDeadMeeting(int&);  // 返回死亡的Meeting 的id
     // 并删除数据库中死亡的Meeting id

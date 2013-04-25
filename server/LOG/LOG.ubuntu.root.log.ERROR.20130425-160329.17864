@@ -1,0 +1,5 @@
+Log file created at: 2013/04/25 16:03:29
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0425 16:03:29.209729 17864 MeetingHandlerTest.cc:110] Failed to serialize Protocol Buffers object. Not all required fields were initialized. Type: 9Operation.
+E0425 16:03:29.258018 17864 MeetingHandlerTest.cc:122] Failed to serialize Protocol Buffers object. Not all required fields were initialized. Type: 9Operation.

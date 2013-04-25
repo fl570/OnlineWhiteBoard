@@ -45,7 +45,7 @@ gtest.a : gtest-all.o
 	$(AR) $(ARFLAGS) $@ $^
 
 $(TESTS) : MemoryCacheTest.o MemoryCache.o message.pb.o gtest.a
-	$(CXX) MemoryCacheTest.o MemoryCache.o message.pb.o gtest.a -lglog -lgflags -lprotobuf \
+	$(CXX) MemoryCacheTest.o MemoryCache.o message.pb.o gtest.a -lglog -lgflags -lprotobuf -lboost_thread\
         $(CXXFLAGS) $(CPPFLAGS) -o test/MemoryCache.test
 
 MemoryCacheTest.o : $(Memory_Cache_TEST_SRCS_)

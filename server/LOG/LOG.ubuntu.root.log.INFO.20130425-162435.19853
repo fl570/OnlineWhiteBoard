@@ -1,0 +1,71 @@
+Log file created at: 2013/04/25 16:24:35
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0425 16:24:35.755445 19853 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366877975
+I0425 16:24:35.760530 19853 DBManager.cc:532] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0425 16:24:35.761190 19853 DBManager.cc:550] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0425 16:24:35.766974 19853 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 16:24:35.772609 19853 DBManager.cc:95] update Meeting set MeetingID = '232' where   id = 232
+I0425 16:24:35.777912 19853 DBManager.cc:173] update Meeting set DataRef = 21042416 where   MeetingID = '232'
+I0425 16:24:35.784066 19853 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '232'
+I0425 16:24:35.788730 19853 DBManager.cc:113] update Meeting set Port = 10249 where   MeetingID = '232'
+I0425 16:24:35.793194 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = '232'
+I0425 16:24:35.798252 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = '232'
+I0425 16:24:35.802333 19853 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366877975
+I0425 16:24:35.806298 19853 DBManager.cc:532] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0425 16:24:35.806800 19853 DBManager.cc:550] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0425 16:24:35.812186 19853 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 16:24:35.816185 19853 DBManager.cc:95] update Meeting set MeetingID = '233' where   id = 233
+I0425 16:24:35.821573 19853 DBManager.cc:173] update Meeting set DataRef = 21041856 where   MeetingID = '233'
+I0425 16:24:35.828045 19853 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '233'
+I0425 16:24:35.831101 19853 DBManager.cc:173] update Meeting set DataRef = 21042256 where   MeetingID = '233'
+I0425 16:24:35.833127 19853 DBManager.cc:193] select DataRef from Meeting where   MeetingID = '233'
+I0425 16:24:35.837152 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = '233'
+I0425 16:24:35.841646 19853 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366877975
+I0425 16:24:35.843818 19853 DBManager.cc:532] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0425 16:24:35.844310 19853 DBManager.cc:550] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0425 16:24:35.849318 19853 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 16:24:35.851485 19853 DBManager.cc:95] update Meeting set MeetingID = '234' where   id = 234
+I0425 16:24:35.855229 19853 DBManager.cc:173] update Meeting set DataRef = 21041616 where   MeetingID = '234'
+I0425 16:24:35.860206 19853 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '234'
+I0425 16:24:35.864853 19853 DBManager.cc:193] select DataRef from Meeting where   MeetingID = '234'
+I0425 16:24:35.869068 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = '234'
+I0425 16:24:35.873376 19853 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366877975
+I0425 16:24:35.877403 19853 DBManager.cc:532] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0425 16:24:35.877895 19853 DBManager.cc:550] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0425 16:24:35.884420 19853 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 16:24:35.888540 19853 DBManager.cc:95] update Meeting set MeetingID = '235' where   id = 235
+I0425 16:24:35.893864 19853 DBManager.cc:173] update Meeting set DataRef = 21042416 where   MeetingID = '235'
+I0425 16:24:35.899902 19853 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '235'
+I0425 16:24:35.905789 19853 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 16:24:35.909860 19853 DBManager.cc:95] update Meeting set MeetingID = 'e4582a0e53a06190459657bd3a6af7b6' where   id = 236
+I0425 16:24:35.914008 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = 'e4582a0e53a06190459657bd3a6af7b6'
+I0425 16:24:35.918126 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = '235'
+I0425 16:24:35.922369 19853 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366877975
+I0425 16:24:35.926959 19853 DBManager.cc:532] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0425 16:24:35.927517 19853 DBManager.cc:550] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0425 16:24:35.932562 19853 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 16:24:35.936457 19853 DBManager.cc:95] update Meeting set MeetingID = '237' where   id = 237
+I0425 16:24:35.940532 19853 DBManager.cc:173] update Meeting set DataRef = 21042416 where   MeetingID = '237'
+I0425 16:24:35.945436 19853 DBManager.cc:113] update Meeting set Port = 10250 where   MeetingID = '237'
+I0425 16:24:35.949995 19853 DBManager.cc:330] select state from Meeting where   MeetingID = '237'
+I0425 16:24:35.950943 19853 DBManager.cc:155] update Meeting set state = 1 where   MeetingID = '237'
+I0425 16:24:35.951702 19853 DBManager.cc:351] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('237', 'abc', 1, 1366878275)
+I0425 16:24:35.955570 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = '237'
+I0425 16:24:35.959561 19853 DBManager.cc:382] select State from MeetingUser where   MeetingID = '237' and UserID = 'abc'
+I0425 16:24:35.963537 19853 DBManager.cc:330] select state from Meeting where   MeetingID = '123'
+I0425 16:24:35.968386 19853 DBManager.cc:382] select State from MeetingUser where   MeetingID = '237' and UserID = 'abcd'
+I0425 16:24:35.972342 19853 DBManager.cc:77] insert into Meeting (state) values (0)
+I0425 16:24:35.976259 19853 DBManager.cc:95] update Meeting set MeetingID = '72a51a990afc6b92e6b169c55b630541' where   id = 238
+I0425 16:24:35.980290 19853 DBManager.cc:330] select state from Meeting where   MeetingID = '72a51a990afc6b92e6b169c55b630541'
+I0425 16:24:35.981125 19853 DBManager.cc:155] update Meeting set state = 1 where   MeetingID = '72a51a990afc6b92e6b169c55b630541'
+I0425 16:24:35.981880 19853 DBManager.cc:351] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('72a51a990afc6b92e6b169c55b630541', 'cccc', 3, 1366878275)
+I0425 16:24:35.985769 19853 DBManager.cc:173] update Meeting set DataRef = 21041984 where   MeetingID = '72a51a990afc6b92e6b169c55b630541'
+I0425 16:24:35.990787 19853 DBManager.cc:113] update Meeting set Port = 10249 where   MeetingID = '72a51a990afc6b92e6b169c55b630541'
+I0425 16:24:35.995524 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = '72a51a990afc6b92e6b169c55b630541'
+I0425 16:24:35.999626 19853 DBManager.cc:382] select State from MeetingUser where   MeetingID = '72a51a990afc6b92e6b169c55b630541' and UserID = 'cccc'
+I0425 16:24:36.003834 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = '72a51a990afc6b92e6b169c55b630541'
+I0425 16:24:36.007681 19853 DBManager.cc:133] select Port from Meeting where   MeetingID = '237'
+I0425 16:24:36.012465 19853 DBManager.cc:511] delete from MeetingUser where   HBTime < 1366877976
+I0425 16:24:36.016294 19853 DBManager.cc:532] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0425 16:24:36.016912 19853 DBManager.cc:550] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by

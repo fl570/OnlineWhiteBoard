@@ -1,0 +1,8 @@
+Log file created at: 2013/04/24 18:47:06
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0424 18:47:06.725574 24649 DBManager.cc:77] insert into Meeting (state) values (0)
+I0424 18:47:06.728761 24649 DBManager.cc:95] update Meeting set MeetingID = 'cf44a93a3da987eb5a7b779cea6afc17' where   id = 146
+I0424 18:47:06.731156 24649 DBManager.cc:330] select state from Meeting where   MeetingID = '146'
+I0424 18:47:06.731498 24649 MeetingHandler.cc:183] 3
+I0424 18:47:06.731514 24649 MeetingHandler.cc:184] 146
