@@ -10,8 +10,10 @@
 #define KINGSLANDING_ONLINEWHITEBOARD_SERVER_DATAUPDATER_UPDATER_H_
 
 #define MEMCACHE Kingslanding::OnlineWhiteBoard::Server::DataProvider::MemoryCache
+#define DRAWOP Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation
 #include "../message.pb.h"
 #include "../DataProvider/MemoryCache.h"
+#include "../DrawOperation/DrawOperation.h"
 
 namespace Kingslanding {
 namespace OnlineWhiteBoard {
@@ -19,12 +21,12 @@ namespace Server {
 namespace DataUpdater {
 class UpdaterImp {
 public:
-  UpdaterImp(MEMCACHE *);
+  UpdaterImp(MEMCACHE *, DRAWOP*);
   ~UpdaterImp();
   bool WriteOperationToPool(const Operation&);
 private:
   MEMCACHE *mem_cache_;
-  //DrawOp draw_op;
+  DRAWOP* draw_op_;
 };
 }  // DataUpdater
 }  // Server

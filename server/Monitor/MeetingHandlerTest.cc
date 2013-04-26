@@ -23,9 +23,10 @@ protected:
   std::string str_id;
   static DBM *db_instance ;
   MEMCACHE* memory;
+  DRAWOP* draw_oper;
   static void SetUpTestCase() {
     google::InitGoogleLogging("LOG");
-    FLAGS_log_dir = "../LOG";
+    FLAGS_log_dir = "./LOG";
   }
   static void TearDownTestCase() {
     google::ShutdownGoogleLogging();
@@ -43,8 +44,10 @@ protected:
     db_instance -> SetMeetingID(str_id, id);
     MeetingHandler::UpdaterInfo *info = new MeetingHandler::UpdaterInfo;
     memory = new MEMCACHE();
+    draw_oper = new DRAWOP(str_id);
     info -> server = new RCF::RcfServer(RCF::TcpEndpoint("0.0.0.0", 10250));
-    info -> up_ref = new MeetingHandler::UpdaterImpl(memory);
+    info -> up_ref = new MeetingHandler::UpdaterImpl(memory,  draw_oper);
+    info -> draw_oper = draw_oper;
     db_instance ->SetDataRef(str_id, (int64_t) memory);
     MeetingHandler::UpdaterTable::accessor write_acc;
     meeting_instance -> monitor_updater_.insert(write_acc, str_id);
@@ -116,9 +119,9 @@ TEST_F(MeetingHandlerTest, JoinMeeting) {
   point -> set_x(30);
   point -> set_y(40);
   try {
-   RcfClient<Updater> client(RCF::TcpEndpoint("127.0.0.1", 10249));
-   bool result = client.WriteOperationToPool(oper);
-   EXPECT_TRUE(result);
+    RcfClient<Updater> client(RCF::TcpEndpoint("127.0.0.1", 10249));
+    bool result = client.WriteOperationToPool(oper);
+    EXPECT_TRUE(result);
   } catch (const RCF::Exception & e) {
     LOG(ERROR) << e.getError().getErrorString();
   }
@@ -128,9 +131,16 @@ TEST_F(MeetingHandlerTest, DeleteMeeting) {
   EXPECT_TRUE(meeting_instance -> DeleteMeeting(str_id));
 }
 
+TEST_F(MeetingHandlerTest, TransferHostDraw) {
+  EXPECT_TRUE(meeting_instance ->TransferHostDraw(str_id));
+}
+
+TEST_F(MeetingHandlerTest, GetDrawOperation) {
+  EXPECT_EQ(draw_oper, meeting_instance  -> GetDrawOperation(str_id));
+}
+
 TEST_F(MeetingHandlerTest, ResumeUpdater) {
   EXPECT_TRUE(meeting_instance -> ResumeUpdater(str_id));
-  LOG(INFO) << "UpdaterResume Complete";
   Operation oper;
   Operation_OperationData *data;
   Operation_OperationData_Point *point;

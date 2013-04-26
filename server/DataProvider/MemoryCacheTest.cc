@@ -15,11 +15,11 @@ namespace DataProvider {
 class MemoryCacheTest: public ::testing::Test {
 protected:
   MemoryCache *q0_ ;
-  Operation **oper;
+  Operation oper[6];
   static void SetUpTestCase() {
     GOOGLE_PROTOBUF_VERIFY_VERSION;
     google::InitGoogleLogging("LOG");
-    FLAGS_log_dir = "../LOG";
+    FLAGS_log_dir = "./LOG";
   }
   static void TearDownTestCase() {
     google::protobuf::ShutdownProtobufLibrary();
@@ -27,13 +27,11 @@ protected:
   }
   virtual void SetUp() {
     q0_ = new MemoryCache(5);
-    oper = new Operation*[6];
     Operation_OperationData *data;
     Operation_OperationData_Point *point;
     for (int i = 0; i < 6; i++) {
-      oper[i] = new Operation;
-      oper[i]->set_serial_number(i);
-      data = oper[i]->mutable_data();
+      oper[i].set_serial_number(i);
+      data = oper[i].mutable_data();
       data -> set_data_type(Operation_OperationData_OperationDataType_LINE);
       data -> set_thinkness(30+i);
       data -> set_color(30+i);
@@ -49,7 +47,7 @@ protected:
     }
   }
   virtual void TearDown() {
-    delete oper;
+    delete q0_;
   }
 };
 
@@ -215,8 +213,3 @@ TEST_F(MemoryCacheTest, SetState) {
 }  // OnlineWhiteBoard
 }  // Kingslanding
 
-int main(int argc, char **argv) {
-  std::cout << "Running main() from gtest_main.cc\n";
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

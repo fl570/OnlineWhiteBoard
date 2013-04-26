@@ -7,8 +7,8 @@
  ************************************************************************/
 
 #include "./MeetingHandler.h"
-#include "./md5.h"
 #include <iostream>
+#include "./md5.h"
 
 namespace Kingslanding {
 namespace OnlineWhiteBoard {
@@ -78,7 +78,8 @@ JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, con
   if (result == 1) {
     if (!has_meeting) {
       MEMCACHE* mem =  new MEMCACHE();
-      UpdaterImpl *updater = new UpdaterImpl(mem);
+      DRAWOP* draw_oper = new DRAWOP(meeting_id);
+      UpdaterImpl *updater = new UpdaterImpl(mem, draw_oper);
       SetDataRef(meeting_id, mem);
 
       int port = AddMeetingPort(meeting_id);      
@@ -89,6 +90,7 @@ JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, con
       UpdaterInfo *updater_info = new UpdaterInfo;
       updater_info->server = server;
       updater_info->up_ref = updater;
+      updater_info->draw_oper = draw_oper;
       UpdaterTable::accessor write_acc;
       monitor_updater_.insert(write_acc, meeting_id);
       write_acc->second = updater_info;
@@ -132,11 +134,8 @@ bool MeetingHandler::DeleteMeeting(const std::string& meeting_id) {
     port_.push(port);
     lock.unlock();
   }
-
   delete write_acc->second->server;
-  LOG (INFO) << "delete server";
   delete write_acc->second->up_ref;
-  LOG (INFO) << write_acc -> second ->up_ref;
   delete write_acc->second;
   monitor_updater_.erase(write_acc);
   return true;
@@ -152,7 +151,8 @@ bool MeetingHandler::ResumeUpdater(const std::string& meeting_id) {
   int port = db_manager_->GetMeetingPort(meeting_id);
   if (NULL == write_acc->second->up_ref) {
     MEMCACHE* ref = GetDataRef(meeting_id);
-    write_acc->second->up_ref = new UpdaterImpl(ref);
+    DRAWOP* draw_op = new DRAWOP(meeting_id);
+    write_acc->second->up_ref = new UpdaterImpl(ref, draw_op);
   }
   try {
     write_acc ->second -> server ->stop();
@@ -165,8 +165,28 @@ bool MeetingHandler::ResumeUpdater(const std::string& meeting_id) {
 }
 
 bool MeetingHandler::TransferHostDraw(const std::string& meeting_id) {
+  UpdaterTable::const_accessor read_acc;
+  bool has_meeting = monitor_updater_.find(read_acc, meeting_id);
+  if (!has_meeting) {
+    return false;
+  }
+  std::string path = read_acc->second->draw_oper->SaveAsBmp();
+  read_acc.release();
+  if(path == "")
+    return false;
+  db_manager_ -> AddDocument(meeting_id, path);
   return true;
 }
+
+DRAWOP* MeetingHandler::GetDrawOperation(const std::string& meeting_id) {
+  UpdaterTable::const_accessor read_acc;
+  bool has_meeting = monitor_updater_.find(read_acc, meeting_id);
+  if (!has_meeting) {
+    return NULL;
+  }
+  return read_acc -> second -> draw_oper;
+}
+
 
 MeetingHandler::~MeetingHandler() {
   UpdaterTable::iterator iter;

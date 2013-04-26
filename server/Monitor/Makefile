@@ -49,6 +49,27 @@ MEETING_HANDLER_SRCS_ = Handler.cc MeetingHandler.cc md5.cc
 RCF_SRCS_ = $(RCF_DIR)/src/RCF/RCF.cpp
 MEETING_HANDLER_TEST_SRCS_ = MeetingHandlerTest.cc
 
+# DrawOperation sources
+DRAW_OPERATION_SRCS_ = ../DrawOperation/DrawOperation.cc
+DRAW_OPERATION_TEST_SRCS_ = ../DrawOperation/DrawOperationTest.cc
+DRAW_CLASS_SRCS_ = ../DrawOperation/DrawClass.cc
+DRAW_CIRCLE_SRCS_ = ../DrawOperation/DrawCircle.cc
+DRAW_TRANSCIRCLE_SRCS_ = ../DrawOperation/DrawTransCircle.cc
+DRAW_RECT_SRCS_ = ../DrawOperation/DrawRect.cc
+DRAW_TRANSRECT_SRCS_ = ../DrawOperation/DrawTransRect.cc
+DRAW_ECLIPSE_SRCS_ = ../DrawOperation/DrawEclipse.cc
+DRAW_TRANSECLIPSE_SRCS_ =../DrawOperation/DrawTransEclipse.cc
+DRAW_LINE_SRCS_ = ../DrawOperation/DrawLine.cc
+DRAW_POINT_SRCS_ = ../DrawOperation/DrawPoint.cc
+DRAW_ERASER_SRCS_ = ../DrawOperation/DrawEraser.cc
+DRAW_CIRCLE_TEST_SRCS_ = ../DrawOperation/DrawCircleTest.cc
+DRAW_TRANSCIRCLE_TEST_SRCS_ = ../DrawOperation/DrawTransCircleTest.cc
+DRAW_TRANSRECT_TEST_SRCS_ = ../DrawOperation/DrawTransRectTest.cc
+DRAW_RECT_TEST_SRCS_ = ../DrawOperation/DrawRectTest.cc
+DRAW_LINE_TEST_SRCS_ = ../DrawOperation/DrawLineTest.cc
+DRAW_POINT_TEST_SRCS_ = ../DrawOperation/DrawPointTest.cc
+DRAW_ERASER_TEST_SRCS_ = ../DrawOperation/DrawEraserTest.cc
+
 all : $(TESTS)
 
 gtest-all.o : $(GTEST_SRCS_)
@@ -58,10 +79,19 @@ gtest-all.o : $(GTEST_SRCS_)
 gtest.a : gtest-all.o
 	$(AR) $(ARFLAGS) $@ $^
 
-$(TESTS) : Handler.o md5.o MeetingHandler.o Updater.o MemoryCache.o\
-message.pb.o DBManager.o RCF.o MeetingHandlerTest.o gtest.a
-	$(CXX) $(CXXFLAGS) $(CPPFLAGS) Handler.o md5.o MeetingHandler.o Updater.o MemoryCache.o\
- message.pb.o DBManager.o RCF.o MeetingHandlerTest.o gtest.a -ldl -lboost_thread -lpthread -ltbb -lprotobuf -lglog -lgflags -lgtest -lmysqlclient -o $@
+$(TESTS) : Handler.o md5.o MeetingHandler.o Updater.o MemoryCache.o \
+        message.pb.o DBManager.o RCF.o MeetingHandlerTest.o gtest.a  \
+        DrawOperation.o DrawClass.o \
+	DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
+	DrawTransRect.o DrawCircle.o DrawTransCircle.o \
+        DrawEclipse.o DrawTransEclipse.o
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) Handler.o md5.o MeetingHandler.o Updater.o MemoryCache.o \
+	message.pb.o DBManager.o RCF.o MeetingHandlerTest.o gtest.a \
+	DrawOperation.o DrawClass.o \
+	DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
+	DrawTransRect.o DrawCircle.o DrawTransCircle.o \
+	DrawEclipse.o DrawTransEclipse.o -ldl -lboost_thread -lpthread -ltbb -lprotobuf \
+	-lglog -lgflags -lgtest -lmysqlclient `pkg-config --cflags opencv`  `pkg-config --libs opencv` -o $@
 
 MeetingHandlerTest.o : $(MEETING_HANDLER_TEST_SRCS_)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(MEETING_HANDLER_TEST_SRCS_)
@@ -83,5 +113,39 @@ Updater.o : $(UPDATER_SRCS_)
 
 Handler.o md5.o MeetingHandler.o : $(MEETING_HANDLER_SRCS_)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(MEETING_HANDLER_SRCS_)
+
+DrawOperation.o : $(DRAW_OPERATION_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_OPERATION_SRCS_)
+
+DrawCircle.o : $(DRAW_CIRCLE_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_CIRCLE_SRCS_)
+
+DrawTransCircle.o : $(DRAW_TRANSCIRCLE_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_TRANSCIRCLE_SRCS_)
+
+DrawRect.o : $(DRAW_RECT_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_RECT_SRCS_)
+
+DrawTransRect.o : $(DRAW_TRANSRECT_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_TRANSRECT_SRCS_)
+
+DrawEclipse.o : $(DRAW_ECLIPSE_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_ECLIPSE_SRCS_)
+
+DrawTransEclipse.o : $(DRAW_TRANSECLIPSE_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_TRANSECLIPSE_SRCS_)
+
+DrawLine.o : $(DRAW_LINE_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_LINE_SRCS_)
+
+DrawPoint.o : $(DRAW_POINT_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_POINT_SRCS_)
+
+DrawEraser.o : $(DRAW_ERASER_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_ERASER_SRCS_)
+
+DrawClass.o : $(DRAW_CLASS_SRCS_) $(GTEST_HEADERS)
+	$(CXX) $(CXXFLAGS) -c $(DRAW_CLASS_SRCS_)
+
 clean :
 	rm -rf $(TESTS) *.a *.o test/*.o 

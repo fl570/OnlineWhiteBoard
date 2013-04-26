@@ -44,19 +44,21 @@ MemoryCache::MemoryCache(int capacity) {
 
 MemoryCache::~MemoryCache() {
   boost:: unique_lock<boost::shared_mutex> lock(g_mutex);
-  if (operation_[0]) {
+  if (operation_[0] != NULL) {
     for (int i = 0; i < size_[0]; i++) {
       index_ = front_[0];
       delete operation_[0][index_];
       front_[0]++;
+      front_[0] %= capacity_;
     }
     delete []operation_[0];
   }
-  if (operation_[1]) {
+  if (operation_[1] != NULL) {
     for (int i = 0; i < size_[1]; i++) {
       index_ = front_[1];
       delete operation_[1][index_];
       front_[1]++;
+      front_[0] %= capacity_;
     }
     delete []operation_[1];
   }

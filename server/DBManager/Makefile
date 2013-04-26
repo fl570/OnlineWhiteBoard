@@ -47,10 +47,10 @@ $(TESTS) : DBManagerTest.o DBManager.o gtest.a
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) DBManagerTest.o \
 	DBManager.o gtest.a -lglog -lgflags -lmysqlclient -o $@
 
-DBManagerTest.o : $(Memory_Cache_TEST_SRCS_) $(GTEST_HEADERS)
+DBManagerTest.o : $(DB_MANAGER_TEST_SRCS_) $(GTEST_HEADERS)
 	$(CXX) $(CXXFLAGS) -c $(DB_MANAGER_TEST_SRCS_)
 
-DBManager.o : $(Memory_Cache_SRCS_) $(GTEST_HEADERS)
+DBManager.o : $(DB_MANAGER_SRCS_) $(GTEST_HEADERS)
 	$(CXX) $(CXXFLAGS) -c $(DB_MANAGER_SRCS_)
 
 clean :

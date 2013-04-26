@@ -12,16 +12,19 @@ namespace Kingslanding {
 namespace OnlineWhiteBoard {
 namespace Server {
 namespace DataUpdater {
-UpdaterImp::UpdaterImp(DataProvider::MemoryCache* mem_cache) {
+UpdaterImp::UpdaterImp(MEMCACHE* mem_cache, DRAWOP* draw_op) {
   mem_cache_ = mem_cache;
+  draw_op_ = draw_op;
 }
 
 UpdaterImp::~UpdaterImp() {
   delete mem_cache_;
+  delete draw_op_;
 }
 
 bool UpdaterImp::WriteOperationToPool(const Operation& oper) {
- mem_cache_->AddOperation(oper); 
+ mem_cache_ -> AddOperation(oper); 
+ draw_op_ ->  Draw(oper);
  return true;
 }
 }  // DataUpdater

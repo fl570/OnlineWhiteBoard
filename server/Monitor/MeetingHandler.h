@@ -9,8 +9,6 @@
 #ifndef KINGSLANDING_ONLINEWHITEBOARD_SERVER_MONITOR_MEETINGHANDLER_H_
 #define KINGSLANDING_ONLINEWHITEBOARD_SERVER_MONITOR_MEETINGHANDLER_H_
 
-#define DBMANAGER Kingslanding::OnlineWhiteBoard::Server::DBManager
-#define MEMCACHE Kingslanding::OnlineWhiteBoard::Server::DataProvider::MemoryCache
 #define PORTMIN 10000
 #define PORTMAX 10250
 
@@ -22,7 +20,6 @@
 #include "../DataProvider/MemoryCache.h"
 #include "../RcfDefine.h"
 #include "../DataUpdater/Updater.h"
-
 
 namespace Kingslanding {
 namespace OnlineWhiteBoard {
@@ -37,7 +34,7 @@ public:
   bool ResumeUpdater(const std::string&);
   bool TransferHostDraw(const std::string&);
   bool LogIn(const User&);
-  //DrawOperation* GetDrawOperation(const std::string&);
+  DRAWOP* GetDrawOperation(const std::string&);
   virtual ~MeetingHandler();
 private:
   int AddMeetingPort(const std::string&);
@@ -56,6 +53,7 @@ private:
   struct UpdaterInfo {
     RCF::RcfServer* server;
     UpdaterImpl* up_ref;
+    DRAWOP* draw_oper;
   };
 
   typedef tbb::concurrent_hash_map<std::string, UpdaterInfo*> UpdaterTable;

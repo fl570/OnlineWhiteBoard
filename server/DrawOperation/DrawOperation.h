@@ -33,7 +33,7 @@ namespace DrawOperation {
 class DrawOperation {
 public:
     explicit DrawOperation(std::string meeting_id);
-    ~DrawOperation();
+    // ~DrawOperation();
     void Draw(Operation op);
     std::string SaveAsBmp();
     void Show();

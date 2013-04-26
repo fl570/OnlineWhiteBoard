@@ -24,7 +24,7 @@ protected:
   MYSQL* conn_;
   static void SetUpTestCase() {
     google::InitGoogleLogging("LOG");
-    FLAGS_log_dir = "../LOG";
+    FLAGS_log_dir = "./LOG";
   }
   static void TearDownTestCase() {
     google::ShutdownGoogleLogging();
@@ -476,10 +476,3 @@ TEST_F(DBManagerTest, TransferAuth) {
 }  // Server
 }  // OnlineWhiteBoard
 }  // Kingslanding
-
-int main(int argc, char **argv) {
-  std::cout << "Running main() from gtest_main.cc\n";
-  google::ParseCommandLineFlags(&argc, &argv, true);
-  testing::InitGoogleTest(&argc, argv);
-  return RUN_ALL_TESTS();
-}

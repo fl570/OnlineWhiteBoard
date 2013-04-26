@@ -112,8 +112,10 @@ void DrawOperation::Show() {
 std::string DrawOperation::SaveAsBmp() {
   time_t now =time(NULL);
   std::string now_time = ctime(&now);
-  std::string path = "/home/vanvick/picture/"+meeting_id_+"+"+now_time+".bmp";
-  cv::imwrite(path, picture_);
+  std::string path = "/root/picture/"+meeting_id_+"+"+now_time+".bmp";
+  bool temp = cv::imwrite(path, picture_);
+  if(!temp)
+    return "";
   return path;
 }
 }  // DrawOperation
