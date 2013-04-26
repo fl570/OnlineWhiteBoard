@@ -21,7 +21,7 @@ namespace Monitor {
 class HbHandler : public MsgHandler {
 public:
     HbHandler();
-    HeartReturnPackage GetUserState(HeartBeatSendPackage&);
+    HeartReturnPackage GetUserState(HeartBeatSendPackage& h);
     virtual ~HbHandler();
 };
 }  // Monitor

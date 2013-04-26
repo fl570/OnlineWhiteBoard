@@ -32,8 +32,8 @@ message Operation {
         optional Point end_point = 5;
 
         //对于椭圆
-        optional Point f_1 = 6;
-        optional Point f_2 = 7;
+        optional Point center = 6;
+        optional float axe = 7;
         optional int32 a = 8;
         optional int32 b = 9;
         

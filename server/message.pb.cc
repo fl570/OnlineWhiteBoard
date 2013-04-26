@@ -87,8 +87,8 @@ void protobuf_AssignDesc_message_2eproto() {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, color_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, start_point_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, end_point_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, f_1_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, f_2_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, center_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, axe_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, a_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, b_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, top_left_corner_),
@@ -344,42 +344,41 @@ void protobuf_AddDesc_message_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rmessage.proto\"\312\005\n\tOperation\022\025\n\rserial_"
+    "\n\rmessage.proto\"\255\005\n\tOperation\022\025\n\rserial_"
     "number\030\001 \002(\r\022&\n\004data\030\002 \002(\0132\030.Operation.O"
-    "perationData\032\375\004\n\rOperationData\022=\n\tdata_t"
+    "perationData\032\340\004\n\rOperationData\022=\n\tdata_t"
     "ype\030\001 \002(\0162*.Operation.OperationData.Oper"
     "ationDataType\022\021\n\tthinkness\030\002 \002(\005\022\r\n\005colo"
     "r\030\003 \001(\005\0223\n\013start_point\030\004 \001(\0132\036.Operation"
     ".OperationData.Point\0221\n\tend_point\030\005 \001(\0132"
-    "\036.Operation.OperationData.Point\022+\n\003f_1\030\006"
-    " \001(\0132\036.Operation.OperationData.Point\022+\n\003"
-    "f_2\030\007 \001(\0132\036.Operation.OperationData.Poin"
-    "t\022\t\n\001a\030\010 \001(\005\022\t\n\001b\030\t \001(\005\0227\n\017top_left_corn"
-    "er\030\n \001(\0132\036.Operation.OperationData.Point"
-    "\022;\n\023bottom_right_corner\030\013 \001(\0132\036.Operatio"
-    "n.OperationData.Point\0220\n\010position\030\014 \001(\0132"
-    "\036.Operation.OperationData.Point\022\014\n\004fill\030"
-    "\r \001(\010\022\r\n\005alpha\030\016 \001(\002\032\035\n\005Point\022\t\n\001x\030\001 \002(\005"
-    "\022\t\n\001y\030\002 \002(\005\"O\n\021OperationDataType\022\010\n\004LINE"
-    "\020\000\022\013\n\007ELLIPSE\020\001\022\014\n\010RECTANGE\020\002\022\t\n\005POINT\020\003"
-    "\022\n\n\006ERASER\020\004\"I\n\nOperations\022\033\n\023operation_"
-    "avaliable\030\001 \002(\010\022\036\n\noperations\030\002 \003(\0132\n.Op"
-    "eration\"B\n\010Document\022\025\n\rserial_number\030\001 \002"
-    "(\r\022\014\n\004data\030\002 \002(\014\022\021\n\tuser_name\030\003 \001(\t\"3\n\014D"
-    "ocumentList\022#\n\020history_document\030\001 \003(\0132\t."
-    "Document\"4\n\021MeetingServerInfo\022\014\n\004port\030\001 "
-    "\002(\005\022\021\n\tserver_ip\030\002 \002(\t\"\\\n\021JoinMeetingRet"
-    "urn\022\036\n\njoin_state\030\001 \002(\0162\n.JoinState\022\'\n\013s"
-    "erver_info\030\002 \001(\0132\022.MeetingServerInfo\"H\n\004"
-    "User\022\021\n\tuser_name\030\001 \002(\t\022\020\n\010password\030\002 \001("
-    "\t\022\033\n\010identity\030\003 \001(\0162\t.Identity\"=\n\024HeartB"
-    "eatSendPackage\022\021\n\tuser_name\030\001 \002(\t\022\022\n\nmee"
-    "ting_id\030\002 \002(\t\"1\n\022HeartReturnPackage\022\033\n\010i"
-    "dentity\030\001 \002(\0162\t.Identity\" \n\010UserList\022\024\n\005"
-    "users\030\001 \003(\0132\005.User*5\n\010Identity\022\010\n\004HOST\020\001"
-    "\022\r\n\tCANDIDATE\020\002\022\020\n\014PARTICIPANTS\020\003*>\n\tJoi"
-    "nState\022\013\n\007SUCCESS\020\001\022\010\n\004FAIL\020\002\022\020\n\014NOTAVAI"
-    "LABLE\020\003\022\010\n\004DEAD\020\004", 1417);
+    "\036.Operation.OperationData.Point\022.\n\006cente"
+    "r\030\006 \001(\0132\036.Operation.OperationData.Point\022"
+    "\013\n\003axe\030\007 \001(\002\022\t\n\001a\030\010 \001(\005\022\t\n\001b\030\t \001(\005\0227\n\017to"
+    "p_left_corner\030\n \001(\0132\036.Operation.Operatio"
+    "nData.Point\022;\n\023bottom_right_corner\030\013 \001(\013"
+    "2\036.Operation.OperationData.Point\0220\n\010posi"
+    "tion\030\014 \001(\0132\036.Operation.OperationData.Poi"
+    "nt\022\014\n\004fill\030\r \001(\010\022\r\n\005alpha\030\016 \001(\002\032\035\n\005Point"
+    "\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\"O\n\021OperationDataT"
+    "ype\022\010\n\004LINE\020\000\022\013\n\007ELLIPSE\020\001\022\014\n\010RECTANGE\020\002"
+    "\022\t\n\005POINT\020\003\022\n\n\006ERASER\020\004\"I\n\nOperations\022\033\n"
+    "\023operation_avaliable\030\001 \002(\010\022\036\n\noperations"
+    "\030\002 \003(\0132\n.Operation\"B\n\010Document\022\025\n\rserial"
+    "_number\030\001 \002(\r\022\014\n\004data\030\002 \002(\014\022\021\n\tuser_name"
+    "\030\003 \001(\t\"3\n\014DocumentList\022#\n\020history_docume"
+    "nt\030\001 \003(\0132\t.Document\"4\n\021MeetingServerInfo"
+    "\022\014\n\004port\030\001 \002(\005\022\021\n\tserver_ip\030\002 \002(\t\"\\\n\021Joi"
+    "nMeetingReturn\022\036\n\njoin_state\030\001 \002(\0162\n.Joi"
+    "nState\022\'\n\013server_info\030\002 \001(\0132\022.MeetingSer"
+    "verInfo\"H\n\004User\022\021\n\tuser_name\030\001 \002(\t\022\020\n\010pa"
+    "ssword\030\002 \001(\t\022\033\n\010identity\030\003 \001(\0162\t.Identit"
+    "y\"=\n\024HeartBeatSendPackage\022\021\n\tuser_name\030\001"
+    " \002(\t\022\022\n\nmeeting_id\030\002 \002(\t\"1\n\022HeartReturnP"
+    "ackage\022\033\n\010identity\030\001 \002(\0162\t.Identity\" \n\010U"
+    "serList\022\024\n\005users\030\001 \003(\0132\005.User*5\n\010Identit"
+    "y\022\010\n\004HOST\020\001\022\r\n\tCANDIDATE\020\002\022\020\n\014PARTICIPAN"
+    "TS\020\003*>\n\tJoinState\022\013\n\007SUCCESS\020\001\022\010\n\004FAIL\020\002"
+    "\022\020\n\014NOTAVAILABLE\020\003\022\010\n\004DEAD\020\004", 1388);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   Operation::default_instance_ = new Operation();
@@ -731,8 +730,8 @@ const int Operation_OperationData::kThinknessFieldNumber;
 const int Operation_OperationData::kColorFieldNumber;
 const int Operation_OperationData::kStartPointFieldNumber;
 const int Operation_OperationData::kEndPointFieldNumber;
-const int Operation_OperationData::kF1FieldNumber;
-const int Operation_OperationData::kF2FieldNumber;
+const int Operation_OperationData::kCenterFieldNumber;
+const int Operation_OperationData::kAxeFieldNumber;
 const int Operation_OperationData::kAFieldNumber;
 const int Operation_OperationData::kBFieldNumber;
 const int Operation_OperationData::kTopLeftCornerFieldNumber;
@@ -750,8 +749,7 @@ Operation_OperationData::Operation_OperationData()
 void Operation_OperationData::InitAsDefaultInstance() {
   start_point_ = const_cast< ::Operation_OperationData_Point*>(&::Operation_OperationData_Point::default_instance());
   end_point_ = const_cast< ::Operation_OperationData_Point*>(&::Operation_OperationData_Point::default_instance());
-  f_1_ = const_cast< ::Operation_OperationData_Point*>(&::Operation_OperationData_Point::default_instance());
-  f_2_ = const_cast< ::Operation_OperationData_Point*>(&::Operation_OperationData_Point::default_instance());
+  center_ = const_cast< ::Operation_OperationData_Point*>(&::Operation_OperationData_Point::default_instance());
   top_left_corner_ = const_cast< ::Operation_OperationData_Point*>(&::Operation_OperationData_Point::default_instance());
   bottom_right_corner_ = const_cast< ::Operation_OperationData_Point*>(&::Operation_OperationData_Point::default_instance());
   position_ = const_cast< ::Operation_OperationData_Point*>(&::Operation_OperationData_Point::default_instance());
@@ -770,8 +768,8 @@ void Operation_OperationData::SharedCtor() {
   color_ = 0;
   start_point_ = NULL;
   end_point_ = NULL;
-  f_1_ = NULL;
-  f_2_ = NULL;
+  center_ = NULL;
+  axe_ = 0;
   a_ = 0;
   b_ = 0;
   top_left_corner_ = NULL;
@@ -790,8 +788,7 @@ void Operation_OperationData::SharedDtor() {
   if (this != default_instance_) {
     delete start_point_;
     delete end_point_;
-    delete f_1_;
-    delete f_2_;
+    delete center_;
     delete top_left_corner_;
     delete bottom_right_corner_;
     delete position_;
@@ -829,12 +826,10 @@ void Operation_OperationData::Clear() {
     if (has_end_point()) {
       if (end_point_ != NULL) end_point_->::Operation_OperationData_Point::Clear();
     }
-    if (has_f_1()) {
-      if (f_1_ != NULL) f_1_->::Operation_OperationData_Point::Clear();
+    if (has_center()) {
+      if (center_ != NULL) center_->::Operation_OperationData_Point::Clear();
     }
-    if (has_f_2()) {
-      if (f_2_ != NULL) f_2_->::Operation_OperationData_Point::Clear();
-    }
+    axe_ = 0;
     a_ = 0;
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
@@ -937,31 +932,33 @@ bool Operation_OperationData::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(50)) goto parse_f_1;
+        if (input->ExpectTag(50)) goto parse_center;
         break;
       }
       
-      // optional .Operation.OperationData.Point f_1 = 6;
+      // optional .Operation.OperationData.Point center = 6;
       case 6: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_f_1:
+         parse_center:
           DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_f_1()));
+               input, mutable_center()));
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(58)) goto parse_f_2;
+        if (input->ExpectTag(61)) goto parse_axe;
         break;
       }
       
-      // optional .Operation.OperationData.Point f_2 = 7;
+      // optional float axe = 7;
       case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_LENGTH_DELIMITED) {
-         parse_f_2:
-          DO_(::google::protobuf::internal::WireFormatLite::ReadMessageNoVirtual(
-               input, mutable_f_2()));
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
+         parse_axe:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
+                 input, &axe_)));
+          set_has_axe();
         } else {
           goto handle_uninterpreted;
         }
@@ -1121,16 +1118,15 @@ void Operation_OperationData::SerializeWithCachedSizes(
       5, this->end_point(), output);
   }
   
-  // optional .Operation.OperationData.Point f_1 = 6;
-  if (has_f_1()) {
+  // optional .Operation.OperationData.Point center = 6;
+  if (has_center()) {
     ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      6, this->f_1(), output);
+      6, this->center(), output);
   }
   
-  // optional .Operation.OperationData.Point f_2 = 7;
-  if (has_f_2()) {
-    ::google::protobuf::internal::WireFormatLite::WriteMessageMaybeToArray(
-      7, this->f_2(), output);
+  // optional float axe = 7;
+  if (has_axe()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->axe(), output);
   }
   
   // optional int32 a = 8;
@@ -1209,18 +1205,16 @@ void Operation_OperationData::SerializeWithCachedSizes(
         5, this->end_point(), target);
   }
   
-  // optional .Operation.OperationData.Point f_1 = 6;
-  if (has_f_1()) {
+  // optional .Operation.OperationData.Point center = 6;
+  if (has_center()) {
     target = ::google::protobuf::internal::WireFormatLite::
       WriteMessageNoVirtualToArray(
-        6, this->f_1(), target);
+        6, this->center(), target);
   }
   
-  // optional .Operation.OperationData.Point f_2 = 7;
-  if (has_f_2()) {
-    target = ::google::protobuf::internal::WireFormatLite::
-      WriteMessageNoVirtualToArray(
-        7, this->f_2(), target);
+  // optional float axe = 7;
+  if (has_axe()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->axe(), target);
   }
   
   // optional int32 a = 8;
@@ -1309,18 +1303,16 @@ int Operation_OperationData::ByteSize() const {
           this->end_point());
     }
     
-    // optional .Operation.OperationData.Point f_1 = 6;
-    if (has_f_1()) {
+    // optional .Operation.OperationData.Point center = 6;
+    if (has_center()) {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->f_1());
+          this->center());
     }
     
-    // optional .Operation.OperationData.Point f_2 = 7;
-    if (has_f_2()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
-          this->f_2());
+    // optional float axe = 7;
+    if (has_axe()) {
+      total_size += 1 + 4;
     }
     
     // optional int32 a = 8;
@@ -1412,11 +1404,11 @@ void Operation_OperationData::MergeFrom(const Operation_OperationData& from) {
     if (from.has_end_point()) {
       mutable_end_point()->::Operation_OperationData_Point::MergeFrom(from.end_point());
     }
-    if (from.has_f_1()) {
-      mutable_f_1()->::Operation_OperationData_Point::MergeFrom(from.f_1());
+    if (from.has_center()) {
+      mutable_center()->::Operation_OperationData_Point::MergeFrom(from.center());
     }
-    if (from.has_f_2()) {
-      mutable_f_2()->::Operation_OperationData_Point::MergeFrom(from.f_2());
+    if (from.has_axe()) {
+      set_axe(from.axe());
     }
     if (from.has_a()) {
       set_a(from.a());
@@ -1466,11 +1458,8 @@ bool Operation_OperationData::IsInitialized() const {
   if (has_end_point()) {
     if (!this->end_point().IsInitialized()) return false;
   }
-  if (has_f_1()) {
-    if (!this->f_1().IsInitialized()) return false;
-  }
-  if (has_f_2()) {
-    if (!this->f_2().IsInitialized()) return false;
+  if (has_center()) {
+    if (!this->center().IsInitialized()) return false;
   }
   if (has_top_left_corner()) {
     if (!this->top_left_corner().IsInitialized()) return false;
@@ -1491,8 +1480,8 @@ void Operation_OperationData::Swap(Operation_OperationData* other) {
     std::swap(color_, other->color_);
     std::swap(start_point_, other->start_point_);
     std::swap(end_point_, other->end_point_);
-    std::swap(f_1_, other->f_1_);
-    std::swap(f_2_, other->f_2_);
+    std::swap(center_, other->center_);
+    std::swap(axe_, other->axe_);
     std::swap(a_, other->a_);
     std::swap(b_, other->b_);
     std::swap(top_left_corner_, other->top_left_corner_);
