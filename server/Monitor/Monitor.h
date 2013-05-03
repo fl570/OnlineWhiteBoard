@@ -23,7 +23,7 @@ public:
   MonitorImp(MeetingHandler*);
   virtual ~MonitorImp();
   bool Login(const User&);
-  std::string CreatMeeting(const std::string&);
+  std::string CreateMeeting(const std::string&);
   JoinMeetingReturn JoinMeeting(const std::string&, const std::string&);
   int32_t TransferAuth(const std::string&, const std::string&);
   bool RequestAuth(const std::string&, const std::string&);
@@ -33,7 +33,7 @@ public:
 private:
   MeetingHandler *meeting_handler_;
   HbHandler hb_handler_;
-  UserHandler user_handler_;
+  UserHandler *user_handler_;
 };
 }  // Monitor
 }  // Server

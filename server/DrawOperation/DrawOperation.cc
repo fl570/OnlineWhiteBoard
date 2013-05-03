@@ -16,6 +16,9 @@ namespace Kingslanding {
 namespace OnlineWhiteBoard {
 namespace Server {
 namespace DrawOperation {
+
+DEFINE_string(picture_store_address, "/root/picture/", "the address where pictures store");
+
 DrawOperation::DrawOperation(std::string meeting_id) {
   meeting_id_ = meeting_id;
   a_ = 0;
@@ -110,9 +113,11 @@ void DrawOperation::Show() {
 }
 
 std::string DrawOperation::SaveAsBmp() {
-  time_t now =time(NULL);
-  std::string now_time = ctime(&now);
-  std::string path = "/root/picture/"+meeting_id_+"+"+now_time+".bmp";
+  time_t now = time(NULL);
+  std::ostringstream bufstr;
+  bufstr << now;
+  std::string now_time = bufstr.str();
+  std::string path = FLAGS_picture_store_address.c_str()+meeting_id_+"-"+now_time+".bmp";
   bool temp = cv::imwrite(path, picture_);
   if(!temp)
     return "";

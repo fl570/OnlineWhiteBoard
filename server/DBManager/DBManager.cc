@@ -97,7 +97,11 @@ bool DBManager::SetMeetingID(const std::string& meeting_id, int id) {
     LOG(ERROR) << mysql_error(conn);
     result = false;
   } else {
-    result = true;
+      if (conn->affected_rows == 0) {
+	result = false;
+      } else {
+	result = true;
+      }
   }
   DestoryConnection(conn);
   return result;
@@ -115,7 +119,11 @@ bool DBManager::AddMeetingPort(const std::string& meeting_id, int port) {
     LOG(ERROR) << mysql_error(conn);
     result = false;
   } else {
-    result = true;
+      if (conn->affected_rows == 0) {
+	result = false;
+      } else {
+	result = true;
+      }
   }
   DestoryConnection(conn);
   return result;
@@ -157,7 +165,11 @@ bool DBManager::SetMeetingState(const std::string& meeting_id, int state) {
     LOG(ERROR) << mysql_error(conn);
     result = false;
   } else {
-    result = true;
+      if (conn->affected_rows == 0) {
+	result = false;
+      } else {
+	result = true;
+      }
   }
   DestoryConnection(conn);
   return result;
@@ -175,7 +187,11 @@ bool DBManager::SetDataRef(const std::string& meeting_id, int64_t data_ref) {
     LOG(ERROR) << mysql_error(conn);
     result = false;
   } else {
-    result = true;
+      if (conn->affected_rows == 0) {
+	result = false;
+      } else {
+	result = true;
+      }
   }
   DestoryConnection(conn);
   return result;
@@ -306,6 +322,7 @@ DocumentInfo* DBManager::GetHistoryDocuments(const std::string& meeting_id, int&
         row_ = mysql_fetch_row(res_);
         sscanf(row_[0], "%d", &res[i].serial_number);
         sscanf(row_[1], "%s", res[i].path);
+	LOG(INFO) << res[i].path;
       }
     }
     mysql_free_result(res_);
@@ -429,7 +446,11 @@ int DBManager::UpdateUserState(const std::string& meeting_id,
       LOG(ERROR) << mysql_error(conn);
       result = -1;
     } else {
-      result = 4;
+      if (conn -> affected_rows == 0) {
+	result = -1;
+      } else {
+	result  = 4;
+      }
     }
   }
   if (result != -1 && result != 2 && result != 4) {
@@ -441,7 +462,11 @@ int DBManager::UpdateUserState(const std::string& meeting_id,
       LOG(ERROR) << mysql_error(conn);
       result = 0;
     } else {
-      result = 1;
+      if (conn -> affected_rows == 0) {
+	result = -1;
+      } else {
+	result  = 1;
+      }
     }
   }
   DestoryConnection(conn);
@@ -493,7 +518,11 @@ bool DBManager::UpdateUserTime(const std::string& meeting_id,
      LOG(ERROR) << mysql_error(conn);
      result = false;
   } else {
-     result = true;
+    if (conn -> affected_rows == 0) {
+      result = false;
+    } else {
+      result = true;
+    }
   }
   DestoryConnection(conn);
   return result;

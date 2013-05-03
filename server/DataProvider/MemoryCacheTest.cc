@@ -16,15 +16,15 @@ class MemoryCacheTest: public ::testing::Test {
 protected:
   MemoryCache *q0_ ;
   Operation oper[6];
-  static void SetUpTestCase() {
-    GOOGLE_PROTOBUF_VERIFY_VERSION;
-    google::InitGoogleLogging("LOG");
-    FLAGS_log_dir = "./LOG";
-  }
-  static void TearDownTestCase() {
-    google::protobuf::ShutdownProtobufLibrary();
-    google::ShutdownGoogleLogging();
-  }
+//   static void SetUpTestCase() {
+//     GOOGLE_PROTOBUF_VERIFY_VERSION;
+//     google::InitGoogleLogging("LOG");
+//     FLAGS_log_dir = "./LOG";
+//   }
+//   static void TearDownTestCase() {
+//     google::protobuf::ShutdownProtobufLibrary();
+//     google::ShutdownGoogleLogging();
+//   }
   virtual void SetUp() {
     q0_ = new MemoryCache(5);
     Operation_OperationData *data;

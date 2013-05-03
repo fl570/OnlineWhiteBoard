@@ -167,11 +167,13 @@ Operations MemoryCache::GetOperationFromSet(int set, int operation_id) {
     opers.set_operation_avaliable(false);
   } else {
     opers.set_operation_avaliable(true);
-    index_ = operation_id+1;
+    index_ = operation_id+1-front_id_[set]+front_[set];
+    index_ %= capacity_;
     for (int i = 0; i < rear_id_[set]-operation_id; i++) {
       oper = opers.add_operations();
       *oper = *operation_[set][index_];
       index_++;
+      index_ %= capacity_;
     }
   }
   lock.unlock();

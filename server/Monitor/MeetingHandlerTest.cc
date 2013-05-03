@@ -24,13 +24,6 @@ protected:
   static DBM *db_instance ;
   MEMCACHE* memory;
   DRAWOP* draw_oper;
-  static void SetUpTestCase() {
-    google::InitGoogleLogging("LOG");
-    FLAGS_log_dir = "./LOG";
-  }
-  static void TearDownTestCase() {
-    google::ShutdownGoogleLogging();
-  }
   virtual void SetUp() {
     db_instance ->DeleteDeadUser();
     int size;
@@ -49,10 +42,7 @@ protected:
     info -> up_ref = new MeetingHandler::UpdaterImpl(memory,  draw_oper);
     info -> draw_oper = draw_oper;
     db_instance ->SetDataRef(str_id, (int64_t) memory);
-    MeetingHandler::UpdaterTable::accessor write_acc;
-    meeting_instance -> monitor_updater_.insert(write_acc, str_id);
-    write_acc->second = info;
-    write_acc.release();
+    meeting_instance -> monitor_updater_ -> Insert(str_id, info);
     db_instance -> AddMeetingPort(str_id, 10250);
   }
   virtual void TearDown() {
@@ -165,12 +155,23 @@ TEST_F(MeetingHandlerTest, ResumeUpdater) {
 }  // Monitor
 }  // Server
 }  // OnlineWhiteBoard
-}  // Kingslanding
+}  // Kingslanding\
 
+class TestEnvironment : public testing::Environment {
+public:
+  virtual void SetUp() {
+    google::InitGoogleLogging("LOG");
+    FLAGS_log_dir = "./LOG";
+  }
+  virtual void TearDown() {
+    google::ShutdownGoogleLogging();
+  }
+};
 int main(int argc, char **argv) {
   std::cout << "Running main() from gtest_main.cc\n";
   RCF::RcfInitDeinit rcfInit;
   google::ParseCommandLineFlags(&argc, &argv, true);
+  testing::AddGlobalTestEnvironment(new TestEnvironment);
   testing::InitGoogleTest(&argc, argv);
   return RUN_ALL_TESTS();
 }

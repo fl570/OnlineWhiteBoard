@@ -29,16 +29,19 @@ GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
                 $(GTEST_DIR)/include/gtest/internal/*.h
 
 # Flags passed to the preprocessor
-CPPFLAGS += -I$(GTEST_DIR)/include -I$(RCF_DIR)/include\
- 	 -I$(TBB_DIR)/include -L$(TBB_LIB)
+CPPFLAGS += -I$(GTEST_DIR)/include -I$(RCF_DIR)/include
 
 GTEST_SRCS_ = $(GTEST_DIR)/src/*.cc $(GTEST_DIR)/src/*.h $(GTEST_HEADERS)
 
 # Flags passed to the C++ compiler
-CXXFLAGS += -g -Wall -Wextra -O2 -DNDEBUG -m64
+CXXFLAGS += -g -Wall -Wextra -O2
 
 # Test
-TESTS = ../test/MeetingHandler.test
+TESTS = ../test/UserHandler.test
+
+# HashMap
+HASHMAP_SRCS_ = ../HashMap/chain.hpp ../HashMap/segment.hpp \
+	../HashMap/Node.hpp
 
 # sources
 DB_MANAGER_SRCS_ = ../DBManager/DBManager.cc
@@ -46,8 +49,10 @@ MEM_CACHE_SRCS_ = ../DataProvider/MemoryCache.cc
 UPDATER_SRCS_ = ../DataUpdater/Updater.cc
 MESSAGE_SRCS_ = ../message.pb.cc
 MEETING_HANDLER_SRCS_ = Handler.cc MeetingHandler.cc md5.cc
+USER_HANDLER_SRCS_ = UserHandler.cc
 RCF_SRCS_ = $(RCF_DIR)/src/RCF/RCF.cpp
 MEETING_HANDLER_TEST_SRCS_ = MeetingHandlerTest.cc
+USER_HANDLER_TEST_SRCS_ = UserHandlerTest.cc
 
 # DrawOperation sources
 DRAW_OPERATION_SRCS_ = ../DrawOperation/DrawOperation.cc
@@ -80,18 +85,22 @@ gtest.a : gtest-all.o
 	$(AR) $(ARFLAGS) $@ $^
 
 $(TESTS) : Handler.o md5.o MeetingHandler.o Updater.o MemoryCache.o \
-        message.pb.o DBManager.o RCF.o MeetingHandlerTest.o gtest.a  \
-        DrawOperation.o DrawClass.o \
+        message.pb.o DBManager.o RCF.o UserHandlerTest.o gtest.a  \
+        DrawOperation.o DrawClass.o UserHandler.o \
 	DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
 	DrawTransRect.o DrawCircle.o DrawTransCircle.o \
         DrawEclipse.o DrawTransEclipse.o
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) Handler.o md5.o MeetingHandler.o Updater.o MemoryCache.o \
-	message.pb.o DBManager.o RCF.o MeetingHandlerTest.o gtest.a \
-	DrawOperation.o DrawClass.o \
+	message.pb.o DBManager.o RCF.o UserHandlerTest.o gtest.a \
+	DrawOperation.o DrawClass.o UserHandler.o \
 	DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
 	DrawTransRect.o DrawCircle.o DrawTransCircle.o \
-	DrawEclipse.o DrawTransEclipse.o -ldl -lboost_thread -lpthread -ltbb -lprotobuf \
+	DrawEclipse.o DrawTransEclipse.o $(HASHMAP_SRCS_) \
+	-ldl -lboost_thread -lpthread -lprotobuf \
 	-lglog -lgflags -lgtest -lmysqlclient `pkg-config --cflags opencv`  `pkg-config --libs opencv` -o $@
+
+UserHandlerTest.o : $(USER_HANDLER_TEST_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(USER_HANDLER_TEST_SRCS_)
 
 MeetingHandlerTest.o : $(MEETING_HANDLER_TEST_SRCS_)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(MEETING_HANDLER_TEST_SRCS_)
@@ -110,6 +119,9 @@ MemoryCache.o : $(MEM_CACHE_SRCS_)
 
 Updater.o : $(UPDATER_SRCS_)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(UPDATER_SRCS_)
+
+UserHandler.o : $(USER_HANDLER_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(USER_HANDLER_SRCS_)
 
 Handler.o md5.o MeetingHandler.o : $(MEETING_HANDLER_SRCS_)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(MEETING_HANDLER_SRCS_)

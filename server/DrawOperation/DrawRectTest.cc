@@ -15,15 +15,15 @@ namespace DrawOperation {
 class DrawRectTest: public ::testing::Test {
 protected:
   DrawRect * rect ;
-  static void SetUpTestCase() {
-    GOOGLE_PROTOBUF_VERIFY_VERSION;
-    google::InitGoogleLogging("LOG");
-    FLAGS_log_dir = "../LOG";
-  }
-  static void TearDownTestCase() {
-    google::protobuf::ShutdownProtobufLibrary();
-    google::ShutdownGoogleLogging();
-  }
+//   static void SetUpTestCase() {
+//     GOOGLE_PROTOBUF_VERIFY_VERSION;
+//     google::InitGoogleLogging("LOG");
+//     FLAGS_log_dir = "../LOG";
+//   }
+//   static void TearDownTestCase() {
+//     google::protobuf::ShutdownProtobufLibrary();
+//     google::ShutdownGoogleLogging();
+//   }
   virtual void SetUp() {
     rect = new DrawRect();
   }

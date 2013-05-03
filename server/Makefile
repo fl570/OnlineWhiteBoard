@@ -14,9 +14,6 @@ THRIDPARTY_DIR = $(ROOT_DIR)/thridparty
 # To find the gtest
 GTEST_DIR = $(THRIDPARTY_DIR)/gtest-1.6.0
 
-# To find the tbb
-TBB_DIR = $(THRIDPARTY_DIR)/tbb41_20130314oss
-
 # To find the RCF
 RCF_DIR = $(THRIDPARTY_DIR)/RCF-2.0.0.2679
 
@@ -25,20 +22,27 @@ RCF_DIR = $(THRIDPARTY_DIR)/RCF-2.0.0.2679
 GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
                 $(GTEST_DIR)/include/gtest/internal/*.h
 
-# To find the tbb lib
-TBB_LIB = $(TBB_DIR)/build/linux_intel64_gcc_cc4.6.1_libc2.13_kernel3.0.0_release
-
 # Flags passed to the preprocessor
-CPPFLAGS += -I$(GTEST_DIR)/include -I$(TBB_DIR)/include -L$(TBB_LIB) -I$(RCF_DIR)/include
+CPPFLAGS += -I$(GTEST_DIR)/include -I$(RCF_DIR)/include
 
 # Flags passed to the C++ compiler
-CXXFLAGS += -g -Wall -Wextra -O2 -DNDEBUG -m64
+CXXFLAGS += -g -Wall -Wextra -O2
 
 # Test
 TESTS = test/all.test
 
+# Server
+SERVER = Server
+
+# ServerTest
+SERVERTEST = ServerTest.test
+
 # Message
 MESSAGE = message.pb.cc
+
+# HashMap
+HASHMAP_SRCS_ = HashMap/chain.hpp HashMap/segment.hpp \
+	HashMap/Node.hpp
 
 # DrawOperation sources
 DRAW_OPERATION_SRCS_ = DrawOperation/DrawOperation.cc
@@ -68,10 +72,24 @@ DB_MANAGER_SRCS_ = DBManager/DBManager.cc
 DB_MANAGER_TEST_SRCS_ = DBManager/DBManagerTest.cc
 MEETING_HANDLER_SRCS_ = Monitor/Handler.cc Monitor/MeetingHandler.cc Monitor/md5.cc
 MEETING_HANDLER_TEST_SRCS_ = Monitor/MeetingHandlerTest.cc
+USER_HANDLER_SRCS_ = Monitor/UserHandler.cc
+USER_HANDLER_TEST_SRCS_ = Monitor/UserHandlerTest.cc
+DOCUMENT_HANDLER_SRCS_ = DataProvider/DocumentHandler.cc
+DOCUMENT_HANDLER_TEST_SRCS_ = DataProvider/DocumentHandlerTest.cc
 UPDATER_SRCS_ = DataUpdater/Updater.cc
+MONITOR_SRCS_ = Monitor/Monitor.cc
+PROVIDER_SRCS_ = DataProvider/Provider.cc
 RCF_SRCS_ = $(RCF_DIR)/src/RCF/RCF.cpp
+SERVER_SRCS_ = Server.cc
+HB_HANDLER_SRCS_ = Monitor/HBHandler.cc
+CHECK_HANDLER_SRCS_ = Check/CheckHandler.cc
+SERVER_TEST_SRCS_ = ServerTest.cc
 
-all : $(TESTS)
+all : $(SERVER)
+
+test : $(TESTS)
+
+TestServer : $(SERVERTEST)
 
 gtest-all.o : $(GTEST_SRCS_)
 	$(CXX) $(CPPFLAGS) -I$(GTEST_DIR) $(CXXFLAGS) -c \
@@ -80,25 +98,85 @@ gtest-all.o : $(GTEST_SRCS_)
 gtest.a : gtest-all.o
 	$(AR) $(ARFLAGS) $@ $^
 
+$(SERVERTEST) : MemoryCache.o message.pb.o DBManager.o gtest.a \
+	Handler.o md5.o MeetingHandler.o Updater.o CheckHandler.o \
+	RCF.o UserHandler.o Monitor.o Provider.o \
+        DrawOperation.o DrawClass.o DocumentHandler.o \
+        DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
+        DrawTransRect.o DrawCircle.o DrawTransCircle.o \
+	DrawEclipse.o DrawTransEclipse.o HBHandler.o ServerTest.o
+	$(CXX) MemoryCache.o message.pb.o DBManager.o gtest.a \
+	Handler.o md5.o MeetingHandler.o Updater.o CheckHandler.o \
+	RCF.o UserHandler.o ServerTest.o Monitor.o Provider.o \
+	DrawOperation.o DrawClass.o DocumentHandler.o \
+	DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
+	DrawTransRect.o DrawCircle.o DrawTransCircle.o \
+	DrawEclipse.o DrawTransEclipse.o HBHandler.o $(HASHMAP_SRCS_) \
+	-ldl -lpthread `pkg-config --cflags opencv`  `pkg-config --libs opencv` \
+	-lglog -lgflags -lprotobuf -lboost_thread -lmysqlclient \
+	$(CXXFLAGS) $(CPPFLAGS) -lgtest -o $@
+
+$(SERVER) : MemoryCache.o message.pb.o DBManager.o \
+	Handler.o md5.o MeetingHandler.o Updater.o CheckHandler.o \
+	RCF.o UserHandler.o Monitor.o Provider.o \
+        DrawOperation.o DrawClass.o DocumentHandler.o \
+        DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
+        DrawTransRect.o DrawCircle.o DrawTransCircle.o \
+	DrawEclipse.o DrawTransEclipse.o HBHandler.o Server.o
+	$(CXX) MemoryCache.o message.pb.o DBManager.o \
+	Handler.o md5.o MeetingHandler.o Updater.o CheckHandler.o \
+	RCF.o UserHandler.o Server.o Monitor.o Provider.o \
+	DrawOperation.o DrawClass.o DocumentHandler.o \
+	DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
+	DrawTransRect.o DrawCircle.o DrawTransCircle.o \
+	DrawEclipse.o DrawTransEclipse.o HBHandler.o $(HASHMAP_SRCS_) \
+	-ldl -lpthread `pkg-config --cflags opencv`  `pkg-config --libs opencv` \
+	-lglog -lgflags -lprotobuf -lboost_thread -lmysqlclient \
+	$(CXXFLAGS) $(CPPFLAGS) -o $@
+
 $(TESTS) : MemoryCacheTest.o MemoryCache.o message.pb.o gtest.a DBManagerTest.o DBManager.o \
-	Handler.o md5.o MeetingHandler.o Updater.o \
-	RCF.o MeetingHandlerTest.o gtest.a DrawOperationTest.o DrawCircleTest.o DrawTransCircleTest.o \
-        DrawRectTest.o DrawTransRectTest.o DrawLineTest.o \
-        DrawPointTest.o DrawEraserTest.o DrawOperation.o DrawClass.o \
+	Handler.o md5.o MeetingHandler.o Updater.o UserHandlerTest.o DocumentHandlerTest.o \
+	RCF.o MeetingHandlerTest.o DrawOperationTest.o DrawCircleTest.o DrawTransCircleTest.o \
+        DrawRectTest.o DrawTransRectTest.o DrawLineTest.o UserHandler.o \
+        DrawPointTest.o DrawEraserTest.o DrawOperation.o DrawClass.o DocumentHandler.o \
         DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
         DrawTransRect.o DrawCircle.o DrawTransCircle.o \
 	DrawEclipse.o DrawTransEclipse.o
-	$(CXX) MemoryCacheTest.o MemoryCache.o message.pb.o gtest.a DBManagerTest.o DBManager.o \
-	Handler.o md5.o MeetingHandler.o Updater.o \
+	$(CXX) MemoryCacheTest.o MemoryCache.o message.pb.o DBManagerTest.o DBManager.o \
+	Handler.o md5.o MeetingHandler.o Updater.o UserHandlerTest.o DocumentHandlerTest.o \
 	RCF.o MeetingHandlerTest.o gtest.a DrawOperationTest.o DrawCircleTest.o DrawTransCircleTest.o \
-	DrawRectTest.o DrawTransRectTest.o DrawLineTest.o \
-	DrawPointTest.o DrawEraserTest.o DrawOperation.o DrawClass.o \
+	DrawRectTest.o DrawTransRectTest.o DrawLineTest.o UserHandler.o \
+	DrawPointTest.o DrawEraserTest.o DrawOperation.o DrawClass.o DocumentHandler.o \
 	DrawLine.o DrawPoint.o DrawEraser.o DrawRect.o \
 	DrawTransRect.o DrawCircle.o DrawTransCircle.o \
-	DrawEclipse.o DrawTransEclipse.o \
-	-ldl -lpthread -ltbb `pkg-config --cflags opencv`  `pkg-config --libs opencv` \
+	DrawEclipse.o DrawTransEclipse.o $(HASHMAP_SRCS_) \
+	-ldl -lpthread `pkg-config --cflags opencv`  `pkg-config --libs opencv` \
 	-lglog -lgflags -lprotobuf -lboost_thread -lmysqlclient -lgtest \
 	$(CXXFLAGS) $(CPPFLAGS) -o $@
+
+Server.o : $(SERVER_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(SERVER_SRCS_)
+
+ServerTest.o : $(SERVER_TEST_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(SERVER_TEST_SRCS_)
+
+UserHandlerTest.o : $(USER_HANDLER_TEST_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(USER_HANDLER_TEST_SRCS_)
+
+DocumentHandlerTest.o : $(DOCUMENT_HANDLER_TEST_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(DOCUMENT_HANDLER_TEST_SRCS_)
+
+UserHandler.o : $(USER_HANDLER_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(USER_HANDLER_SRCS_)
+
+HBHandler.o : $(HB_HANDLER_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(HB_HANDLER_SRCS_)
+
+CheckHandler.o : $(CHECK_HANDLER_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(CHECK_HANDLER_SRCS_)
+
+DocumentHandler.o : $(DOCUMENT_HANDLER_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(DOCUMENT_HANDLER_SRCS_)
 
 MeetingHandlerTest.o : $(MEETING_HANDLER_TEST_SRCS_)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(MEETING_HANDLER_TEST_SRCS_)
@@ -108,6 +186,12 @@ RCF.o : $(RCF_SRCS_)
 
 Updater.o : $(UPDATER_SRCS_)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(UPDATER_SRCS_)
+
+Monitor.o : $(MONITOR_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(MONITOR_SRCS_)
+
+Provider.o : $(PROVIDER_SRCS_)
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(PROVIDER_SRCS_)
 
 Handler.o md5.o MeetingHandler.o : $(MEETING_HANDLER_SRCS_)
 	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $(MEETING_HANDLER_SRCS_)

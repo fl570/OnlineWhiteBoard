@@ -9,13 +9,11 @@
 #ifndef KINGSLANDING_ONLINEWHITEBOARD_SERVER_MONITOR_MEETINGHANDLER_H_
 #define KINGSLANDING_ONLINEWHITEBOARD_SERVER_MONITOR_MEETINGHANDLER_H_
 
-#define PORTMIN 10000
-#define PORTMAX 10250
+#define PORTMIN 11000
+#define PORTMAX 11250
 
 #include <stack>
-#include <boost/thread/mutex.hpp>
-#include <boost/thread/locks.hpp>
-#include "tbb/concurrent_hash_map.h"
+#include "../HashMap/segment.hpp"
 #include "./Handler.h"
 #include "../DataProvider/MemoryCache.h"
 #include "../RcfDefine.h"
@@ -56,10 +54,10 @@ private:
     DRAWOP* draw_oper;
   };
 
-  typedef tbb::concurrent_hash_map<std::string, UpdaterInfo*> UpdaterTable;
+  typedef HashMap::HashTable<UpdaterInfo*> UpdaterTable;
 
   boost::mutex m_stack_;
-  UpdaterTable monitor_updater_;
+  UpdaterTable *monitor_updater_;
   std::stack<int> port_;
 };
 }  // Monitor

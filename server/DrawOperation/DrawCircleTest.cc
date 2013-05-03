@@ -16,15 +16,15 @@ namespace DrawOperation {
 class DrawCircleTest: public ::testing::Test {
 protected:
   DrawCircle * circle ;
-  static void SetUpTestCase() {
-    GOOGLE_PROTOBUF_VERIFY_VERSION;
-    google::InitGoogleLogging("LOG");
-    FLAGS_log_dir = "../LOG";
-  }
-  static void TearDownTestCase() {
-    google::protobuf::ShutdownProtobufLibrary();
-    google::ShutdownGoogleLogging();
-  }
+//   static void SetUpTestCase() {
+//     GOOGLE_PROTOBUF_VERIFY_VERSION;
+//     google::InitGoogleLogging("LOG");
+//     FLAGS_log_dir = "../LOG";
+//   }
+//   static void TearDownTestCase() {
+//     google::protobuf::ShutdownProtobufLibrary();
+//     google::ShutdownGoogleLogging();
+//   }
   virtual void SetUp() {
     circle = new DrawCircle();
   }

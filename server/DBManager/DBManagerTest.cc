@@ -22,13 +22,13 @@ class DBManagerTest: public ::testing::Test {
 protected:
   static DBManager *db_instance ;
   MYSQL* conn_;
-  static void SetUpTestCase() {
-    google::InitGoogleLogging("LOG");
-    FLAGS_log_dir = "./LOG";
-  }
-  static void TearDownTestCase() {
-    google::ShutdownGoogleLogging();
-  }
+//   static void SetUpTestCase() {
+//     google::InitGoogleLogging("LOG");
+//     FLAGS_log_dir = "./LOG";
+//   }
+//   static void TearDownTestCase() {
+//     google::ShutdownGoogleLogging();
+//   }
   virtual void SetUp() {
     char sql[200];
     conn_ = db_instance -> InitConnection();

@@ -14,13 +14,15 @@ namespace Server {
 namespace Monitor {
 MonitorImp::MonitorImp(MeetingHandler* meeting_handler) {
   meeting_handler_ = meeting_handler;
+  user_handler_ = new UserHandler(meeting_handler);
 }
 
 MonitorImp::~MonitorImp() {
+  delete user_handler_;
   delete meeting_handler_;
 }
 
-std::string MonitorImp::CreatMeeting(const std::string& meeting_id) {
+std::string MonitorImp::CreateMeeting(const std::string& meeting_id) {
   return meeting_handler_ -> CreateMeeting(meeting_id);
 }
 
@@ -38,11 +40,11 @@ bool MonitorImp::ResumeUpdater(const std::string& meeting_id) {
 }
 
 bool MonitorImp::RequestAuth(const std::string& user_id, const std::string& meeting_id) {
-  return user_handler_.RequestAuth(meeting_id, user_id);
+  return user_handler_->RequestAuth(meeting_id, user_id);
 }
 
 int32_t MonitorImp::TransferAuth(const std::string& user_id, const std::string& meeting_id) {
-  return user_handler_.TransferAuth(meeting_id, user_id);
+  return user_handler_->TransferAuth(meeting_id, user_id);
 }
 
 HeartReturnPackage MonitorImp::HeartBeat(const HeartBeatSendPackage& msg) {
@@ -50,7 +52,7 @@ HeartReturnPackage MonitorImp::HeartBeat(const HeartBeatSendPackage& msg) {
 }
 
 UserList MonitorImp::GetCurrentUserList(const std::string& meeting_id) {
-  return user_handler_.GetCurrentUserList(meeting_id);
+  return user_handler_->GetCurrentUserList(meeting_id);
 }
 }  // Monitor
 }  // Server

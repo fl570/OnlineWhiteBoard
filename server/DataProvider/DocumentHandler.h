@@ -11,11 +11,13 @@
 
 #define DBMANAGER Kingslanding::OnlineWhiteBoard::Server::DBManager
 
+#include <math.h>
 #include "../DBManager/DBManager.h"
 #include "../message.pb.h"
 #include "../Monitor/Handler.h"
 #include "../Monitor/MeetingHandler.h"
 #include "../DrawOperation/DrawOperation.h"
+#include "./../common.h"
 
 namespace Kingslanding {
 namespace OnlineWhiteBoard {
@@ -24,13 +26,19 @@ namespace DataProvider {
 
 class DocumentHandler : public Kingslanding::OnlineWhiteBoard::Server::Monitor::MsgHandler{
 public:
-    DocumentHandler(MeetingHandler&);
+    DocumentHandler(Kingslanding::OnlineWhiteBoard::Server::Monitor::MeetingHandler*);
     Document GetCurrentDocument(const std::string&);
     DocumentList GetHistorySnapshots(const std::string&);
     Document GetDocument(const std::string&, int);
-    virtual ~DocumentHandler();
+    virtual ~DocumentHandler(){};
 private:
-    MeetingHandler* meeting_handler;
+#ifdef DEBUG
+    FRIEND_TEST(DocumentHandlerTest, GetCurrentDocument);
+    FRIEND_TEST(DocumentHandlerTest, GetHistorySnapshots);
+    FRIEND_TEST(DocumentHandlerTest, GetDocument);
+#endif
+    IplImage* zoom(IplImage*, int, int); 
+    Kingslanding::OnlineWhiteBoard::Server::Monitor::MeetingHandler* meeting_handler;
 };
 }  // DataProvider
 }  // Server

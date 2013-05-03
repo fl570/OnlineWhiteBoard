@@ -18,6 +18,7 @@ DEFINE_string(server_ip,"127.0.0.1","the ip of the server");
 
 MeetingHandler::MeetingHandler() {
   boost:: unique_lock<boost::mutex> lock(m_stack_);
+  monitor_updater_ = new UpdaterTable(163);
   for (int i = PORTMIN; i <= PORTMAX; i++) {
     port_.push(i);
   }
@@ -36,7 +37,8 @@ int MeetingHandler::AddMeetingPort(const std::string& meeting_id) {
   return 0;
 }
 
-bool MeetingHandler::LogIn(const User& ) {
+bool MeetingHandler::LogIn(const User& user) {
+  std::cerr << user.user_name() << " " << user.password() << std::endl;
   return true;
 }
 
@@ -65,9 +67,8 @@ DataProvider::MemoryCache* MeetingHandler::GetDataRef(const std::string& meeting
 }
 
 JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, const std::string& user_id) {
-  UpdaterTable::const_accessor read_acc;
-  bool has_meeting = monitor_updater_.find(read_acc,meeting_id);
-  read_acc.release();
+  bool has_meeting = false;
+  UpdaterInfo* info = monitor_updater_->GetValue(has_meeting, meeting_id);
   int result;
   if (has_meeting) {
     result = db_manager_->AddMeetingUser(meeting_id, user_id, 1);
@@ -91,10 +92,7 @@ JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, con
       updater_info->server = server;
       updater_info->up_ref = updater;
       updater_info->draw_oper = draw_oper;
-      UpdaterTable::accessor write_acc;
-      monitor_updater_.insert(write_acc, meeting_id);
-      write_acc->second = updater_info;
-      write_acc.release();
+      monitor_updater_->Insert(meeting_id, updater_info);
     }
   }
 
@@ -122,56 +120,54 @@ JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, con
 }
 
 bool MeetingHandler::DeleteMeeting(const std::string& meeting_id) {
-  UpdaterTable::accessor write_acc;
-  bool has_meeting = monitor_updater_.find(write_acc, meeting_id);
+  bool has_meeting = false;
+  UpdaterInfo* info = monitor_updater_->GetValue(has_meeting, meeting_id);
   if (!has_meeting) {
     return false;
   }
-  write_acc->second->server->stop();
+  info -> server ->stop();
   int port = db_manager_->GetMeetingPort(meeting_id);
   if (port != -1 || port != 0) {
     boost:: unique_lock<boost::mutex> lock(m_stack_);
     port_.push(port);
     lock.unlock();
   }
-  delete write_acc->second->server;
-  delete write_acc->second->up_ref;
-  delete write_acc->second;
-  monitor_updater_.erase(write_acc);
+  delete info->server;
+  delete info->up_ref;
+  delete info;
+  monitor_updater_->Delete(meeting_id);
   return true;
 }
 
 bool MeetingHandler::ResumeUpdater(const std::string& meeting_id) {
-  UpdaterTable::accessor write_acc;
-  bool has_meeting = monitor_updater_.find(write_acc, meeting_id);
-  LOG(INFO) << has_meeting;
+  bool has_meeting = false;
+  UpdaterInfo* info = monitor_updater_->GetValue(has_meeting, meeting_id);
   if (!has_meeting) {
     return false;
   }
   int port = db_manager_->GetMeetingPort(meeting_id);
-  if (NULL == write_acc->second->up_ref) {
+  if (NULL == info->up_ref) {
     MEMCACHE* ref = GetDataRef(meeting_id);
     DRAWOP* draw_op = new DRAWOP(meeting_id);
-    write_acc->second->up_ref = new UpdaterImpl(ref, draw_op);
+    info->up_ref = new UpdaterImpl(ref, draw_op);
   }
   try {
-    write_acc ->second -> server ->stop();
-    delete write_acc->second->server;
+    info -> server ->stop();
+    delete info->server;
   } catch (...) {}
-  write_acc->second->server = new RCF::RcfServer( RCF::TcpEndpoint("0.0.0.0", port) );
-  write_acc->second->server -> bind<Updater>(*write_acc -> second -> up_ref);
-  write_acc->second->server -> start();
+  info->server = new RCF::RcfServer( RCF::TcpEndpoint("0.0.0.0", port) );
+  info->server -> bind<Updater>(*info -> up_ref);
+  info->server -> start();
   return true;
 }
 
 bool MeetingHandler::TransferHostDraw(const std::string& meeting_id) {
-  UpdaterTable::const_accessor read_acc;
-  bool has_meeting = monitor_updater_.find(read_acc, meeting_id);
+  bool has_meeting = false;
+  UpdaterInfo* info = monitor_updater_->GetValue(has_meeting, meeting_id);
   if (!has_meeting) {
     return false;
   }
-  std::string path = read_acc->second->draw_oper->SaveAsBmp();
-  read_acc.release();
+  std::string path = info->draw_oper->SaveAsBmp();
   if(path == "")
     return false;
   db_manager_ -> AddDocument(meeting_id, path);
@@ -179,21 +175,22 @@ bool MeetingHandler::TransferHostDraw(const std::string& meeting_id) {
 }
 
 DRAWOP* MeetingHandler::GetDrawOperation(const std::string& meeting_id) {
-  UpdaterTable::const_accessor read_acc;
-  bool has_meeting = monitor_updater_.find(read_acc, meeting_id);
+  bool has_meeting = false;
+  UpdaterInfo* info = monitor_updater_->GetValue(has_meeting, meeting_id);
   if (!has_meeting) {
     return NULL;
   }
-  return read_acc -> second -> draw_oper;
+  return info -> draw_oper;
 }
 
 
 MeetingHandler::~MeetingHandler() {
-  UpdaterTable::iterator iter;
-  iter =  monitor_updater_.begin();
-  for (; iter != monitor_updater_.end(); iter++) {
-    DeleteMeeting(iter -> first);
+  UpdaterTable::Iterator itr(monitor_updater_);
+  while (itr.next()) {
+    std::string key = itr.GetKey();
+    DeleteMeeting(key);
   }
+  delete monitor_updater_;
 }
 
 }  // Monitor
