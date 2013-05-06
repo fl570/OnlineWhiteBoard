@@ -1,0 +1,15 @@
+Log file created at: 2013/05/04 21:40:23
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0504 21:40:23.136665  9158 MeetingHandler.cc:78] create meeting updater
+E0504 21:40:23.145129  9158 MeetingHandler.cc:98] join msg return
+E0504 21:43:08.262166  9107 MeetingHandler.cc:78] create meeting updater
+E0504 21:43:08.268501  9107 MeetingHandler.cc:98] join msg return
+E0504 21:43:36.376448  9171 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:43:46.386286  9171 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:43:46.877583  9108 MeetingHandler.cc:78] create meeting updater
+E0504 21:43:46.890687  9108 MeetingHandler.cc:98] join msg return
+E0504 21:43:56.393672  9171 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''alias>
+  <collation name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="prima' at line 1

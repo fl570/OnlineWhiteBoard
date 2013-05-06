@@ -18,13 +18,18 @@ ProviderImp::ProviderImp(DocumentHandler* document_handler) {
 }
 
 Operations ProviderImp::GetOperations(const std::string& meeting_id,
-                                                                                                                 int32_t latest_id) {
-  MemoryCache *mem = (MemoryCache*) db_instance_ ->GetDataRef(meeting_id);
+                                                 uint32_t latest_id) {
+  int64_t ret= db_instance_ ->GetDataRef(meeting_id);
+  if (ret == -1) {
+    Operations opers;
+    return opers;
+  }
+  MemoryCache *mem = (MemoryCache*) ret;
   return mem->GetOperationAfter(latest_id);
 }
 
 Document ProviderImp::GetDocument(const std::string& meeting_id,
-                                                                                                   int32_t document_id) {
+                                               uint32_t document_id) {
   return document_handler_->GetDocument(meeting_id, document_id);
 }
 

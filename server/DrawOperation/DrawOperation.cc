@@ -7,8 +7,9 @@
  ************************************************************************/
 
 
-#include<opencv/highgui.h>
-#include<opencv2/core/core.hpp>
+#include <opencv/highgui.h>
+#include <opencv2/core/core.hpp>
+#include <stdlib.h>
 #include "../message.pb.h"
 #include "./DrawOperation.h"
 
@@ -30,12 +31,20 @@ DrawOperation::DrawOperation(std::string meeting_id) {
   ya_ = 0;
   xb_ = 0;
   yb_ = 0;
+  serial_num_ = 0;
   picture_ = cv::Mat(500, 500, CV_8UC3, cv::Scalar(255, 255, 255));
 }
 
-void DrawOperation::Draw(Operation op) {
+DrawOperation::~DrawOperation(){
+  std::string str = "rm -f "+FLAGS_picture_store_address+"temp/*"+meeting_id_+"-*.bmp";
+  system(str.c_str());
+}
+
+
+void DrawOperation::Draw(Operation op, unsigned int number) {
   Operation_OperationData* data;
   data = op.mutable_data();
+  serial_num_ = number;
   switch (data->data_type()) {
     case Operation_OperationData_OperationDataType_ELLIPSE:
       a_ = data->a();
@@ -45,25 +54,30 @@ void DrawOperation::Draw(Operation op) {
       xa_ = data->mutable_center()->x();
       ya_ = data->mutable_center()->y();
       if (a_ == b_) {
-        if (data->fill()) {
+        if (data->fill()) { 
           alpha_ = data->alpha();
           transCircle.set(color_, thinkness_, xa_, ya_, a_, alpha_);
+	  boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
           transCircle.Draw(picture_);
         } else {
           circle.set(color_, thinkness_, xa_, ya_, a_);
+	  boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
           circle.Draw(picture_);
         }
       } else {
         if (data->fill()) {
           alpha_  = data->alpha();
           transEclipse.set(color_, thinkness_, xa_, ya_, a_, b_, alpha_);
+	  boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
           transEclipse.Draw(picture_);
         } else {
           eclipse.set(color_, thinkness_, xa_, ya_, a_, b_);
+	  boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
           eclipse.Draw(picture_);
-        }}
-        break;
-    case Operation_OperationData_OperationDataType_LINE:
+        }	
+      }
+      break;
+    case Operation_OperationData_OperationDataType_LINE: {
       color_ = data->color();
       thinkness_ = data->thinkness();
       xa_ = data->mutable_start_point()->x();
@@ -71,9 +85,13 @@ void DrawOperation::Draw(Operation op) {
       xb_ = data->mutable_end_point()->x();
       yb_ = data->mutable_end_point()->y();
       line.set(color_, thinkness_, xa_, ya_, xb_, yb_);
+      boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
       line.Draw(picture_);
+      lock.unlock();
+      lock.release();
       break;
-    case Operation_OperationData_OperationDataType_RECTANGE:
+    }
+    case Operation_OperationData_OperationDataType_RECTANGE: {
       color_ = data->color();
       thinkness_ = data->thinkness();
       xa_ = data->mutable_top_left_corner()->x();
@@ -83,27 +101,38 @@ void DrawOperation::Draw(Operation op) {
       if (data->fill()) {
         alpha_ = data->alpha();
         transRect.set(color_, thinkness_, xa_, ya_, xb_, yb_, alpha_);
+	boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
         transRect.Draw(picture_);
       } else {
         rect.set(color_, thinkness_, xa_, ya_, xb_, yb_);
+	boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
         rect.Draw(picture_);
       }
       break;
-    case Operation_OperationData_OperationDataType_POINT:
+    }
+    case Operation_OperationData_OperationDataType_POINT: {
       color_ = data->color();
       thinkness_ = data->thinkness();
       xa_ = data->mutable_position()->x();
       ya_ = data->mutable_position()->y();
       point.set(color_, thinkness_, xa_, ya_);
+      boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
       point.Draw(picture_);
+      lock.unlock();
+      lock.release();
       break;
-    case Operation_OperationData_OperationDataType_ERASER:
+    }
+    case Operation_OperationData_OperationDataType_ERASER: {
       thinkness_ = data->thinkness();
       xa_ = data->mutable_position()->x();
       ya_ = data->mutable_position()->y();
       eraser.set(thinkness_, xa_, ya_);
+      boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
       eraser.Draw(picture_);
+      lock.unlock();
+      lock.release();
       break;
+    }
   }
 }
 
@@ -112,24 +141,47 @@ void DrawOperation::Show() {
   cv::waitKey(0);
 }
 
-std::string DrawOperation::SaveAsBmp() {
+bool DrawOperation::Load(const std::string& path) {
+  boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
+  IplImage img = IplImage(picture_);
+  IplImage* pImage = &img;
+  pImage = cvLoadImage(path.c_str(), 1);
+  cvReleaseImage(&pImage);
+  return true;
+}
+
+
+
+PathInfo DrawOperation::SaveAsBmp(int i) {
+  boost::shared_lock<boost::shared_mutex> lock(draw_mutex_);
   time_t now = time(NULL);
   std::ostringstream bufstr;
   bufstr << now;
   std::string now_time = bufstr.str();
-  std::string path = FLAGS_picture_store_address.c_str()+meeting_id_+"-"+now_time+".bmp";
+  std::string path;
+  if (i == 1) {
+    path = FLAGS_picture_store_address+meeting_id_+"-"+now_time+".bmp";
+  } else if (i == 2) {
+    path = FLAGS_picture_store_address+"/temp"+meeting_id_+"-"+now_time+".bmp";
+  }
   bool temp = cv::imwrite(path, picture_);
+  PathInfo path_info;
+  path_info.number = serial_num_;
+  path_info.path = path;
   if(!temp)
-    return "";
-  return path;
+    path_info.path = "";
+  return path_info;
 }
+
+
 }  // DrawOperation
 }  // ServerOperation op2;
 }  // OnlineWhiteBoard
 }  // Kingslanding
-
-/*int main() {
+/*
+int main() {
   Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation* d = new  Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation("fl570") ;
+  d->Load("a.bmp");
      Operation  op;
     op.set_serial_number(1);
    Operation_OperationData*  data;
@@ -137,7 +189,7 @@ std::string DrawOperation::SaveAsBmp() {
    data->set_data_type(Operation_OperationData_OperationDataType_ELLIPSE);
    data->set_thinkness(1);
    data->set_color(2);
-   data->set_a(300);
+   data->set_a(100);
    data->set_b(50);
    data->set_fill(true);
    data->set_alpha(0.7);
@@ -145,7 +197,7 @@ std::string DrawOperation::SaveAsBmp() {
    point1=data->mutable_center();
    point1->set_x(100);
    point1->set_y(100);
-   d->Draw(op);
+   d->Draw(op, 1);
    Operation op1;
    op1.set_serial_number(2);
    Operation_OperationData* data1;
@@ -161,7 +213,7 @@ std::string DrawOperation::SaveAsBmp() {
    point3=data1->mutable_center();
    point3->set_x(100);
    point3->set_y(100);
-   d->Draw(op1);
+   d->Draw(op1, 2);
    Operation op2;
    op2.set_serial_number(3);
    Operation_OperationData *data2;
@@ -179,7 +231,7 @@ std::string DrawOperation::SaveAsBmp() {
    end_point->set_x(250);
    end_point->set_y(250);
    data2->set_alpha(0.9);
-   d->Draw(op2);
+   d->Draw(op2, 3);
     
  Operation op3;
    op3.set_serial_number(4);
@@ -192,7 +244,7 @@ std::string DrawOperation::SaveAsBmp() {
    position=data3->mutable_position();
  position->set_x(100);
  position->set_y(50);
-   d->Draw(op3);
+   d->Draw(op3, 5);
    Operation op4;
    op4.set_serial_number(5);
    Operation_OperationData* data4;
@@ -203,8 +255,8 @@ std::string DrawOperation::SaveAsBmp() {
    position1=data4->mutable_position();
    position1->set_x(90);
    position1->set_y(100);
-   d->Draw(op4);
-   //d->Show();
+   d->Draw(op4, 4);
+   d->Show();
    d->SaveAsBmp();
    return 0;
 }*/

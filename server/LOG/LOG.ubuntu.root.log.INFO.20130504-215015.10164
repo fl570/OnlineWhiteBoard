@@ -1,0 +1,527 @@
+Log file created at: 2013/05/04 21:50:15
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0504 21:50:15.246837 10272 DBManager.cc:540] delete from MeetingUser where   HBTime < 1367675115
+I0504 21:50:15.249024 10271 DBManager.cc:540] delete from MeetingUser where   HBTime < 1367675115
+I0504 21:50:15.250943 10272 DBManager.cc:561] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0504 21:50:15.251132 10271 DBManager.cc:561] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0504 21:50:15.251427 10272 DBManager.cc:579] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0504 21:50:15.251530 10271 DBManager.cc:579] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0504 21:50:25.256888 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675420 order by id
+I0504 21:50:25.257952 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:50:25.258363 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675420
+I0504 21:50:25.258906 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675420
+I0504 21:50:25.259237 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:50:25.259600 10271 DBManager.cc:613] 1
+I0504 21:50:30.114778 10259 DBManager.cc:77] insert into Meeting (state) values (0)
+I0504 21:50:30.118654 10259 DBManager.cc:95] update Meeting set MeetingID = '94c7610d456e96936c4592d3e9dc0ced' where   id = 4017
+I0504 21:50:35.177989 10269 DBManager.cc:347] select state from Meeting where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+I0504 21:50:35.179047 10269 DBManager.cc:163] update Meeting set state = 1 where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+I0504 21:50:35.179453 10269 DBManager.cc:368] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('94c7610d456e96936c4592d3e9dc0ced', 'G', 3, 1367675435)
+E0504 21:50:35.179800 10269 MeetingHandler.cc:78] create meeting updater
+I0504 21:50:35.185101 10269 DBManager.cc:185] update Meeting set DataRef = 22573344 where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+I0504 21:50:35.188858 10269 DBManager.cc:117] update Meeting set Port = 11250 where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+E0504 21:50:35.189600 10269 MeetingHandler.cc:98] join msg return
+I0504 21:50:35.194146 10269 DBManager.cc:141] select Port from Meeting where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+I0504 21:50:35.217898 10269 DBManager.cc:516] update MeetingUser set HBTime = 1367675435 where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and UserID = 'G'
+I0504 21:50:35.221818 10269 DBManager.cc:399] select State from MeetingUser where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and UserID = 'G'
+I0504 21:50:35.265480 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675430 order by id
+I0504 21:50:35.266587 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:50:35.266917 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675430
+I0504 21:50:35.267251 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675430
+I0504 21:50:35.267560 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:50:35.267892 10271 DBManager.cc:613] 1
+I0504 21:50:40.329521 10262 DBManager.cc:516] update MeetingUser set HBTime = 1367675440 where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and UserID = 'G'
+I0504 21:50:40.334120 10262 DBManager.cc:399] select State from MeetingUser where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and UserID = 'G'
+I0504 21:50:45.272985 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675440 order by id
+I0504 21:50:45.274471 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:50:45.274835 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675440
+I0504 21:50:45.275197 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675440
+I0504 21:50:45.275542 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:50:45.275892 10271 DBManager.cc:613] 1
+I0504 21:50:45.403708 10269 DBManager.cc:516] update MeetingUser set HBTime = 1367675445 where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and UserID = 'G'
+I0504 21:50:45.410241 10269 DBManager.cc:399] select State from MeetingUser where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and UserID = 'G'
+I0504 21:50:50.528115 10262 DBManager.cc:516] update MeetingUser set HBTime = 1367675450 where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and UserID = 'G'
+I0504 21:50:50.532090 10262 DBManager.cc:399] select State from MeetingUser where   MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and UserID = 'G'
+I0504 21:50:55.280854 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675450 order by id
+I0504 21:50:55.282042 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:50:55.282397 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675450
+I0504 21:50:55.282784 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675450
+I0504 21:50:55.283149 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:50:55.283473 10271 DBManager.cc:613] 1
+I0504 21:51:05.288547 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675460 order by id
+I0504 21:51:05.289754 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:51:05.290072 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675460
+I0504 21:51:05.290406 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675460
+I0504 21:51:05.290732 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:51:05.291059 10271 DBManager.cc:613] 2
+I0504 21:51:05.294816 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:51:05.295042 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:51:05.295290 10271 DBManager.cc:613] 2
+I0504 21:51:15.300369 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675470 order by id
+I0504 21:51:15.301745 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:51:15.302105 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675470
+I0504 21:51:15.302467 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675470
+I0504 21:51:15.302801 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:51:15.303155 10271 DBManager.cc:613] 2
+I0504 21:51:15.306926 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:51:15.307159 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:51:15.307461 10271 DBManager.cc:613] 2
+I0504 21:51:25.312465 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675480 order by id
+I0504 21:51:25.313814 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:51:25.314168 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675480
+I0504 21:51:25.314502 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675480
+I0504 21:51:25.314811 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:51:25.315140 10271 DBManager.cc:613] 2
+I0504 21:51:25.319357 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:51:25.319541 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:51:25.319845 10271 DBManager.cc:613] 2
+I0504 21:51:35.324825 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675490 order by id
+I0504 21:51:35.326017 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:51:35.326354 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675490
+I0504 21:51:35.326679 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675490
+I0504 21:51:35.326984 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:51:35.327308 10271 DBManager.cc:613] 2
+I0504 21:51:35.331177 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:51:35.331398 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:51:35.331622 10271 DBManager.cc:613] 2
+I0504 21:51:45.336292 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675500 order by id
+I0504 21:51:45.337527 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:51:45.337921 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675500
+I0504 21:51:45.338289 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675500
+I0504 21:51:45.338624 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:51:45.338973 10271 DBManager.cc:613] 2
+I0504 21:51:45.342780 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:51:45.342995 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:51:45.343298 10271 DBManager.cc:613] 2
+I0504 21:51:55.348530 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675510 order by id
+I0504 21:51:55.349792 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:51:55.350239 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675510
+I0504 21:51:55.350664 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675510
+I0504 21:51:55.351065 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:51:55.351419 10271 DBManager.cc:613] 2
+I0504 21:51:55.355175 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:51:55.355422 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:51:55.355736 10271 DBManager.cc:613] 2
+I0504 21:52:05.360589 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675520 order by id
+I0504 21:52:05.361652 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:52:05.361963 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675520
+I0504 21:52:05.362287 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675520
+I0504 21:52:05.362747 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:52:05.363157 10271 DBManager.cc:613] 2
+I0504 21:52:05.367087 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:52:05.367324 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:52:05.367569 10271 DBManager.cc:613] 2
+I0504 21:52:15.372694 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675530 order by id
+I0504 21:52:15.373975 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:52:15.374282 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675530
+I0504 21:52:15.374604 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675530
+I0504 21:52:15.374907 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:52:15.375232 10271 DBManager.cc:613] 2
+I0504 21:52:15.380025 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '<order>English</order>
+    <order>French</order>
+    <order>German Duden</order>
+    <order>Italian</order>
+    <order>Latin</order>
+    <order>Portuguese</order>
+    <order>Spanish</order>
+  </collation>
+  <collation name="latin1_general_cs"	id="49">
+    <order>Dutch</order>
+    <order>English</order>
+    <order>French</order>
+    <order>German Duden</order>
+    <order>Italian</order>
+    <order>Latin</order>
+    <order>Portug
+E0504 21:52:15.380291 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''<order>English</order>
+    <order>French</order>
+    <order>German Duden</order' at line 1
+E0504 21:52:15.380743 10271 DBManager.cc:613] 2
+I0504 21:52:25.385829 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675540 order by id
+I0504 21:52:25.386963 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:52:25.387275 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675540
+I0504 21:52:25.387603 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675540
+I0504 21:52:25.387905 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:52:25.388228 10271 DBManager.cc:613] 2
+I0504 21:52:25.391859 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:52:25.392042 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:52:25.392241 10271 DBManager.cc:613] 2
+I0504 21:52:35.397276 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675550 order by id
+I0504 21:52:35.398298 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:52:35.398608 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675550
+I0504 21:52:35.398933 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675550
+I0504 21:52:35.399265 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:52:35.399585 10271 DBManager.cc:613] 2
+I0504 21:52:35.403326 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'p932'
+I0504 21:52:35.403612 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = 'p932' and HBTime > 1367675550
+I0504 21:52:35.403931 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = 'p932' and HBTime > 1367675550
+I0504 21:52:35.404229 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'p932'
+E0504 21:52:35.404505 10271 DBManager.cc:613] 2
+I0504 21:52:45.407534 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675560 order by id
+I0504 21:52:45.408591 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:52:45.408819 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675560
+I0504 21:52:45.409136 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675560
+I0504 21:52:45.409510 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:52:45.409895 10271 DBManager.cc:613] 2
+I0504 21:52:45.413483 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = ''
+I0504 21:52:45.413768 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '' and HBTime > 1367675560
+I0504 21:52:45.414083 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '' and HBTime > 1367675560
+I0504 21:52:45.414379 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = ''
+E0504 21:52:45.414652 10271 DBManager.cc:613] 2
+I0504 21:52:55.419803 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675570 order by id
+I0504 21:52:55.420996 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:52:55.421367 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675570
+I0504 21:52:55.421756 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675570
+I0504 21:52:55.422116 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:52:55.422477 10271 DBManager.cc:613] 2
+I0504 21:52:55.426604 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = ''
+I0504 21:52:55.426921 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '' and HBTime > 1367675570
+I0504 21:52:55.427304 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '' and HBTime > 1367675570
+I0504 21:52:55.427669 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = ''
+E0504 21:52:55.428000 10271 DBManager.cc:613] 2
+I0504 21:53:05.433301 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675580 order by id
+I0504 21:53:05.434439 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:53:05.434803 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675580
+I0504 21:53:05.435130 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675580
+I0504 21:53:05.435431 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:53:05.435755 10271 DBManager.cc:613] 2
+I0504 21:53:05.439523 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = ''
+I0504 21:53:05.440009 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '' and HBTime > 1367675580
+I0504 21:53:05.440341 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '' and HBTime > 1367675580
+I0504 21:53:05.440654 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = ''
+E0504 21:53:05.440971 10271 DBManager.cc:613] 2
+I0504 21:53:15.446331 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675590 order by id
+I0504 21:53:15.447724 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:53:15.448046 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675590
+I0504 21:53:15.448372 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675590
+I0504 21:53:15.448729 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:53:15.449081 10271 DBManager.cc:613] 2
+I0504 21:53:15.452980 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = ''
+I0504 21:53:15.453269 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '' and HBTime > 1367675590
+I0504 21:53:15.453598 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '' and HBTime > 1367675590
+I0504 21:53:15.453914 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = ''
+E0504 21:53:15.454195 10271 DBManager.cc:613] 2
+I0504 21:53:25.459486 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675600 order by id
+I0504 21:53:25.460429 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:53:25.460784 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675600
+I0504 21:53:25.461129 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675600
+I0504 21:53:25.461437 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:53:25.461771 10271 DBManager.cc:613] 2
+I0504 21:53:25.465425 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = ''
+I0504 21:53:25.465737 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '' and HBTime > 1367675600
+I0504 21:53:25.466097 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '' and HBTime > 1367675600
+I0504 21:53:25.466413 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = ''
+E0504 21:53:25.466776 10271 DBManager.cc:613] 2
+I0504 21:53:35.471835 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675610 order by id
+I0504 21:53:35.472975 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:53:35.473343 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675610
+I0504 21:53:35.473723 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675610
+I0504 21:53:35.474134 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:53:35.474459 10271 DBManager.cc:613] 2
+I0504 21:53:35.478319 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = ''
+I0504 21:53:35.478623 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '' and HBTime > 1367675610
+I0504 21:53:35.479001 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '' and HBTime > 1367675610
+I0504 21:53:35.479369 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = ''
+E0504 21:53:35.479686 10271 DBManager.cc:613] 2
+I0504 21:53:45.484848 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675620 order by id
+I0504 21:53:45.486124 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:53:45.486367 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675620
+I0504 21:53:45.486629 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675620
+I0504 21:53:45.486917 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:53:45.487237 10271 DBManager.cc:613] 2
+I0504 21:53:45.489507 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = ''
+I0504 21:53:45.489766 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '' and HBTime > 1367675620
+I0504 21:53:45.490087 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '' and HBTime > 1367675620
+I0504 21:53:45.490385 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = ''
+E0504 21:53:45.490685 10271 DBManager.cc:613] 2
+I0504 21:53:54.326156 10240 DBManager.cc:77] insert into Meeting (state) values (0)
+I0504 21:53:54.330096 10240 DBManager.cc:95] update Meeting set MeetingID = '617fae011b0a67048bca632d646edba8' where   id = 4018
+I0504 21:53:55.495754 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675630 order by id
+I0504 21:53:55.496886 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:53:55.497273 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675630
+I0504 21:53:55.497630 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675630
+I0504 21:53:55.497999 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:53:55.498370 10271 DBManager.cc:613] 2
+I0504 21:53:55.502300 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = ''
+I0504 21:53:55.502615 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '' and HBTime > 1367675630
+I0504 21:53:55.502944 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '' and HBTime > 1367675630
+I0504 21:53:55.503257 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = ''
+E0504 21:53:55.503545 10271 DBManager.cc:613] 2
+I0504 21:53:59.007165 10241 DBManager.cc:347] select state from Meeting where   MeetingID = '617fae011b0a67048bca632d646edba8'
+I0504 21:53:59.008240 10241 DBManager.cc:163] update Meeting set state = 1 where   MeetingID = '617fae011b0a67048bca632d646edba8'
+I0504 21:53:59.008641 10241 DBManager.cc:368] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('617fae011b0a67048bca632d646edba8', 'T', 3, 1367675639)
+E0504 21:53:59.009146 10241 MeetingHandler.cc:78] create meeting updater
+I0504 21:53:59.014861 10241 DBManager.cc:185] update Meeting set DataRef = 22348368 where   MeetingID = '617fae011b0a67048bca632d646edba8'
+I0504 21:53:59.018677 10241 DBManager.cc:117] update Meeting set Port = 11249 where   MeetingID = '617fae011b0a67048bca632d646edba8'
+E0504 21:53:59.019451 10241 MeetingHandler.cc:98] join msg return
+I0504 21:53:59.024188 10241 DBManager.cc:141] select Port from Meeting where   MeetingID = '617fae011b0a67048bca632d646edba8'
+I0504 21:53:59.057090 10240 DBManager.cc:516] update MeetingUser set HBTime = 1367675639 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:53:59.060941 10240 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:04.105288 10240 DBManager.cc:516] update MeetingUser set HBTime = 1367675644 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:04.110525 10240 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:05.508651 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675640 order by id
+I0504 21:54:05.509832 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:54:05.510190 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675640
+I0504 21:54:05.510556 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675640
+I0504 21:54:05.510859 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:54:05.511186 10271 DBManager.cc:613] 2
+I0504 21:54:05.515074 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:54:05.515295 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:54:05.515586 10271 DBManager.cc:613] 2
+I0504 21:54:09.147578 10224 DBManager.cc:516] update MeetingUser set HBTime = 1367675649 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:09.151692 10224 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:14.228601 10240 DBManager.cc:516] update MeetingUser set HBTime = 1367675654 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:14.232583 10240 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:15.520612 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675650 order by id
+I0504 21:54:15.521790 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:54:15.522027 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675650
+I0504 21:54:15.522287 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675650
+I0504 21:54:15.522572 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:54:15.522896 10271 DBManager.cc:613] 2
+I0504 21:54:15.524942 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'p932'
+I0504 21:54:15.525213 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = 'p932' and HBTime > 1367675650
+I0504 21:54:15.525578 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = 'p932' and HBTime > 1367675650
+I0504 21:54:15.525897 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'p932'
+E0504 21:54:15.526213 10271 DBManager.cc:613] 2
+I0504 21:54:19.331574 10234 DBManager.cc:516] update MeetingUser set HBTime = 1367675659 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:19.334626 10234 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:24.404094 10255 DBManager.cc:516] update MeetingUser set HBTime = 1367675664 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:24.407927 10255 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:25.531394 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675660 order by id
+I0504 21:54:25.532379 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:54:25.532718 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675660
+I0504 21:54:25.533082 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675660
+I0504 21:54:25.533445 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:54:25.533808 10271 DBManager.cc:613] 2
+I0504 21:54:25.537632 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:54:25.537875 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:54:25.538159 10271 DBManager.cc:613] 2
+I0504 21:54:29.475214 10234 DBManager.cc:516] update MeetingUser set HBTime = 1367675669 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:29.479104 10234 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:34.585855 10239 DBManager.cc:516] update MeetingUser set HBTime = 1367675674 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:34.589859 10239 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:35.543252 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675670 order by id
+I0504 21:54:35.544205 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:54:35.544529 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675670
+I0504 21:54:35.544905 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675670
+I0504 21:54:35.545217 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:54:35.545548 10271 DBManager.cc:613] 2
+I0504 21:54:35.549353 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:54:35.549537 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:54:35.550145 10271 DBManager.cc:613] 2
+I0504 21:54:39.630092 10240 DBManager.cc:516] update MeetingUser set HBTime = 1367675679 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:39.633960 10240 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:44.707514 10221 DBManager.cc:516] update MeetingUser set HBTime = 1367675684 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:44.711352 10221 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:45.557363 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675680 order by id
+I0504 21:54:45.558871 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:54:45.559274 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675680
+I0504 21:54:45.559674 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675680
+I0504 21:54:45.560053 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:54:45.560555 10271 DBManager.cc:613] 2
+I0504 21:54:45.566395 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:54:45.566639 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:54:45.567253 10271 DBManager.cc:613] 2
+I0504 21:54:49.801643 10258 DBManager.cc:516] update MeetingUser set HBTime = 1367675689 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:49.805619 10258 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:54.879684 10240 DBManager.cc:516] update MeetingUser set HBTime = 1367675694 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:54.883857 10240 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:55.572445 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675690 order by id
+I0504 21:54:55.573591 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:54:55.573941 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675690
+I0504 21:54:55.574331 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675690
+I0504 21:54:55.574694 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:54:55.575067 10271 DBManager.cc:613] 2
+I0504 21:54:55.578920 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:54:55.579159 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:54:55.579469 10271 DBManager.cc:613] 2
+I0504 21:54:59.951416 10234 DBManager.cc:516] update MeetingUser set HBTime = 1367675699 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:54:59.955644 10234 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:05.022407 10255 DBManager.cc:516] update MeetingUser set HBTime = 1367675705 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:05.026409 10255 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:05.584509 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675700 order by id
+I0504 21:55:05.585664 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+I0504 21:55:05.585912 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675700
+I0504 21:55:05.586169 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95' and HBTime > 1367675700
+I0504 21:55:05.586452 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '7257d4ec05d502d49af5079d5fc83f95'
+E0504 21:55:05.586766 10271 DBManager.cc:613] 2
+I0504 21:55:05.588912 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; version 2 of the License.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU
+E0504 21:55:05.589088 10271 DBManager.cc:662] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:55:05.589323 10271 DBManager.cc:613] 2
+I0504 21:55:10.092341 10258 DBManager.cc:516] update MeetingUser set HBTime = 1367675710 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:10.096496 10258 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:15.177423 10258 DBManager.cc:516] update MeetingUser set HBTime = 1367675715 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:15.179527 10258 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:15.255713 10272 DBManager.cc:540] delete from MeetingUser where   HBTime < 1367675415
+I0504 21:55:15.259475 10272 DBManager.cc:561] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0504 21:55:15.260057 10272 DBManager.cc:579] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0504 21:55:15.594205 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675710 order by id
+I0504 21:55:15.595358 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+I0504 21:55:15.595659 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and HBTime > 1367675710
+I0504 21:55:15.595983 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and HBTime > 1367675710
+I0504 21:55:15.596287 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+E0504 21:55:15.596603 10271 DBManager.cc:613] 1
+I0504 21:55:20.271422 10244 DBManager.cc:516] update MeetingUser set HBTime = 1367675720 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:20.275524 10244 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:25.362977 10266 DBManager.cc:516] update MeetingUser set HBTime = 1367675725 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:25.367024 10266 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:25.601971 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675720 order by id
+I0504 21:55:25.603060 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+I0504 21:55:25.603368 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and HBTime > 1367675720
+I0504 21:55:25.603689 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and HBTime > 1367675720
+I0504 21:55:25.603993 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+E0504 21:55:25.604305 10271 DBManager.cc:613] 1
+I0504 21:55:30.446079 10266 DBManager.cc:516] update MeetingUser set HBTime = 1367675730 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:30.450088 10266 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:35.520361 10259 DBManager.cc:516] update MeetingUser set HBTime = 1367675735 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:35.524426 10259 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:35.609736 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675730 order by id
+I0504 21:55:35.610725 10271 DBManager.cc:660] update MeetingUser set State = 4 where   State = 3 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+I0504 21:55:35.611039 10271 DBManager.cc:667] select UserID from MeetingUser where     State = 2 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and HBTime > 1367675730
+I0504 21:55:35.611361 10271 DBManager.cc:689] select UserID from MeetingUser where     State = 1 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced' and HBTime > 1367675730
+I0504 21:55:35.611664 10271 DBManager.cc:727] update MeetingUser set State = 3 where       State = 4 and MeetingID = '94c7610d456e96936c4592d3e9dc0ced'
+E0504 21:55:35.611979 10271 DBManager.cc:613] 1
+I0504 21:55:40.592787 10259 DBManager.cc:516] update MeetingUser set HBTime = 1367675740 where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:40.596580 10259 DBManager.cc:399] select State from MeetingUser where   MeetingID = '617fae011b0a67048bca632d646edba8' and UserID = 'T'
+I0504 21:55:45.617153 10271 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367675740 order by id

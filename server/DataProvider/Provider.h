@@ -21,10 +21,10 @@ class ProviderImp {
 public:
   ProviderImp(DocumentHandler*);
   virtual ~ProviderImp();
-  Operations GetOperations(const std::string&, int32_t);
+  Operations GetOperations(const std::string&, uint32_t);
   Document GetLatestDocument(const std::string&);
   DocumentList GetHistorySnapshots(const std::string&);
-  Document GetDocument(const std::string&, int32_t);
+  Document GetDocument(const std::string&, uint32_t);
 private:
   typedef Kingslanding::OnlineWhiteBoard::Server::DBManager::DBManager DBManager;
   DocumentHandler *document_handler_;

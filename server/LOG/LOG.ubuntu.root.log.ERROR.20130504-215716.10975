@@ -1,0 +1,4 @@
+Log file created at: 2013/05/04 21:57:16
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0504 21:57:16.220978 11078 DBManager.cc:49] Can't initialize character set latin1 (path: /usr/share/mysql/charsets/)

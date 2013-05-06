@@ -52,6 +52,9 @@ UserList UserHandler::GetCurrentUserList(const std::string& meeting_id)
   int  size;
   DBManager::UserInfo * res = db_manager_->GetUserList(meeting_id, size);
   list = UserListFactory(res, size);
+  if (res != NULL) {
+    delete []res;
+  }
   return list;
 }
 

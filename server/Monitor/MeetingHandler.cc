@@ -68,14 +68,14 @@ DataProvider::MemoryCache* MeetingHandler::GetDataRef(const std::string& meeting
 
 JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, const std::string& user_id) {
   bool has_meeting = false;
-  UpdaterInfo* info = monitor_updater_->GetValue(has_meeting, meeting_id);
+  monitor_updater_->GetValue(has_meeting, meeting_id);
   int result;
   if (has_meeting) {
     result = db_manager_->AddMeetingUser(meeting_id, user_id, 1);
   } else {
     result = db_manager_->AddMeetingUser(meeting_id, user_id, 3);
   }
-
+  LOG(ERROR) << "create meeting updater";
   if (result == 1) {
     if (!has_meeting) {
       MEMCACHE* mem =  new MEMCACHE();
@@ -95,7 +95,7 @@ JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, con
       monitor_updater_->Insert(meeting_id, updater_info);
     }
   }
-
+  LOG(ERROR) << "join msg return";
   JoinMeetingReturn join_msg;
   switch (result) {
     case 1:
@@ -167,10 +167,10 @@ bool MeetingHandler::TransferHostDraw(const std::string& meeting_id) {
   if (!has_meeting) {
     return false;
   }
-  std::string path = info->draw_oper->SaveAsBmp();
-  if(path == "")
+  DrawOperation::PathInfo path_info = info->draw_oper->SaveAsBmp(1);
+  if(path_info.path == "")
     return false;
-  db_manager_ -> AddDocument(meeting_id, path);
+  db_manager_ -> AddDocument(meeting_id, path_info.path);
   return true;
 }
 

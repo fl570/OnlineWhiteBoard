@@ -1,0 +1,11 @@
+Log file created at: 2013/05/03 23:50:14
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0503 23:50:14.049279  4358 MeetingHandler.cc:78] create meeting updater
+E0503 23:50:14.179427  4358 MeetingHandler.cc:98] join msg return
+E0503 23:50:14.569058  4280 HBHandler.cc:41] 蛋总 : 1
+E0503 23:50:33.752710  4358 HBHandler.cc:41] 蛋总 : 1
+E0503 23:52:16.487952  4358 MeetingHandler.cc:78] create meeting updater
+E0503 23:52:16.501162  4358 MeetingHandler.cc:98] join msg return
+E0503 23:52:16.538058  4347 HBHandler.cc:41] t : 1
+E0503 23:55:23.006872  4372 DBManager.cc:49] Can't connect to MySQL server on '127.0.0.1' (111)

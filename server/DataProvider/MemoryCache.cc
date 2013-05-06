@@ -66,15 +66,15 @@ MemoryCache::~MemoryCache() {
 }
 
 bool MemoryCache::IsEmpty() const {
-    return 0 == (state_ ? size_[1] : size_[0]);
+  return 0 == (state_ ? size_[1] : size_[0]);
 }
 
 bool MemoryCache::GetCount() const {
-    return state_ ? size_[1] : size_[0];
+  return state_ ? size_[1] : size_[0];
 }
 
 bool MemoryCache::IsFull() const {
-    return capacity_ == (state_ ? size_[1] : size_[0]);
+  return capacity_ == (state_ ? size_[1] : size_[0]);
 }
 
 bool MemoryCache::SetState() {
@@ -108,59 +108,79 @@ bool MemoryCache::SetState() {
 }
 
 
-bool MemoryCache::AddOperation(const Operation& oper) {
+bool MemoryCache::AddOperation(const Operation& oper,
+                                     unsigned int latest_id) {
   if (state_) {
-    AddOperationToSet(1, oper);
+    AddOperationToSet(1, oper, latest_id);
   } else {
-    AddOperationToSet(0, oper);
+    AddOperationToSet(0, oper, latest_id);
   }
-
+  LOG(ERROR) << oper.serial_number();
+  LOG(ERROR) << oper.data().data_type();
   return true;
 }
 
-bool MemoryCache::AddOperationToSet(int set, const Operation& oper) {
-    boost:: unique_lock<boost::shared_mutex> lock(g_mutex);
-    if (IsEmpty()) {
-      rear_[set] = -1;
-      front_id_[set] = oper.serial_number();
-      rear_id_[set] = oper.serial_number();
-    }
-    if (IsFull()) {
-      index_ = front_[set];
-      rear_[set] = index_;
-      delete operation_[set][index_];
-      operation_[set][index_] = new Operation(oper);
-
-      front_[set]++;
-      front_[set] %= capacity_;
-      index_ = front_[set];
-      front_id_[set] = operation_[set][index_] -> serial_number();
-    } else {
-      size_[set]++;
-      rear_[set]++;
-      rear_[set] %= capacity_;
-      index_ = rear_[set];
-      operation_[set][index_] = new Operation(oper);
-    }
-
+bool MemoryCache::AddOperationToSet(int set, const Operation& oper,
+                                              unsigned int lastest_id) {
+  boost:: unique_lock<boost::shared_mutex> lock(g_mutex);
+  if (IsEmpty()) {
+    rear_[set] = -1;
+    front_id_[set] = oper.serial_number();
     rear_id_[set] = oper.serial_number();
-    lock.unlock();
-    return true;
+  }
+  if (IsFull()) {
+    index_ = front_[set];
+    rear_[set] = index_;
+    delete operation_[set][index_];
+    Operation *tmp = new Operation(oper);
+    tmp -> set_serial_number(lastest_id);
+    operation_[set][index_] = tmp;
+
+    front_[set]++;
+    front_[set] %= capacity_;
+    index_ = front_[set];
+    front_id_[set] = operation_[set][index_] -> serial_number();
+  } else {
+    size_[set]++;
+    rear_[set]++;
+    rear_[set] %= capacity_;
+    index_ = rear_[set];
+    Operation *tmp = new Operation(oper);
+    tmp -> set_serial_number(lastest_id);
+    operation_[set][index_] = tmp;
+  }
+
+  rear_id_[set] = oper.serial_number();
+  return true;
 }
 
-Operations MemoryCache::GetOperationAfter(int operation_id) {
+Operations MemoryCache::GetOperationAfter(unsigned int operation_id) {
+  if (state_) {
+    if (front_id_[1] == 0 && rear_id_[1] == 0 && operation_id > 0) {
+      Operations opers;
+      opers.set_operation_avaliable(false);
+      return opers;
+    }
+  } else {
+    if (front_id_[0] == 0 && rear_id_[0] == 0 && operation_id > 0) {
+      Operations opers;
+      opers.set_operation_avaliable(false);
+      return opers;
+    }
+  }
   return state_ ? GetOperationFromSet(1, operation_id) :
                               GetOperationFromSet(0, operation_id);
 }
 
-Operations MemoryCache::GetOperationFromStoreAfter(int operation_id) {
+Operations MemoryCache::GetOperationFromStoreAfter(unsigned int operation_id) {
   return state_ ? GetOperationFromSet(0, operation_id) :
                               GetOperationFromSet(1, operation_id);
 }
 
 
-Operations MemoryCache::GetOperationFromSet(int set, int operation_id) {
-  boost:: unique_lock<boost::shared_mutex> lock(g_mutex);
+Operations MemoryCache::GetOperationFromSet(int set,
+                                   unsigned int operation_id) {
+  boost::shared_lock<boost::shared_mutex> lock(g_mutex);
   Operations opers;
   Operation *oper;
   if ((operation_id+1) < front_id_[set]) {
@@ -176,7 +196,6 @@ Operations MemoryCache::GetOperationFromSet(int set, int operation_id) {
       index_ %= capacity_;
     }
   }
-  lock.unlock();
   return opers;
 }
 }  // DataProvider

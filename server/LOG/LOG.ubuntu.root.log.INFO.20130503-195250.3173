@@ -1,0 +1,957 @@
+Log file created at: 2013/05/03 19:52:50
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0503 19:52:50.916537  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367581965 order by id
+I0503 19:52:50.921574  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:52:50.922155  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367581965
+I0503 19:52:50.922523  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367581965
+I0503 19:52:50.922866  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:52:50.926988  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:52:50.927366  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367581965
+I0503 19:52:50.927692  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367581965
+I0503 19:52:50.927949  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:52:50.929859  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:52:50.930073  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367581965
+I0503 19:52:50.930376  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367581965
+I0503 19:52:50.930619  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:00.934862  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367581975 order by id
+I0503 19:53:00.936066  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:00.936561  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367581975
+I0503 19:53:00.936918  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367581975
+I0503 19:53:00.937258  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:00.941354  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:00.941856  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367581975
+I0503 19:53:00.942294  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367581975
+I0503 19:53:00.942703  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:00.946715  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:00.947202  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367581975
+I0503 19:53:00.947581  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367581975
+I0503 19:53:00.947914  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:10.951925  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367581985 order by id
+I0503 19:53:10.953245  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:10.953737  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367581985
+I0503 19:53:10.954092  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367581985
+I0503 19:53:10.954444  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:10.958431  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:10.958945  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367581985
+I0503 19:53:10.959303  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367581985
+I0503 19:53:10.959637  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:10.963589  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:10.964053  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367581985
+I0503 19:53:10.964402  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367581985
+I0503 19:53:10.964738  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:20.969410  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367581995 order by id
+I0503 19:53:20.970680  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:20.971207  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367581995
+I0503 19:53:20.971570  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367581995
+I0503 19:53:20.971914  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:20.975999  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:20.976470  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367581995
+I0503 19:53:20.976830  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367581995
+I0503 19:53:20.977176  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:20.981151  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:20.981628  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367581995
+I0503 19:53:20.981976  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367581995
+I0503 19:53:20.982312  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:30.988307  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582005 order by id
+I0503 19:53:30.989626  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:30.990339  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582005
+I0503 19:53:30.990782  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582005
+I0503 19:53:30.991242  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:30.995789  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:30.996351  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582005
+I0503 19:53:30.996776  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582005
+I0503 19:53:30.997174  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:31.001976  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:31.002533  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582005
+I0503 19:53:31.002933  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582005
+I0503 19:53:31.003288  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:41.007803  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582016 order by id
+I0503 19:53:41.008944  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:41.009441  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582016
+I0503 19:53:41.009803  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582016
+I0503 19:53:41.010145  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:41.014184  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:41.014650  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582016
+I0503 19:53:41.015028  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582016
+I0503 19:53:41.015372  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:41.019322  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:41.019798  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582016
+I0503 19:53:41.020148  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582016
+I0503 19:53:41.020486  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:51.025079  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582026 order by id
+I0503 19:53:51.026468  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:51.026988  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582026
+I0503 19:53:51.027353  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582026
+I0503 19:53:51.027695  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:53:51.031667  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:51.032163  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582026
+I0503 19:53:51.032512  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582026
+I0503 19:53:51.032848  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:53:51.037032  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:53:51.037526  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582026
+I0503 19:53:51.037889  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582026
+I0503 19:53:51.038228  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:01.042867  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582036 order by id
+I0503 19:54:01.044183  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:01.044718  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582036
+I0503 19:54:01.045073  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582036
+I0503 19:54:01.045418  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:01.049696  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:01.050194  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582036
+I0503 19:54:01.050560  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582036
+I0503 19:54:01.050899  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:01.054889  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:01.055390  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582036
+I0503 19:54:01.055747  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582036
+I0503 19:54:01.056085  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:11.060816  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582046 order by id
+I0503 19:54:11.061923  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:11.062424  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582046
+I0503 19:54:11.062783  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582046
+I0503 19:54:11.063176  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:11.067211  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:11.067679  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582046
+I0503 19:54:11.068043  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582046
+I0503 19:54:11.068423  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:11.072387  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:11.072849  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582046
+I0503 19:54:11.073201  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582046
+I0503 19:54:11.073539  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:13.350857  3244 DBManager.cc:77] insert into Meeting (state) values (0)
+I0503 19:54:13.354817  3244 DBManager.cc:95] update Meeting set MeetingID = '8156a82179f98dc175a9fb9a1a378f22' where   id = 3906
+I0503 19:54:18.025130  3211 DBManager.cc:347] select state from Meeting where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:54:18.026393  3211 DBManager.cc:163] update Meeting set state = 1 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:54:18.028156  3211 DBManager.cc:368] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('8156a82179f98dc175a9fb9a1a378f22', 'Rrrrrrr', 3, 1367582058)
+E0503 19:54:18.028506  3211 MeetingHandler.cc:78] create meeting updater
+I0503 19:54:18.034205  3211 DBManager.cc:185] update Meeting set DataRef = 27528128 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:54:18.039427  3211 DBManager.cc:117] update Meeting set Port = 11250 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+E0503 19:54:18.041560  3211 MeetingHandler.cc:98] join msg return
+I0503 19:54:18.046123  3211 DBManager.cc:141] select Port from Meeting where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+E0503 19:54:18.047090  3211 MeetingHandler.cc:119] 192.168.1.109
+I0503 19:54:18.094355  3264 DBManager.cc:516] update MeetingUser set HBTime = 1367582058 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:54:18.098495  3264 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:54:21.078156  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582056 order by id
+I0503 19:54:21.079370  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:21.079884  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582056
+I0503 19:54:21.080247  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582056
+I0503 19:54:21.080589  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:21.084578  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:21.085047  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582056
+I0503 19:54:21.085402  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582056
+I0503 19:54:21.085758  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:21.089941  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:21.090476  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582056
+I0503 19:54:21.090898  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582056
+I0503 19:54:21.091361  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:31.096007  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582066 order by id
+I0503 19:54:31.097053  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:31.097581  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582066
+I0503 19:54:31.097939  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582066
+I0503 19:54:31.098289  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:31.102474  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:31.103013  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582066
+I0503 19:54:31.103462  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582066
+I0503 19:54:31.103867  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:31.108067  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:31.108574  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582066
+I0503 19:54:31.108979  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582066
+I0503 19:54:31.109381  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:31.113641  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:54:31.114162  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582066
+I0503 19:54:31.114516  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582066
+I0503 19:54:31.114850  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:54:31.121114  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582071.bmp')
+I0503 19:54:38.159303  3246 DBManager.cc:516] update MeetingUser set HBTime = 1367582078 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:54:38.163452  3246 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:54:41.125516  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582076 order by id
+I0503 19:54:41.126413  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:41.126971  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582076
+I0503 19:54:41.127311  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582076
+I0503 19:54:41.127651  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:41.131572  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:41.131902  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582076
+I0503 19:54:41.132189  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582076
+I0503 19:54:41.132366  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:41.134511  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:41.134799  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582076
+I0503 19:54:41.135028  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582076
+I0503 19:54:41.135190  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:51.138670  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582086 order by id
+I0503 19:54:51.140063  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:51.140565  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582086
+I0503 19:54:51.140924  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582086
+I0503 19:54:51.141268  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:54:51.145337  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:51.145809  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582086
+I0503 19:54:51.146157  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582086
+I0503 19:54:51.146497  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:54:51.150477  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:51.150982  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582086
+I0503 19:54:51.151345  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582086
+I0503 19:54:51.151687  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:54:51.155688  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:54:51.156163  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582086
+I0503 19:54:51.156515  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582086
+I0503 19:54:51.156848  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:54:51.162817  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582091.bmp')
+I0503 19:54:58.233718  3216 DBManager.cc:516] update MeetingUser set HBTime = 1367582098 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:54:58.237983  3216 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:55:01.166200  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582096 order by id
+I0503 19:55:01.167532  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:01.168047  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582096
+I0503 19:55:01.168401  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582096
+I0503 19:55:01.168750  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:01.172699  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:01.173207  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582096
+I0503 19:55:01.173604  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582096
+I0503 19:55:01.173939  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:01.177976  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:01.178448  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582096
+I0503 19:55:01.178802  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582096
+I0503 19:55:01.179399  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:11.183629  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582106 order by id
+I0503 19:55:11.184424  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:11.184916  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582106
+I0503 19:55:11.185144  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582106
+I0503 19:55:11.185356  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:11.188282  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:11.188629  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582106
+I0503 19:55:11.188869  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582106
+I0503 19:55:11.189031  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:11.191665  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:11.192010  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582106
+I0503 19:55:11.192231  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582106
+I0503 19:55:11.192390  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:11.194329  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:55:11.194702  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582106
+I0503 19:55:11.194993  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582106
+I0503 19:55:11.195205  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:55:11.198567  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582111.bmp')
+I0503 19:55:18.296599  3223 DBManager.cc:516] update MeetingUser set HBTime = 1367582118 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:55:18.300588  3223 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:55:21.202846  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582116 order by id
+I0503 19:55:21.204149  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:21.204663  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582116
+I0503 19:55:21.205157  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582116
+I0503 19:55:21.205615  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:21.210125  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:21.210834  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582116
+I0503 19:55:21.211318  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582116
+I0503 19:55:21.211660  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:21.215720  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:21.216197  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582116
+I0503 19:55:21.216552  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582116
+I0503 19:55:21.216889  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:31.221626  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582126 order by id
+I0503 19:55:31.222892  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:31.223471  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582126
+I0503 19:55:31.223922  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582126
+I0503 19:55:31.224339  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:31.228513  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:31.228989  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582126
+I0503 19:55:31.229346  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582126
+I0503 19:55:31.229686  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:31.233659  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:31.234122  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582126
+I0503 19:55:31.234472  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582126
+I0503 19:55:31.234809  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:31.238791  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:55:31.239320  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582126
+I0503 19:55:31.239670  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582126
+I0503 19:55:31.240007  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:55:31.245978  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582131.bmp')
+I0503 19:55:38.364871  3242 DBManager.cc:516] update MeetingUser set HBTime = 1367582138 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:55:38.369228  3242 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:55:41.249718  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582136 order by id
+I0503 19:55:41.250922  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:41.251446  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582136
+I0503 19:55:41.251807  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582136
+I0503 19:55:41.252147  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:41.255583  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:41.256048  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582136
+I0503 19:55:41.256391  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582136
+I0503 19:55:41.256714  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:41.260689  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:41.260998  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582136
+I0503 19:55:41.261282  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582136
+I0503 19:55:41.261553  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:51.266077  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582146 order by id
+I0503 19:55:51.267774  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:51.268504  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582146
+I0503 19:55:51.268965  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582146
+I0503 19:55:51.269347  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:55:51.273601  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:51.274288  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582146
+I0503 19:55:51.274695  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582146
+I0503 19:55:51.275065  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:55:51.279299  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:51.279858  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582146
+I0503 19:55:51.280236  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582146
+I0503 19:55:51.280573  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:55:51.284697  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:55:51.285254  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582146
+I0503 19:55:51.285648  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582146
+I0503 19:55:51.286008  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:55:51.292309  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582151.bmp')
+I0503 19:55:58.442389  3257 DBManager.cc:516] update MeetingUser set HBTime = 1367582158 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:55:58.446729  3257 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:56:01.295879  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582156 order by id
+I0503 19:56:01.297057  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:01.297580  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582156
+I0503 19:56:01.297935  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582156
+I0503 19:56:01.298274  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:01.302470  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:01.302990  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582156
+I0503 19:56:01.303508  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582156
+I0503 19:56:01.303956  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:01.308214  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:01.308681  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582156
+I0503 19:56:01.309033  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582156
+I0503 19:56:01.309370  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:11.313894  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582166 order by id
+I0503 19:56:11.315016  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:11.315563  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582166
+I0503 19:56:11.316010  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582166
+I0503 19:56:11.316416  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:11.320646  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:11.321152  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582166
+I0503 19:56:11.321504  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582166
+I0503 19:56:11.321842  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:11.325850  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:11.326357  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582166
+I0503 19:56:11.326766  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582166
+I0503 19:56:11.327133  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:11.331115  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:56:11.331589  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582166
+I0503 19:56:11.331943  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582166
+I0503 19:56:11.332276  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:56:11.338405  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582171.bmp')
+I0503 19:56:18.509860  3249 DBManager.cc:516] update MeetingUser set HBTime = 1367582178 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:56:18.511955  3249 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:56:21.341481  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582176 order by id
+I0503 19:56:21.342537  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:21.342891  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582176
+I0503 19:56:21.343194  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582176
+I0503 19:56:21.343400  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:21.346106  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:21.346403  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582176
+I0503 19:56:21.346647  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582176
+I0503 19:56:21.346851  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:21.349340  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:21.349663  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582176
+I0503 19:56:21.349889  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582176
+I0503 19:56:21.350095  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:31.353729  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582186 order by id
+I0503 19:56:31.354837  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:31.355368  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582186
+I0503 19:56:31.355710  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582186
+I0503 19:56:31.356042  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:31.358247  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:31.358701  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582186
+I0503 19:56:31.358943  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582186
+I0503 19:56:31.359328  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:31.363271  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:31.363610  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582186
+I0503 19:56:31.363869  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582186
+I0503 19:56:31.364128  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:31.366173  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:56:31.366477  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582186
+I0503 19:56:31.366770  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582186
+I0503 19:56:31.367125  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:56:31.372886  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582191.bmp')
+I0503 19:56:38.589251  3230 DBManager.cc:516] update MeetingUser set HBTime = 1367582198 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:56:38.593621  3230 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:56:41.377168  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582196 order by id
+I0503 19:56:41.378335  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:41.378891  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582196
+I0503 19:56:41.379261  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582196
+I0503 19:56:41.379609  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:41.383724  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:41.384253  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582196
+I0503 19:56:41.384654  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582196
+I0503 19:56:41.385040  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:41.389425  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:41.389976  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582196
+I0503 19:56:41.390390  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582196
+I0503 19:56:41.390776  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:51.395545  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582206 order by id
+I0503 19:56:51.396961  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:51.397492  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582206
+I0503 19:56:51.397861  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582206
+I0503 19:56:51.398195  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:56:51.402305  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:51.402829  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582206
+I0503 19:56:51.403218  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582206
+I0503 19:56:51.403604  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:56:51.407670  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:51.408138  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582206
+I0503 19:56:51.408488  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582206
+I0503 19:56:51.408823  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:56:51.412845  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:56:51.413370  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582206
+I0503 19:56:51.413766  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582206
+I0503 19:56:51.414152  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:56:51.420135  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582211.bmp')
+I0503 19:56:58.668393  3221 DBManager.cc:516] update MeetingUser set HBTime = 1367582218 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:56:58.672680  3221 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:57:01.423627  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582216 order by id
+I0503 19:57:01.424829  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:57:01.425417  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582216
+I0503 19:57:01.425829  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582216
+I0503 19:57:01.426216  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:57:01.430253  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:57:01.430723  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582216
+I0503 19:57:01.431202  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582216
+I0503 19:57:01.431607  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:57:01.435703  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:57:01.436210  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582216
+I0503 19:57:01.436583  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582216
+I0503 19:57:01.436939  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:57:11.441581  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582226 order by id
+I0503 19:57:11.442893  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:57:11.443459  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582226
+I0503 19:57:11.443828  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582226
+I0503 19:57:11.444171  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:57:11.448194  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:57:11.448664  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582226
+I0503 19:57:11.449019  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582226
+I0503 19:57:11.449359  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:57:11.453727  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:57:11.454205  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582226
+I0503 19:57:11.454561  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582226
+I0503 19:57:11.454893  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:57:11.459247  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:57:11.459728  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582226
+I0503 19:57:11.460124  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582226
+I0503 19:57:11.460465  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:57:11.466691  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582231.bmp')
+I0503 19:57:18.719234  3245 DBManager.cc:516] update MeetingUser set HBTime = 1367582238 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:57:18.723691  3245 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:57:21.470239  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582236 order by id
+I0503 19:57:21.471920  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:57:21.472445  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582236
+I0503 19:57:21.472806  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582236
+I0503 19:57:21.473141  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:57:21.477114  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:57:21.477579  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582236
+I0503 19:57:21.477931  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582236
+I0503 19:57:21.478263  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:57:21.482517  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:57:21.483011  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582236
+I0503 19:57:21.483368  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582236
+I0503 19:57:21.483708  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:57:31.486219  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582246 order by id
+I0503 19:57:31.486825  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:57:31.487107  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582246
+I0503 19:57:31.487294  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771' and HBTime > 1367582246
+I0503 19:57:31.487454  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '699c6aed97ed604c7ecf4ff8b9b2c771'
+I0503 19:57:31.489331  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:57:31.489578  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582246
+I0503 19:57:31.489763  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '73b7079a57e118527d994083c5a8f29a' and HBTime > 1367582246
+I0503 19:57:31.489920  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '73b7079a57e118527d994083c5a8f29a'
+I0503 19:57:31.491740  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:57:31.491983  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582246
+I0503 19:57:31.492169  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7' and HBTime > 1367582246
+I0503 19:57:31.492328  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '1d988959d3d962bb6b3e6f68e5b7f6f7'
+I0503 19:57:31.494129  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:57:31.494410  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582246
+I0503 19:57:31.494596  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582246
+I0503 19:57:31.494753  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:57:31.497778  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582251.bmp')
+I0503 19:57:38.789701  3230 DBManager.cc:516] update MeetingUser set HBTime = 1367582258 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:57:38.791664  3230 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:57:40.913369  3277 DBManager.cc:540] delete from MeetingUser where   HBTime < 1367581960
+I0503 19:57:40.915293  3277 DBManager.cc:561] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0503 19:57:40.915740  3277 DBManager.cc:579] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0503 19:57:41.499977  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582256 order by id
+I0503 19:57:51.502207  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582266 order by id
+I0503 19:57:51.502888  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:57:51.503190  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582266
+I0503 19:57:51.503358  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582266
+I0503 19:57:51.503515  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:57:51.506463  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582271.bmp')
+I0503 19:57:58.835041  3230 DBManager.cc:516] update MeetingUser set HBTime = 1367582278 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:57:58.836964  3230 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:58:01.508684  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582276 order by id
+I0503 19:58:11.512995  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582286 order by id
+I0503 19:58:11.514127  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:58:11.514653  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582286
+I0503 19:58:11.515003  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582286
+I0503 19:58:11.515336  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:58:11.521270  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582291.bmp')
+I0503 19:58:18.909801  3230 DBManager.cc:516] update MeetingUser set HBTime = 1367582298 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:58:18.914304  3230 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:58:21.523634  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582296 order by id
+I0503 19:58:31.526048  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582306 order by id
+I0503 19:58:31.526644  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:58:31.526932  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582306
+I0503 19:58:31.527103  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582306
+I0503 19:58:31.527256  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:58:31.530210  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582311.bmp')
+I0503 19:58:38.973440  3230 DBManager.cc:516] update MeetingUser set HBTime = 1367582318 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:58:38.975393  3230 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:58:41.532567  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582316 order by id
+I0503 19:58:51.534849  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582326 order by id
+I0503 19:58:51.535712  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:58:51.536005  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582326
+I0503 19:58:51.536175  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582326
+I0503 19:58:51.536322  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:58:51.539368  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582331.bmp')
+I0503 19:58:59.040210  3225 DBManager.cc:516] update MeetingUser set HBTime = 1367582339 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:58:59.044311  3225 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:59:01.543519  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582336 order by id
+I0503 19:59:11.547090  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582346 order by id
+I0503 19:59:11.548249  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:59:11.548765  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582346
+I0503 19:59:11.549074  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582346
+I0503 19:59:11.549384  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:59:11.555469  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582351.bmp')
+I0503 19:59:19.123139  3246 DBManager.cc:516] update MeetingUser set HBTime = 1367582359 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:59:19.127290  3246 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:59:21.559774  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582356 order by id
+I0503 19:59:31.563524  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582366 order by id
+I0503 19:59:31.564709  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:59:31.565419  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582366
+I0503 19:59:31.565815  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582366
+I0503 19:59:31.566197  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:59:31.572674  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582371.bmp')
+I0503 19:59:39.219025  3264 DBManager.cc:516] update MeetingUser set HBTime = 1367582379 where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:59:39.223350  3264 DBManager.cc:399] select State from MeetingUser where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and UserID = 'Rrrrrrr'
+I0503 19:59:41.576848  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582376 order by id
+I0503 19:59:51.580404  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582386 order by id
+I0503 19:59:51.581660  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:59:51.582197  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582386
+I0503 19:59:51.582509  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582386
+I0503 19:59:51.582829  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 19:59:51.588938  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582391.bmp')
+I0503 20:00:01.592365  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582396 order by id
+I0503 20:00:01.593582  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:01.594081  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582396
+I0503 20:00:01.594389  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582396
+I0503 20:00:01.594699  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:01.600703  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582401.bmp')
+I0503 20:00:11.604118  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582406 order by id
+I0503 20:00:11.605212  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:11.605715  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582406
+I0503 20:00:11.606026  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582406
+I0503 20:00:11.606333  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:11.612339  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582411.bmp')
+I0503 20:00:21.617146  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582416 order by id
+I0503 20:00:21.618446  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:21.619035  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582416
+I0503 20:00:21.619421  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582416
+I0503 20:00:21.619810  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:21.625174  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582421.bmp')
+I0503 20:00:27.395906  3271 DBManager.cc:77] insert into Meeting (state) values (0)
+I0503 20:00:27.399981  3271 DBManager.cc:95] update Meeting set MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' where   id = 3907
+I0503 20:00:31.511172  3211 DBManager.cc:347] select state from Meeting where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:00:31.512657  3211 DBManager.cc:163] update Meeting set state = 1 where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:00:31.514405  3211 DBManager.cc:368] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('4eb7d067576338b019cf2f5ad9e7b8d6', 'T', 3, 1367582431)
+E0503 20:00:31.514746  3211 MeetingHandler.cc:78] create meeting updater
+I0503 20:00:31.520164  3211 DBManager.cc:185] update Meeting set DataRef = 28344032 where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:00:31.525590  3211 DBManager.cc:117] update Meeting set Port = 11249 where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+E0503 20:00:31.528337  3211 MeetingHandler.cc:98] join msg return
+I0503 20:00:31.532266  3211 DBManager.cc:141] select Port from Meeting where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+E0503 20:00:31.532940  3211 MeetingHandler.cc:119] 192.168.1.109
+I0503 20:00:31.561725  3264 DBManager.cc:516] update MeetingUser set HBTime = 1367582431 where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and UserID = 'T'
+I0503 20:00:31.566026  3264 DBManager.cc:399] select State from MeetingUser where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and UserID = 'T'
+I0503 20:00:31.628399  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582426 order by id
+I0503 20:00:31.629426  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:31.629942  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582426
+I0503 20:00:31.631357  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582426
+I0503 20:00:31.631841  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:31.638006  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582431.bmp')
+I0503 20:00:41.641506  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582436 order by id
+I0503 20:00:41.642609  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:41.643146  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582436
+I0503 20:00:41.643599  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582436
+I0503 20:00:41.644006  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:41.648149  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:00:41.648653  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582436
+I0503 20:00:41.649006  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582436
+I0503 20:00:41.649344  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:00:41.655411  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582441.bmp')
+I0503 20:00:41.661231  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582441.bmp')
+I0503 20:00:51.655228  3260 DBManager.cc:516] update MeetingUser set HBTime = 1367582451 where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and UserID = 'T'
+I0503 20:00:51.659698  3260 DBManager.cc:399] select State from MeetingUser where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and UserID = 'T'
+I0503 20:00:51.665251  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582446 order by id
+I0503 20:00:51.666213  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:51.666760  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582446
+I0503 20:00:51.667127  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582446
+I0503 20:00:51.667516  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:00:51.674114  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582451.bmp')
+I0503 20:01:01.678562  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582456 order by id
+I0503 20:01:01.679915  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:01.680459  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582456
+I0503 20:01:01.680872  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582456
+I0503 20:01:01.681206  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:01.685272  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:01.685775  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582456
+I0503 20:01:01.686159  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582456
+I0503 20:01:01.686496  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:01.692649  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582461.bmp')
+I0503 20:01:01.698601  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582461.bmp')
+I0503 20:01:11.702124  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582466 order by id
+I0503 20:01:11.703368  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:11.703913  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582466
+I0503 20:01:11.704274  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582466
+I0503 20:01:11.704610  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:11.708773  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:11.709282  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582466
+I0503 20:01:11.709689  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582466
+I0503 20:01:11.710070  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:11.716078  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582471.bmp')
+I0503 20:01:11.721856  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582471.bmp')
+I0503 20:01:11.748466  3217 DBManager.cc:516] update MeetingUser set HBTime = 1367582471 where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and UserID = 'T'
+I0503 20:01:11.751261  3217 DBManager.cc:399] select State from MeetingUser where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and UserID = 'T'
+I0503 20:01:21.726248  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582476 order by id
+I0503 20:01:21.727545  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:21.728164  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582476
+I0503 20:01:21.728622  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582476
+I0503 20:01:21.729007  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:21.733091  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:21.733597  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582476
+I0503 20:01:21.733957  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582476
+I0503 20:01:21.734288  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:21.741099  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582481.bmp')
+I0503 20:01:21.746933  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582481.bmp')
+I0503 20:01:31.751240  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582486 order by id
+I0503 20:01:31.752482  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:31.753089  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582486
+I0503 20:01:31.753497  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582486
+I0503 20:01:31.753885  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:31.757997  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:31.758522  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582486
+I0503 20:01:31.758903  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582486
+I0503 20:01:31.759258  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:31.765280  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582491.bmp')
+I0503 20:01:31.770988  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582491.bmp')
+I0503 20:01:41.774268  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582496 order by id
+I0503 20:01:41.775584  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:41.776134  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582496
+I0503 20:01:41.776499  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582496
+I0503 20:01:41.776892  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:41.780859  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:41.781354  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582496
+I0503 20:01:41.781705  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582496
+I0503 20:01:41.782042  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:41.788013  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582501.bmp')
+I0503 20:01:41.793606  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582501.bmp')
+I0503 20:01:51.413954  3253 DBManager.cc:77] insert into Meeting (state) values (0)
+I0503 20:01:51.417804  3253 DBManager.cc:95] update Meeting set MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' where   id = 3908
+I0503 20:01:51.796998  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582506 order by id
+I0503 20:01:51.798115  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:51.798612  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582506
+I0503 20:01:51.798993  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582506
+I0503 20:01:51.799412  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:01:51.803402  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:51.803879  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582506
+I0503 20:01:51.804218  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582506
+I0503 20:01:51.804539  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:01:51.809453  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582511.bmp')
+I0503 20:01:51.813344  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582511.bmp')
+I0503 20:01:54.952652  3231 DBManager.cc:347] select state from Meeting where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:01:54.953788  3231 DBManager.cc:163] update Meeting set state = 1 where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:01:54.955657  3231 DBManager.cc:368] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('be6b82a6fc762ed9fec5258aac9b1e86', 'R', 3, 1367582514)
+E0503 20:01:54.955867  3231 MeetingHandler.cc:78] create meeting updater
+I0503 20:01:54.959393  3231 DBManager.cc:185] update Meeting set DataRef = 28483312 where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:01:54.962743  3231 DBManager.cc:117] update Meeting set Port = 11248 where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+E0503 20:01:54.963870  3231 MeetingHandler.cc:98] join msg return
+I0503 20:01:54.965585  3231 DBManager.cc:141] select Port from Meeting where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+E0503 20:01:54.965925  3231 MeetingHandler.cc:119] 192.168.1.109
+I0503 20:01:54.995005  3223 DBManager.cc:516] update MeetingUser set HBTime = 1367582514 where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:01:54.997319  3223 DBManager.cc:399] select State from MeetingUser where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:02:01.817510  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582516 order by id
+I0503 20:02:01.818661  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:01.819218  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582516
+I0503 20:02:01.819576  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582516
+I0503 20:02:01.819919  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:01.823945  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:01.824414  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582516
+I0503 20:02:01.824839  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582516
+I0503 20:02:01.825176  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:01.829135  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:01.829602  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582516
+I0503 20:02:01.829954  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582516
+I0503 20:02:01.830292  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:01.836515  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582521.bmp')
+I0503 20:02:01.842438  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582521.bmp')
+I0503 20:02:01.848405  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582521.bmp')
+I0503 20:02:11.851860  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582526 order by id
+I0503 20:02:11.853111  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:11.853613  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582526
+I0503 20:02:11.853967  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582526
+I0503 20:02:11.854303  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:11.858305  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:11.858774  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582526
+I0503 20:02:11.859146  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582526
+I0503 20:02:11.859485  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:11.863565  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:11.864073  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582526
+I0503 20:02:11.864426  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582526
+I0503 20:02:11.864763  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:11.870954  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582531.bmp')
+I0503 20:02:11.876564  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582531.bmp')
+I0503 20:02:11.883033  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582531.bmp')
+I0503 20:02:15.072046  3223 DBManager.cc:516] update MeetingUser set HBTime = 1367582535 where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:02:15.075899  3223 DBManager.cc:399] select State from MeetingUser where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:02:21.885356  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582536 order by id
+I0503 20:02:21.886198  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:21.886473  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582536
+I0503 20:02:21.886658  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582536
+I0503 20:02:21.886821  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:21.889036  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:21.889302  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582536
+I0503 20:02:21.889494  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582536
+I0503 20:02:21.889652  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:21.891518  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:21.891773  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582536
+I0503 20:02:21.891959  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582536
+I0503 20:02:21.892117  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:21.895091  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582541.bmp')
+I0503 20:02:21.897989  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582541.bmp')
+I0503 20:02:21.900912  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582541.bmp')
+I0503 20:02:31.903115  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582546 order by id
+I0503 20:02:31.903756  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:31.904012  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582546
+I0503 20:02:31.904193  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582546
+I0503 20:02:31.904371  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:31.906231  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:31.906481  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582546
+I0503 20:02:31.906671  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582546
+I0503 20:02:31.906826  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:31.908699  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:31.908984  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582546
+I0503 20:02:31.909174  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582546
+I0503 20:02:31.909334  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:31.912360  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582551.bmp')
+I0503 20:02:31.915459  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582551.bmp')
+I0503 20:02:31.918341  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582551.bmp')
+I0503 20:02:35.159134  3247 DBManager.cc:516] update MeetingUser set HBTime = 1367582555 where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:02:35.161186  3247 DBManager.cc:399] select State from MeetingUser where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:02:40.920480  3277 DBManager.cc:540] delete from MeetingUser where   HBTime < 1367582260
+I0503 20:02:40.924408  3277 DBManager.cc:561] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0503 20:02:40.925304  3277 DBManager.cc:579] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0503 20:02:41.922808  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582556 order by id
+I0503 20:02:41.924098  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:41.924623  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582556
+I0503 20:02:41.924976  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582556
+I0503 20:02:41.925318  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:41.929294  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:41.929764  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582556
+I0503 20:02:41.930116  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582556
+I0503 20:02:41.930451  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:41.934464  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:41.934958  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582556
+I0503 20:02:41.935322  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582556
+I0503 20:02:41.935660  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:41.941696  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582561.bmp')
+I0503 20:02:41.949270  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582561.bmp')
+I0503 20:02:41.955314  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582561.bmp')
+I0503 20:02:51.958631  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582566 order by id
+I0503 20:02:51.960077  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:51.960618  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582566
+I0503 20:02:51.960976  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582566
+I0503 20:02:51.961321  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:02:51.965327  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:51.965795  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582566
+I0503 20:02:51.966145  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582566
+I0503 20:02:51.966487  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:02:51.970540  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:51.971052  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582566
+I0503 20:02:51.971410  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582566
+I0503 20:02:51.971746  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:02:51.977715  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582571.bmp')
+I0503 20:02:51.983360  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582571.bmp')
+I0503 20:02:51.988952  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582571.bmp')
+I0503 20:02:55.226783  3242 DBManager.cc:516] update MeetingUser set HBTime = 1367582575 where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:02:55.230988  3242 DBManager.cc:399] select State from MeetingUser where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:03:01.993281  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582576 order by id
+I0503 20:03:01.994511  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:01.995163  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582576
+I0503 20:03:01.995589  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582576
+I0503 20:03:01.995946  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:01.999989  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:02.000444  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582576
+I0503 20:03:02.000784  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582576
+I0503 20:03:02.001154  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:02.005089  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:02.005622  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582576
+I0503 20:03:02.006060  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582576
+I0503 20:03:02.006427  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:02.012505  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582582.bmp')
+I0503 20:03:02.018203  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582582.bmp')
+I0503 20:03:02.024212  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582582.bmp')
+I0503 20:03:12.027797  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582587 order by id
+I0503 20:03:12.029018  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:12.029517  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582587
+I0503 20:03:12.029870  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582587
+I0503 20:03:12.030215  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:12.034564  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:12.035205  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582587
+I0503 20:03:12.035568  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582587
+I0503 20:03:12.035908  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:12.039927  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:12.040422  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582587
+I0503 20:03:12.040776  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582587
+I0503 20:03:12.041100  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:12.047122  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582592.bmp')
+I0503 20:03:12.052875  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582592.bmp')
+I0503 20:03:12.058706  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582592.bmp')
+I0503 20:03:15.306378  3223 DBManager.cc:516] update MeetingUser set HBTime = 1367582595 where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:03:15.310801  3223 DBManager.cc:399] select State from MeetingUser where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:03:22.063004  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582597 order by id
+I0503 20:03:22.064271  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:22.064785  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582597
+I0503 20:03:22.065143  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582597
+I0503 20:03:22.065485  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:22.069468  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:22.069937  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582597
+I0503 20:03:22.070287  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582597
+I0503 20:03:22.070623  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:22.074682  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:22.075266  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582597
+I0503 20:03:22.075657  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582597
+I0503 20:03:22.075991  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:22.082021  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582602.bmp')
+I0503 20:03:22.087755  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582602.bmp')
+I0503 20:03:22.093358  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582602.bmp')
+I0503 20:03:32.096701  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582607 order by id
+I0503 20:03:32.097966  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:32.098500  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582607
+I0503 20:03:32.098961  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582607
+I0503 20:03:32.099359  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:32.104943  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:32.105640  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582607
+I0503 20:03:32.106102  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582607
+I0503 20:03:32.106523  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:32.111696  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:32.112050  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582607
+I0503 20:03:32.112262  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582607
+I0503 20:03:32.112457  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:32.116804  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582612.bmp')
+I0503 20:03:32.120851  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582612.bmp')
+I0503 20:03:32.125017  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582612.bmp')
+I0503 20:03:35.350527  3225 DBManager.cc:516] update MeetingUser set HBTime = 1367582615 where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:03:35.352499  3225 DBManager.cc:399] select State from MeetingUser where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and UserID = 'R'
+I0503 20:03:42.127337  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582617 order by id
+I0503 20:03:42.127933  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:42.128201  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582617
+I0503 20:03:42.128381  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582617
+I0503 20:03:42.128550  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:42.130414  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:42.130672  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582617
+I0503 20:03:42.130863  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582617
+I0503 20:03:42.131047  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:42.132951  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:42.133205  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582617
+I0503 20:03:42.133396  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582617
+I0503 20:03:42.133555  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:42.136560  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582622.bmp')
+I0503 20:03:42.139471  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582622.bmp')
+I0503 20:03:42.142441  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582622.bmp')
+I0503 20:03:52.145725  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582627 order by id
+I0503 20:03:52.146944  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:52.147455  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582627
+I0503 20:03:52.147819  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582627
+I0503 20:03:52.148170  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:03:52.152210  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:52.152775  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582627
+I0503 20:03:52.153187  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582627
+I0503 20:03:52.153524  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:03:52.157495  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:52.157960  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582627
+I0503 20:03:52.158311  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582627
+I0503 20:03:52.158656  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:03:52.164813  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582632.bmp')
+I0503 20:03:52.170495  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582632.bmp')
+I0503 20:03:52.176219  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582632.bmp')
+I0503 20:04:02.179280  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582637 order by id
+I0503 20:04:02.180642  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:02.181323  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582637
+I0503 20:04:02.181721  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582637
+I0503 20:04:02.182068  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:02.186101  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:04:02.186617  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582637
+I0503 20:04:02.187016  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582637
+I0503 20:04:02.187352  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:04:02.191447  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:04:02.192100  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582637
+I0503 20:04:02.192503  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582637
+I0503 20:04:02.192829  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:04:02.196954  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582642.bmp')
+I0503 20:04:02.199940  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582642.bmp')
+I0503 20:04:02.203057  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582642.bmp')
+I0503 20:04:12.205267  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582647 order by id
+I0503 20:04:12.205907  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:12.206166  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582647
+I0503 20:04:12.206341  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582647
+I0503 20:04:12.206503  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:12.208355  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:04:12.208618  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582647
+I0503 20:04:12.208808  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582647
+I0503 20:04:12.208966  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:04:12.210777  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:04:12.211040  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582647
+I0503 20:04:12.211222  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582647
+I0503 20:04:12.211380  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:04:12.214344  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582652.bmp')
+I0503 20:04:12.217279  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582652.bmp')
+I0503 20:04:12.220176  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582652.bmp')
+I0503 20:04:22.224330  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582657 order by id
+I0503 20:04:22.225687  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:22.226187  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582657
+I0503 20:04:22.226608  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582657
+I0503 20:04:22.226990  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:22.230963  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:04:22.231422  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582657
+I0503 20:04:22.231763  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582657
+I0503 20:04:22.232089  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:04:22.236029  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:04:22.236518  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582657
+I0503 20:04:22.236858  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582657
+I0503 20:04:22.237215  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:04:22.243425  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582662.bmp')
+I0503 20:04:22.249217  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582662.bmp')
+I0503 20:04:22.254870  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582662.bmp')
+I0503 20:04:25.051921  3271 DBManager.cc:77] insert into Meeting (state) values (0)
+I0503 20:04:25.055924  3271 DBManager.cc:95] update Meeting set MeetingID = '00d4ac06f06e581a57e0d5e538fd57af' where   id = 3909
+I0503 20:04:25.540702  3271 DBManager.cc:77] insert into Meeting (state) values (0)
+I0503 20:04:25.544692  3271 DBManager.cc:95] update Meeting set MeetingID = 'b4eb061de99ff44b32e4e5f419e3617c' where   id = 3910
+I0503 20:04:29.549967  3271 DBManager.cc:347] select state from Meeting where   MeetingID = 'b4eb061de99ff44b32e4e5f419e3617c'
+I0503 20:04:29.551247  3271 DBManager.cc:163] update Meeting set state = 1 where   MeetingID = 'b4eb061de99ff44b32e4e5f419e3617c'
+I0503 20:04:29.553192  3271 DBManager.cc:368] insert into MeetingUser(MeetingID, UserID,         State, HBTime)  values('b4eb061de99ff44b32e4e5f419e3617c', 'rRNA', 3, 1367582669)
+E0503 20:04:29.553544  3271 MeetingHandler.cc:78] create meeting updater
+I0503 20:04:29.558835  3271 DBManager.cc:185] update Meeting set DataRef = 28879664 where   MeetingID = 'b4eb061de99ff44b32e4e5f419e3617c'
+I0503 20:04:29.565235  3271 DBManager.cc:117] update Meeting set Port = 11247 where   MeetingID = 'b4eb061de99ff44b32e4e5f419e3617c'
+E0503 20:04:29.567616  3271 MeetingHandler.cc:98] join msg return
+I0503 20:04:29.571313  3271 DBManager.cc:141] select Port from Meeting where   MeetingID = 'b4eb061de99ff44b32e4e5f419e3617c'
+E0503 20:04:29.571928  3271 MeetingHandler.cc:119] 192.168.1.109
+I0503 20:04:29.623811  3273 DBManager.cc:516] update MeetingUser set HBTime = 1367582669 where   MeetingID = 'b4eb061de99ff44b32e4e5f419e3617c' and UserID = 'rRNA'
+I0503 20:04:29.628247  3273 DBManager.cc:399] select State from MeetingUser where   MeetingID = 'b4eb061de99ff44b32e4e5f419e3617c' and UserID = 'rRNA'
+I0503 20:04:32.258155  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582667 order by id
+I0503 20:04:32.259280  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:32.259866  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582667
+I0503 20:04:32.260224  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582667
+I0503 20:04:32.260563  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:32.264570  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:04:32.265041  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582667
+I0503 20:04:32.265386  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6' and HBTime > 1367582667
+I0503 20:04:32.265723  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:04:32.269836  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:04:32.270299  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582667
+I0503 20:04:32.270638  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86' and HBTime > 1367582667
+I0503 20:04:32.270994  3276 DBManager.cc:721] update MeetingUser set State = 3 where       State = 4 and MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:04:32.277019  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('8156a82179f98dc175a9fb9a1a378f22','/root/picture/8156a82179f98dc175a9fb9a1a378f22-1367582672.bmp')
+I0503 20:04:32.282732  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('4eb7d067576338b019cf2f5ad9e7b8d6','/root/picture/4eb7d067576338b019cf2f5ad9e7b8d6-1367582672.bmp')
+I0503 20:04:32.288342  3276 DBManager.cc:232] insert into MeetingDocument (MeetingID, path)   values ('be6b82a6fc762ed9fec5258aac9b1e86','/root/picture/be6b82a6fc762ed9fec5258aac9b1e86-1367582672.bmp')
+I0503 20:04:32.348346  3173 DBManager.cc:141] select Port from Meeting where   MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:32.354579  3173 DBManager.cc:141] select Port from Meeting where   MeetingID = 'b4eb061de99ff44b32e4e5f419e3617c'
+I0503 20:04:32.359642  3173 DBManager.cc:141] select Port from Meeting where   MeetingID = 'be6b82a6fc762ed9fec5258aac9b1e86'
+I0503 20:04:32.365020  3173 DBManager.cc:141] select Port from Meeting where   MeetingID = '4eb7d067576338b019cf2f5ad9e7b8d6'
+I0503 20:04:42.291765  3276 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367582677 order by id
+I0503 20:04:42.293045  3276 DBManager.cc:654] update MeetingUser set State = 4 where   State = 3 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22'
+I0503 20:04:42.293547  3276 DBManager.cc:661] select UserID from MeetingUser where     State = 2 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582677
+I0503 20:04:42.293911  3276 DBManager.cc:683] select UserID from MeetingUser where     State = 1 and MeetingID = '8156a82179f98dc175a9fb9a1a378f22' and HBTime > 1367582677
+I0503 20:04:42.294246  3276 DBManager.cc:721] update MeetingUser set Stat

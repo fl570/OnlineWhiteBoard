@@ -20,6 +20,7 @@
 
 RCF_BEGIN(Updater, "Updater")
     RCF_METHOD_R1(bool, WriteOperationToPool, const Operation&)
+    RCF_METHOD_R2(bool, SetDocument, const std::string&, uint32_t)
 RCF_END(Updater)
 
 RCF_BEGIN(Monitor, "Monitor")
@@ -36,10 +37,10 @@ RCF_BEGIN(Monitor, "Monitor")
 RCF_END(Monitor)
 
 RCF_BEGIN(Provider, "Provider")
-    RCF_METHOD_R2(Operations, GetOperations, const std::string&, int32_t)
+    RCF_METHOD_R2(Operations, GetOperations, const std::string&, uint32_t)
     RCF_METHOD_R1(Document, GetLatestDocument, const std::string&)
     RCF_METHOD_R1(DocumentList, GetHistorySnapshots, const std::string&)
-    RCF_METHOD_R2(Document, GetDocument, const std::string&, int32_t)
+    RCF_METHOD_R2(Document, GetDocument, const std::string&, uint32_t)
 RCF_END(Provider)
 
 

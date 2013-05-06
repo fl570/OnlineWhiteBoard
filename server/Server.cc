@@ -31,8 +31,10 @@ void* host_check_thread(void* para) {
     sleep(10);
     Meeting_ID = Check_Handler->CheckHost(size);
     for (int i = 0; i < size; i++) {
-    Meeting_Handler->TransferHostDraw(Meeting_ID[i]);
+      Meeting_Handler->TransferHostDraw(Meeting_ID[i]);
     }
+    if (Meeting_ID != NULL)
+      delete []Meeting_ID;
   }
   delete Check_Handler;
   return ((void*)0);
@@ -49,6 +51,8 @@ void* user_check_thread(void* para) {
     for (int i = 0; i < size; i++) {
       Meeting_Handler->DeleteMeeting(Meeting_ID[i]);
     }
+    if (Meeting_ID != NULL)
+      delete []Meeting_ID;
   }
   delete Check_Handler;
   return ((void*)0);
@@ -99,12 +103,12 @@ int main(int argc, char **argv) {
   alive = false;
   monitor->stop();
   data_provider->stop();
+  pthread_join(host_check_tid, NULL);
+  pthread_join(user_check_tid, NULL);
   delete data_provider;
   delete monitor;
   delete monitor_imp;
   delete data_provider_imp;
-  pthread_join(host_check_tid, NULL);
-  pthread_join(user_check_tid, NULL);
   std::cout << "server stoped"<<std::endl;
   google::ShutdownGoogleLogging();
   return 0;

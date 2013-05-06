@@ -1,0 +1,36 @@
+Log file created at: 2013/05/06 09:08:01
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0506 09:08:01.587275  2028 DBManager.cc:540] delete from MeetingUser where   HBTime < 1367802181
+I0506 09:08:01.587280  2029 DBManager.cc:540] delete from MeetingUser where   HBTime < 1367802181
+I0506 09:08:01.595346  2029 DBManager.cc:561] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0506 09:08:01.595393  2028 DBManager.cc:561] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
+I0506 09:08:01.612280  2029 DBManager.cc:579] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0506 09:08:01.612280  2028 DBManager.cc:579] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)
+I0506 09:08:11.615741  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802486 order by id
+I0506 09:08:21.619113  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802496 order by id
+I0506 09:08:31.623697  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802506 order by id
+I0506 09:08:41.627318  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802516 order by id
+I0506 09:08:51.630926  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802526 order by id
+I0506 09:09:01.634440  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802536 order by id
+I0506 09:09:11.638066  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802546 order by id
+I0506 09:09:21.641737  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802556 order by id
+I0506 09:09:31.646306  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802566 order by id
+I0506 09:09:41.649793  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802576 order by id
+I0506 09:09:51.654476  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802586 order by id
+I0506 09:10:01.658880  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802596 order by id
+I0506 09:10:11.662514  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802606 order by id
+I0506 09:10:21.666103  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802616 order by id
+I0506 09:10:31.669780  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802626 order by id
+I0506 09:10:41.673985  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802636 order by id
+I0506 09:10:51.678496  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802646 order by id
+I0506 09:11:01.683035  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802656 order by id
+I0506 09:11:11.687054  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802666 order by id
+I0506 09:11:21.691478  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802676 order by id
+I0506 09:11:31.696025  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802686 order by id
+I0506 09:11:41.699511  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802696 order by id
+I0506 09:11:51.703956  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802706 order by id
+I0506 09:12:01.707424  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802716 order by id
+I0506 09:12:11.711307  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802726 order by id
+I0506 09:12:21.714761  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802736 order by id
+I0506 09:12:31.718307  2028 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367802746 order by id

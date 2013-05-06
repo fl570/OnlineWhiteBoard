@@ -10,6 +10,8 @@
 #ifndef KINGSLANDING_ONLINEWHITEBOARD_SERVER_DRAWOPERATION_DRAWOPERATION_H_
 #define KINGSLANDING_ONLINEWHITEBOARD_SERVER_DRAWOPERATION_DRAWOPERATION_H_
 
+#include <boost/thread/shared_mutex.hpp>
+#include <boost/thread/locks.hpp>
 #include <opencv/highgui.h>
 #include <opencv2/core/core.hpp>
 #include <string>
@@ -30,13 +32,19 @@ namespace Kingslanding {
 namespace OnlineWhiteBoard {
 namespace Server {
 namespace DrawOperation {
+
+struct PathInfo {
+  std::string path;
+  unsigned int number;
+};
 class DrawOperation {
 public:
     explicit DrawOperation(std::string meeting_id);
-    // ~DrawOperation();
-    void Draw(Operation op);
-    std::string SaveAsBmp();
+    ~DrawOperation();
+    void Draw(Operation op, unsigned int num);
+    PathInfo SaveAsBmp(int i);
     void Show();
+    bool Load(const std::string& path);
 
 private:
     std::string meeting_id_;
@@ -49,6 +57,7 @@ private:
     int xb_;
     int ya_;
     int yb_;
+    unsigned int serial_num_;
     cv::Mat picture_;
     DrawCircle circle;
     DrawTransCircle transCircle;
@@ -59,6 +68,7 @@ private:
     DrawLine line;
     DrawPoint point;
     DrawEraser eraser;
+    boost::shared_mutex draw_mutex_;
 };
 }  // DrawOperation
 }  // Server

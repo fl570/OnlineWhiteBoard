@@ -606,14 +606,14 @@ std::string* DBManager::GetDeadHostMeeting(int& size) {
     size = mysql_num_rows(res_);
     if (0 != size) {
       res = new std::string[size];
+      int index = 0;
       for (int i = 0; i < size; i++) {
         row_ = mysql_fetch_row(res_);
-        res[i] = row_[0];
-        int back = TransferAuth(res[i]);
+        int back = TransferAuth(row_[0]);
         switch (back) {
            case -3:
              snprintf(sql, sizeof(sql), "update MeetingUser set State = 1 where \
-             State = 4 and MeetingID = '%s'", res[i].c_str());
+             State = 4 and MeetingID = '%s'", row_[0]);
 	     LOG(INFO) << sql;
              if (mysql_query(conn, sql)) {
                 LOG(ERROR) << "transferAuth" << mysql_error(conn);
@@ -621,16 +621,21 @@ std::string* DBManager::GetDeadHostMeeting(int& size) {
              break;
            case -4:
              snprintf(sql, sizeof(sql), "update MeetingUser set State = 3 where \
-             State = 4 and MeetingID = '%s'", res[i].c_str());
+             State = 4 and MeetingID = '%s'", row_[0]);
 	     LOG(INFO) << sql;
               if (mysql_query(conn, sql)) {
                  LOG(ERROR) << "transferAuth" << mysql_error(conn);
               }
               break;
+	   case 1:
+	      res[index] = row_[0];
+	      index++;
+	      break;
            default:
               break;
          }
       }
+      size = index;
     }
     mysql_free_result(res_);
   }

@@ -13,6 +13,9 @@ namespace OnlineWhiteBoard {
 namespace Server {
 namespace Check {
 CheckHandler::CheckHandler() : MsgHandler() {
+  int size;
+  db_manager_->DeleteDeadUser();
+  db_manager_->GetDeadMeeting(size);
 }
 
 std::string* CheckHandler::CheckHost(int& size) {

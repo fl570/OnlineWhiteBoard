@@ -35,13 +35,14 @@ Document DocumentHandler::GetDocument(const std::string& meeting_id, int documen
 }
 
 Document DocumentHandler::GetCurrentDocument(const std::string& meeting_id) {
-  Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation* draw_operation = meeting_handler->GetDrawOperation(meeting_id);
-  const std::string path = draw_operation->SaveAsBmp();
+  Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation* draw_operation =
+  meeting_handler->GetDrawOperation(meeting_id);
+  DrawOperation::PathInfo path_info = draw_operation->SaveAsBmp(2);
   IplImage* img;
-  img = cvLoadImage(path.c_str(), 1);
+  img = cvLoadImage(path_info.path.c_str(), 1);
   uchar* data =(uchar*) img->imageData;
   Document document;
-  document.set_serial_number(0);
+  document.set_serial_number(path_info.number);
   document.set_data((char*)data);
   cvReleaseImage(&img);
   return document;
@@ -53,7 +54,7 @@ DocumentList DocumentHandler::GetHistorySnapshots(const std::string& meeting_id)
   int size;
   IplImage* img;
   IplImage* history_img;
-  DBManager::DocumentInfo * res = db_manager_->GetHistoryDocuments(meeting_id, size);
+  DBManager::DocumentInfo *res = db_manager_->GetHistoryDocuments(meeting_id, size);
   for(int i = 0; i < size; i++) {
     Document* history_document = list.add_history_document();
     img = cvLoadImage(res[i].path, 1);
@@ -61,6 +62,9 @@ DocumentList DocumentHandler::GetHistorySnapshots(const std::string& meeting_id)
     uchar* data =(uchar*) history_img->imageData;
     history_document->set_serial_number(res[i].serial_number);
     history_document->set_data((char*)data);
+  }
+  if (res != NULL) {
+    delete []res;
   }
   cvReleaseImage(&img);
   cvReleaseImage(&history_img);

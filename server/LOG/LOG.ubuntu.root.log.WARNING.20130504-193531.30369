@@ -1,0 +1,59 @@
+Log file created at: 2013/05/04 19:35:31
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0504 19:35:31.396879 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:35:41.410640 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:35:51.422617 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:36:01.432337 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:36:11.440181 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:36:21.450644 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:36:31.462311 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:36:41.470113 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:36:51.481688 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:37:01.493396 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:37:11.501937 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:37:21.513818 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:37:31.525588 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:37:41.533145 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:37:51.545001 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:38:01.556164 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:38:11.571049 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:38:21.582898 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:38:31.594527 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:38:41.605983 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:38:51.618224 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:39:01.629539 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:39:11.641356 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:39:21.652802 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:39:31.663352 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:39:41.675330 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:39:51.685009 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 19:40:01.696735 30472 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1

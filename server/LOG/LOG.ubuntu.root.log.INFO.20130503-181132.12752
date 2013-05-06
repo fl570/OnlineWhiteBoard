@@ -1,0 +1,12 @@
+Log file created at: 2013/05/03 18:11:32
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+I0503 18:11:32.718004 12855 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367575887 order by id
+I0503 18:11:42.722991 12855 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367575897 order by id
+I0503 18:11:52.726531 12855 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367575907 order by id
+I0503 18:12:02.730986 12855 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367575917 order by id
+I0503 18:12:05.471514 12825 DBManager.cc:77] insert into Meeting (state) values (0)
+I0503 18:12:05.475563 12825 DBManager.cc:95] update Meeting set MeetingID = 'c2be501257849a47ff11c6f281ef3dbb' where   id = 3823
+I0503 18:12:12.734700 12855 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367575927 order by id
+I0503 18:12:22.738271 12855 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367575937 order by id
+I0503 18:12:32.742743 12855 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367575947 order by id

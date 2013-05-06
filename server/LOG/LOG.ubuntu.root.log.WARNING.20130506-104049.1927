@@ -1,0 +1,31 @@
+Log file created at: 2013/05/06 10:40:49
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0506 10:40:49.215217  2034 MeetingHandler.cc:78] create meeting updater
+E0506 10:40:49.251891  2034 MeetingHandler.cc:98] join msg return
+E0506 11:11:38.110630  2000 MeetingHandler.cc:78] create meeting updater
+E0506 11:11:38.121520  2000 MeetingHandler.cc:98] join msg return
+E0506 11:21:42.217097  1980 MeetingHandler.cc:78] create meeting updater
+E0506 11:21:42.228279  1980 MeetingHandler.cc:98] join msg return
+E0506 11:23:46.374598  2020 MeetingHandler.cc:78] create meeting updater
+E0506 11:23:46.382488  2020 MeetingHandler.cc:98] join msg return
+E0506 11:30:06.532940  1967 MeetingHandler.cc:78] create meeting updater
+E0506 11:30:06.538214  1967 MeetingHandler.cc:98] join msg return
+E0506 11:33:21.184490  1964 MeetingHandler.cc:78] create meeting updater
+E0506 11:33:21.195716  1964 MeetingHandler.cc:98] join msg return
+E0506 11:38:41.289212  1966 MeetingHandler.cc:78] create meeting updater
+E0506 11:38:41.301432  1966 MeetingHandler.cc:98] join msg return
+E0506 11:41:10.406548  2018 MeetingHandler.cc:78] create meeting updater
+E0506 11:41:10.417342  2018 MeetingHandler.cc:98] join msg return
+E0506 11:46:52.790325  1984 MeetingHandler.cc:78] create meeting updater
+E0506 11:46:52.801226  1984 MeetingHandler.cc:98] join msg return
+E0506 11:55:42.535161  1945 MeetingHandler.cc:78] create meeting updater
+E0506 11:55:42.545979  1945 MeetingHandler.cc:98] join msg return
+E0506 12:00:38.132462  2037 MeetingHandler.cc:78] create meeting updater
+E0506 12:00:38.144654  2037 MeetingHandler.cc:98] join msg return
+E0506 12:01:38.267436  1986 MeetingHandler.cc:78] create meeting updater
+E0506 12:01:38.275411  1986 MeetingHandler.cc:98] join msg return
+E0506 12:05:44.923657  1947 MeetingHandler.cc:78] create meeting updater
+E0506 12:05:44.931547  1947 MeetingHandler.cc:98] join msg return
+E0506 12:26:27.390347  1999 MeetingHandler.cc:78] create meeting updater
+E0506 12:26:27.397794  1999 MeetingHandler.cc:98] join msg return

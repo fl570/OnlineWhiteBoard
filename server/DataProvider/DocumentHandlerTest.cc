@@ -58,7 +58,7 @@ TEST_F(DocumentHandlerTest, GetDocument) {
     LOG(ERROR) << e.getError().getErrorString();
   }
  Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation* draw_operation = m->GetDrawOperation(id);
-  const std::string path = draw_operation->SaveAsBmp();
+  const std::string path = draw_operation->SaveAsBmp(1);
   Kingslanding::OnlineWhiteBoard::Server::DBManager::DBManager* db_manager_ = Kingslanding::OnlineWhiteBoard::Server::DBManager::DBManager::GetInstance();
   db_manager_->AddDocument(id, path);
   DocumentList list = d->GetHistorySnapshots(id);
@@ -96,7 +96,7 @@ TEST_F(DocumentHandlerTest, GetHistorySnapshots) {
     LOG(ERROR) << e.getError().getErrorString();
   }
   Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation* draw_operation = m->GetDrawOperation(id);
-  const std::string path = draw_operation->SaveAsBmp();
+  const std::string path = draw_operation->SaveAsBmp(1);
   Kingslanding::OnlineWhiteBoard::Server::DBManager::DBManager* db_manager_ = Kingslanding::OnlineWhiteBoard::Server::DBManager::DBManager::GetInstance();
   db_manager_->AddDocument(id, path);
   DocumentList list = d->GetHistorySnapshots(id);
@@ -135,7 +135,7 @@ TEST_F(DocumentHandlerTest, GetCurrentDocument) {
   }
   Document document = d->GetCurrentDocument(id);
   Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation* draw_operation = m->GetDrawOperation(id);
-  const std::string path = draw_operation->SaveAsBmp();
+  const std::string path = draw_operation->SaveAsBmp(1);
   Kingslanding::OnlineWhiteBoard::Server::DBManager::DBManager* db_manager_ = Kingslanding::OnlineWhiteBoard::Server::DBManager::DBManager::GetInstance();
   db_manager_->AddDocument(id, path);
   DocumentList list = d->GetHistorySnapshots(id);

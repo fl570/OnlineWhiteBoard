@@ -1,0 +1,51 @@
+Log file created at: 2013/05/04 20:22:34
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0504 20:22:34.709738  1769 MeetingHandler.cc:78] create meeting updater
+E0504 20:22:34.751818  1769 MeetingHandler.cc:98] join msg return
+E0504 20:53:58.234561  1714 MeetingHandler.cc:78] create meeting updater
+E0504 20:53:58.242244  1714 MeetingHandler.cc:98] join msg return
+E0504 21:02:13.887313  1692 MeetingHandler.cc:78] create meeting updater
+E0504 21:02:13.904029  1692 MeetingHandler.cc:98] join msg return
+E0504 21:02:49.861454  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:09:10.079041  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:09:20.087116  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:10:54.955521  1712 MeetingHandler.cc:78] create meeting updater
+E0504 21:10:54.966197  1712 MeetingHandler.cc:98] join msg return
+E0504 21:19:01.804786  1752 MeetingHandler.cc:78] create meeting updater
+E0504 21:19:01.814460  1752 MeetingHandler.cc:98] join msg return
+E0504 21:20:30.371662  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:20:40.380537  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:20:50.393358  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:21:00.399305  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:21:10.410846  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:21:20.419340  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:21:30.425173  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:21:40.432715  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:21:50.438837  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:22:00.446105  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:22:10.458781  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:22:20.467681  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:22:30.473985  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''ion name="hebrew_general_ci"	id="16"	order="Hebrew"	flag="primary"/>
+  <collati' at line 1
+E0504 21:22:36.364363  1690 MeetingHandler.cc:78] create meeting updater
+E0504 21:22:36.371624  1690 MeetingHandler.cc:98] join msg return
+E0504 21:22:40.482868  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1
+E0504 21:22:50.491037  1798 DBManager.cc:661] transferAuthYou have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''and/or modify
+  it under the terms of the GNU General Public License as publish' at line 1

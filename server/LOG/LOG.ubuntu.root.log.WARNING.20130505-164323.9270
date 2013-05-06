@@ -1,0 +1,45 @@
+Log file created at: 2013/05/05 16:43:23
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0505 16:43:23.229876  9336 MeetingHandler.cc:78] create meeting updater
+E0505 16:43:23.241153  9336 MeetingHandler.cc:98] join msg return
+E0505 16:45:01.486315  9351 MeetingHandler.cc:78] create meeting updater
+E0505 16:45:01.497437  9351 MeetingHandler.cc:98] join msg return
+E0505 16:49:26.394656  9318 MeetingHandler.cc:78] create meeting updater
+E0505 16:49:26.407218  9318 MeetingHandler.cc:98] join msg return
+E0505 17:16:12.364421  9297 MeetingHandler.cc:78] create meeting updater
+E0505 17:16:12.375567  9297 MeetingHandler.cc:98] join msg return
+E0505 17:22:26.511116  9348 MeetingHandler.cc:78] create meeting updater
+E0505 17:22:26.523242  9348 MeetingHandler.cc:98] join msg return
+E0505 17:24:48.770355  9353 MeetingHandler.cc:78] create meeting updater
+E0505 17:24:48.781321  9353 MeetingHandler.cc:98] join msg return
+E0505 17:27:15.656968  9309 MeetingHandler.cc:78] create meeting updater
+E0505 17:27:15.667490  9309 MeetingHandler.cc:98] join msg return
+E0505 17:48:42.792223  9309 MeetingHandler.cc:78] create meeting updater
+E0505 17:48:42.802429  9309 MeetingHandler.cc:98] join msg return
+E0505 18:17:47.034768  9361 MeetingHandler.cc:78] create meeting updater
+E0505 18:17:47.040472  9361 MeetingHandler.cc:98] join msg return
+E0505 18:30:11.687294  9285 MeetingHandler.cc:78] create meeting updater
+E0505 18:30:11.697655  9285 MeetingHandler.cc:98] join msg return
+E0505 18:32:34.361126  9324 MeetingHandler.cc:78] create meeting updater
+E0505 18:32:34.373703  9324 MeetingHandler.cc:98] join msg return
+E0505 18:36:15.625115  9358 MeetingHandler.cc:78] create meeting updater
+E0505 18:36:15.635591  9358 MeetingHandler.cc:98] join msg return
+E0505 18:37:51.243283  9332 MeetingHandler.cc:78] create meeting updater
+E0505 18:37:51.254494  9332 MeetingHandler.cc:98] join msg return
+E0505 19:21:03.999061  9358 MeetingHandler.cc:78] create meeting updater
+E0505 19:21:04.012768  9358 MeetingHandler.cc:98] join msg return
+E0505 19:21:56.374044  9319 MeetingHandler.cc:78] create meeting updater
+E0505 19:21:56.387392  9319 MeetingHandler.cc:98] join msg return
+E0505 19:22:39.634053  9365 MeetingHandler.cc:78] create meeting updater
+E0505 19:22:39.644556  9365 MeetingHandler.cc:98] join msg return
+E0505 19:33:17.441886  9291 MeetingHandler.cc:78] create meeting updater
+E0505 19:33:17.455610  9291 MeetingHandler.cc:98] join msg return
+E0505 20:05:11.914810  9289 MeetingHandler.cc:78] create meeting updater
+E0505 20:05:11.923401  9289 MeetingHandler.cc:98] join msg return
+E0505 20:08:24.942843  9334 MeetingHandler.cc:78] create meeting updater
+E0505 20:08:24.953328  9334 MeetingHandler.cc:98] join msg return
+E0505 20:16:26.952889  9349 MeetingHandler.cc:78] create meeting updater
+E0505 20:16:26.965051  9349 MeetingHandler.cc:98] join msg return
+E0505 20:23:58.061091  9365 MeetingHandler.cc:78] create meeting updater
+E0505 20:23:58.072410  9365 MeetingHandler.cc:98] join msg return

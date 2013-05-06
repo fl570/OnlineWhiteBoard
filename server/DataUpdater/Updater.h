@@ -11,6 +11,7 @@
 
 #define MEMCACHE Kingslanding::OnlineWhiteBoard::Server::DataProvider::MemoryCache
 #define DRAWOP Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation
+
 #include "../message.pb.h"
 #include "../DataProvider/MemoryCache.h"
 #include "../DrawOperation/DrawOperation.h"
@@ -24,9 +25,11 @@ public:
   UpdaterImp(MEMCACHE *, DRAWOP*);
   ~UpdaterImp();
   bool WriteOperationToPool(const Operation&);
+  bool SetDocument(const std::string&, uint32_t);
 private:
   MEMCACHE *mem_cache_;
   DRAWOP* draw_op_;
+  unsigned int lastest_id_;
 };
 }  // DataUpdater
 }  // Server

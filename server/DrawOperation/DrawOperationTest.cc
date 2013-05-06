@@ -51,7 +51,7 @@ TEST_F(DrawOperationTest, set) {
   point1->set_x(100);
   point1->set_y(100);
   d->Draw(op);
-  std::string path = d->SaveAsBmp();
+  std::string path = d->SaveAsBmp(1);
   time_t now = time(NULL);
   std::ostringstream bufstr;
   bufstr << now;

@@ -30,17 +30,17 @@ public:
       ~MemoryCache();
 
 public:
-      bool AddOperation(const Operation& oper);
+      bool AddOperation(const Operation&, unsigned int);
       bool SetState();
-      Operations GetOperationAfter(int operation_id);
-      Operations GetOperationFromStoreAfter(int operation_id);
+      Operations GetOperationAfter(unsigned int);
+      Operations GetOperationFromStoreAfter(unsigned int);
 
 private:
       bool IsEmpty() const;
       bool IsFull() const;
       bool GetCount() const;
-      bool AddOperationToSet(int set, const Operation& oper);
-      Operations GetOperationFromSet(int set, int operation_id);
+      bool AddOperationToSet(int, const Operation&, unsigned int);
+      Operations GetOperationFromSet(int, unsigned int);
       FORBIDDEN_EVIL_CONSTRUCTORS(MemoryCache);
 
 #ifdef DEBUG
@@ -55,9 +55,9 @@ private:
       int front_[2];
       int rear_[2];
       int size_[2];
-      int front_id_[2];
-      int rear_id_[2];
-      int index_;
+      unsigned int front_id_[2];
+      unsigned int rear_id_[2];
+      unsigned int index_;
       boost::shared_mutex g_mutex;
       const Operation** operation_[2];
 };

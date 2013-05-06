@@ -31,6 +31,9 @@ cv::Scalar DrawClass::SetColor(int color) {
     case 4:
       return cv::Scalar(0, 0, 255);  // 颜色为红色
       break;
+    case 5:
+      return cv::Scalar(0, 255, 255); //颜色为黄色
+      break;
   }
 }
 }  // DrawOperation

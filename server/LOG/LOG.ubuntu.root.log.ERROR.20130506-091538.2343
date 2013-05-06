@@ -1,0 +1,11 @@
+Log file created at: 2013/05/06 09:15:38
+Running on machine: ubuntu
+Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
+E0506 09:15:38.783085  2435 MeetingHandler.cc:78] create meeting updater
+E0506 09:15:38.808969  2435 MeetingHandler.cc:98] join msg return
+E0506 09:17:57.274699  2392 MeetingHandler.cc:78] create meeting updater
+E0506 09:17:57.285294  2392 MeetingHandler.cc:98] join msg return
+E0506 09:19:33.334249  2387 MeetingHandler.cc:78] create meeting updater
+E0506 09:19:33.345005  2387 MeetingHandler.cc:98] join msg return
+E0506 09:21:33.653774  2387 MeetingHandler.cc:78] create meeting updater
+E0506 09:21:33.665145  2387 MeetingHandler.cc:98] join msg return
