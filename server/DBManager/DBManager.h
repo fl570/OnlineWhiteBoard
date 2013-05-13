@@ -11,7 +11,7 @@
 
 #include <mysql/mysql.h>
 #include <string>
-
+#include "boost/thread/mutex.hpp"
 #include "../common.h"
 
 namespace Kingslanding {
@@ -76,6 +76,7 @@ private:
         }
     };
     static Garbo garbo_;
+    boost::mutex lock;
 };
 }  // DBManager
 }  // Server

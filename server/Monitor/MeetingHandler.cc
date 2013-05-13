@@ -48,7 +48,7 @@ std::string MeetingHandler::CreateMeeting(const std::string& user_id) {
   std::ostringstream ostr;
   ostr << id;
   str_id = ostr.str();
-  str_id = MD5(str_id).toString();
+  //str_id = MD5(str_id).toString();
   db_manager_->SetMeetingID(str_id, id);
   return str_id;
 }
@@ -75,14 +75,14 @@ JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, con
   } else {
     result = db_manager_->AddMeetingUser(meeting_id, user_id, 3);
   }
-  LOG(ERROR) << "create meeting updater";
+  
   if (result == 1) {
     if (!has_meeting) {
       MEMCACHE* mem =  new MEMCACHE();
       DRAWOP* draw_oper = new DRAWOP(meeting_id);
       UpdaterImpl *updater = new UpdaterImpl(mem, draw_oper);
       SetDataRef(meeting_id, mem);
-
+      LOG(ERROR) << "create meeting updater";
       int port = AddMeetingPort(meeting_id);      
       RCF::RcfServer *server = new RCF::RcfServer( RCF::TcpEndpoint("0.0.0.0", port) );
       server->bind<Updater>(*updater);
@@ -95,7 +95,6 @@ JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, con
       monitor_updater_->Insert(meeting_id, updater_info);
     }
   }
-  LOG(ERROR) << "join msg return";
   JoinMeetingReturn join_msg;
   switch (result) {
     case 1:
@@ -116,6 +115,7 @@ JoinMeetingReturn MeetingHandler::JoinMeeting(const std::string& meeting_id, con
     msg->set_server_ip(FLAGS_server_ip);
     msg->set_port(db_manager_->GetMeetingPort(meeting_id));
   }
+  LOG(ERROR) << "Join Meeting end";
   return join_msg;
 }
 
@@ -132,10 +132,12 @@ bool MeetingHandler::DeleteMeeting(const std::string& meeting_id) {
     port_.push(port);
     lock.unlock();
   }
-  delete info->server;
-  delete info->up_ref;
-  delete info;
-  monitor_updater_->Delete(meeting_id);
+  try {
+    delete info->server;
+    delete info->up_ref;
+    delete info;
+    monitor_updater_->Delete(meeting_id);
+  } catch (...) {}
   return true;
 }
 
@@ -146,10 +148,10 @@ bool MeetingHandler::ResumeUpdater(const std::string& meeting_id) {
     return false;
   }
   int port = db_manager_->GetMeetingPort(meeting_id);
+  MEMCACHE* ref = GetDataRef(meeting_id);
+  ref->SetState();
   if (NULL == info->up_ref) {
-    MEMCACHE* ref = GetDataRef(meeting_id);
-    DRAWOP* draw_op = new DRAWOP(meeting_id);
-    info->up_ref = new UpdaterImpl(ref, draw_op);
+    info->up_ref = new UpdaterImpl(ref, info->draw_oper);
   }
   try {
     info -> server ->stop();

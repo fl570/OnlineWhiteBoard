@@ -24,8 +24,13 @@ class DrawEraser : public DrawClass {
 public:
     DrawEraser();
     void set(int thinkness, int xa, int ya);
+    void set1(int thinkness, int xa, int ya, int xb, int yb, int xc, int yc);
     void Draw(cv::Mat &m);
+    void DrawLine(cv::Mat &m);
 private:
+    CvPoint3D32f pointAdd(CvPoint3D32f p, CvPoint3D32f q);
+    CvPoint3D32f pointTimes(float c, CvPoint3D32f p);
+    CvPoint3D32f Bernstein(float u, CvPoint3D32f *p);
 #ifdef DEBUG
     FRIEND_TEST(DrawEraserTest, set);
     FRIEND_TEST(DrawEraserTest, Draw);
@@ -34,6 +39,10 @@ private:
     int thinkness_;
     int xa_;
     int ya_;
+    int xb_;
+    int yb_;
+    int xc_;
+    int yc_;
 };
 }  // DrawOperation
 }  // Server

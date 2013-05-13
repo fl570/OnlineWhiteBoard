@@ -44,12 +44,21 @@ public:
     void Draw(Operation op, unsigned int num);
     PathInfo SaveAsBmp(int i);
     void Show();
-    bool Load(const std::string& path);
+    bool Load(const std::string& path, unsigned int serial_num);
 
 private:
+    IplImage* zoom(IplImage*, int, int);
+    
     std::string meeting_id_;
-    int a_;
-    int b_;
+    bool is_start_;
+    int temp_xa_;
+    int temp_ya_;
+    int temp_xb_;
+    int temp_yb_;
+    int temp_xc_;
+    int temp_yc_;
+    float a_;
+    float b_;
     int color_;
     int thinkness_;
     float alpha_;
@@ -58,6 +67,8 @@ private:
     int ya_;
     int yb_;
     unsigned int serial_num_;
+    int height_;
+    int width_;
     cv::Mat picture_;
     DrawCircle circle;
     DrawTransCircle transCircle;

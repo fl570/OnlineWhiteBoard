@@ -23,6 +23,7 @@ typedef Kingslanding::OnlineWhiteBoard::Server::Check::CheckHandler CheckHandler
 
 bool alive = true;
 void* host_check_thread(void* para) {
+  sleep(400);
   CheckHandler* Check_Handler = new CheckHandler();
   MeetingHandler* Meeting_Handler = (MeetingHandler*)para;
   std::string* Meeting_ID;
@@ -33,14 +34,20 @@ void* host_check_thread(void* para) {
     for (int i = 0; i < size; i++) {
       Meeting_Handler->TransferHostDraw(Meeting_ID[i]);
     }
-    if (Meeting_ID != NULL)
-      delete []Meeting_ID;
+    if (Meeting_ID != NULL && size != 0) {
+      try {
+	delete []Meeting_ID;
+      } catch (...) {
+	LOG(ERROR) << "host check delete failed";
+      }
+    }
   }
   delete Check_Handler;
   return ((void*)0);
 }
 
 void* user_check_thread(void* para) {
+  sleep(800);
   CheckHandler* Check_Handler = new CheckHandler();
   MeetingHandler* Meeting_Handler = (MeetingHandler*)para;
   std::string* Meeting_ID;
@@ -51,8 +58,13 @@ void* user_check_thread(void* para) {
     for (int i = 0; i < size; i++) {
       Meeting_Handler->DeleteMeeting(Meeting_ID[i]);
     }
-    if (Meeting_ID != NULL)
-      delete []Meeting_ID;
+    if (Meeting_ID != NULL && size != 0){
+      try {
+	delete []Meeting_ID;
+      } catch (...) {
+	LOG(ERROR) << "user check delete failed";
+      }
+    }
   }
   delete Check_Handler;
   return ((void*)0);

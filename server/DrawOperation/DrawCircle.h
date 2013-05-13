@@ -35,7 +35,7 @@ private:
     int thinkness_;
     int xa_;
     int ya_;
-    int r_;
+    float r_;
 };
 }  // DrawOperation
 }  // Server

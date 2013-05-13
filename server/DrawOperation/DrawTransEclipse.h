@@ -30,8 +30,8 @@ private:
     int thinkness_;
     int xa_;
     int ya_;
-    int a_;
-    int b_;
+    float a_;
+    float b_;
     float alpha_;
 };
 }  // DrawOperation

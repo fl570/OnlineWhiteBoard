@@ -38,17 +38,18 @@ void DrawTransRect::set
 }
 
 void DrawTransRect::Draw(cv::Mat& m) {
-  IplImage  img = IplImage(m);
+  IplImage img = IplImage(m);
   IplImage * pImage = &img;
+  IplImage * pTemp = (IplImage*)cvClone(pImage);
   int width = xb_-xa_;
   int height = yb_-ya_;
   cv::Scalar c = SetColor(color_);
-  IplImage *rec = cvCreateImage(cvSize(width, height),
-                                   pImage->depth, pImage->nChannels);
-  cvRectangle(rec, cvPoint(0, 0), cvPoint(width, height), c, -1);
-  cvSetImageROI(pImage, cvRect(xa_, ya_, width, height));
-  cvAddWeighted(pImage, alpha_, rec, 1-alpha_, 0.0, pImage);
-  cvResetImageROI(pImage);
+  cv::Point left_corner = cv::Point(xa_, ya_);
+  cv::Point right_corner = cv::Point(xb_, yb_);
+  cvRectangle(pTemp, left_corner, right_corner, c, -1 );
+  //cvAddWeighted(pImage, alpha_, pTemp, 1-alpha_, 0.0, pImage);
+  cvAddWeighted(pImage, 1-alpha_, pTemp, alpha_, 0.0, pImage);
+  cvReleaseImage(&pTemp);
 }
 }  // DrawOperation
 }  // Server

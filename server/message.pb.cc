@@ -28,6 +28,7 @@ const ::google::protobuf::EnumDescriptor* Operation_OperationData_OperationDataT
 const ::google::protobuf::Descriptor* Operations_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Operations_reflection_ = NULL;
+const ::google::protobuf::EnumDescriptor* Operations_OperationAvaliable_descriptor_ = NULL;
 const ::google::protobuf::Descriptor* Document_descriptor_ = NULL;
 const ::google::protobuf::internal::GeneratedMessageReflection*
   Document_reflection_ = NULL;
@@ -81,19 +82,20 @@ void protobuf_AssignDesc_message_2eproto() {
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(Operation));
   Operation_OperationData_descriptor_ = Operation_descriptor_->nested_type(0);
-  static const int Operation_OperationData_offsets_[14] = {
+  static const int Operation_OperationData_offsets_[15] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, data_type_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, thinkness_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, color_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, start_point_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, end_point_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, center_),
-    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, axe_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, angle_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, a_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, b_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, top_left_corner_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, bottom_right_corner_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, position_),
+    GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, is_start_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, fill_),
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Operation_OperationData, alpha_),
   };
@@ -141,6 +143,7 @@ void protobuf_AssignDesc_message_2eproto() {
       ::google::protobuf::DescriptorPool::generated_pool(),
       ::google::protobuf::MessageFactory::generated_factory(),
       sizeof(Operations));
+  Operations_OperationAvaliable_descriptor_ = Operations_descriptor_->enum_type(0);
   Document_descriptor_ = file->message_type(2);
   static const int Document_offsets_[3] = {
     GOOGLE_PROTOBUF_GENERATED_MESSAGE_FIELD_OFFSET(Document, serial_number_),
@@ -344,41 +347,44 @@ void protobuf_AddDesc_message_2eproto() {
   GOOGLE_PROTOBUF_VERIFY_VERSION;
 
   ::google::protobuf::DescriptorPool::InternalAddGeneratedFile(
-    "\n\rmessage.proto\"\255\005\n\tOperation\022\025\n\rserial_"
+    "\n\rmessage.proto\"\301\005\n\tOperation\022\025\n\rserial_"
     "number\030\001 \002(\r\022&\n\004data\030\002 \002(\0132\030.Operation.O"
-    "perationData\032\340\004\n\rOperationData\022=\n\tdata_t"
+    "perationData\032\364\004\n\rOperationData\022=\n\tdata_t"
     "ype\030\001 \002(\0162*.Operation.OperationData.Oper"
     "ationDataType\022\021\n\tthinkness\030\002 \002(\005\022\r\n\005colo"
     "r\030\003 \001(\005\0223\n\013start_point\030\004 \001(\0132\036.Operation"
     ".OperationData.Point\0221\n\tend_point\030\005 \001(\0132"
     "\036.Operation.OperationData.Point\022.\n\006cente"
     "r\030\006 \001(\0132\036.Operation.OperationData.Point\022"
-    "\013\n\003axe\030\007 \001(\002\022\t\n\001a\030\010 \001(\005\022\t\n\001b\030\t \001(\005\0227\n\017to"
-    "p_left_corner\030\n \001(\0132\036.Operation.Operatio"
-    "nData.Point\022;\n\023bottom_right_corner\030\013 \001(\013"
-    "2\036.Operation.OperationData.Point\0220\n\010posi"
-    "tion\030\014 \001(\0132\036.Operation.OperationData.Poi"
-    "nt\022\014\n\004fill\030\r \001(\010\022\r\n\005alpha\030\016 \001(\002\032\035\n\005Point"
-    "\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002(\005\"O\n\021OperationDataT"
-    "ype\022\010\n\004LINE\020\000\022\013\n\007ELLIPSE\020\001\022\014\n\010RECTANGE\020\002"
-    "\022\t\n\005POINT\020\003\022\n\n\006ERASER\020\004\"I\n\nOperations\022\033\n"
-    "\023operation_avaliable\030\001 \002(\010\022\036\n\noperations"
-    "\030\002 \003(\0132\n.Operation\"B\n\010Document\022\025\n\rserial"
-    "_number\030\001 \002(\r\022\014\n\004data\030\002 \002(\014\022\021\n\tuser_name"
-    "\030\003 \001(\t\"3\n\014DocumentList\022#\n\020history_docume"
-    "nt\030\001 \003(\0132\t.Document\"4\n\021MeetingServerInfo"
-    "\022\014\n\004port\030\001 \002(\005\022\021\n\tserver_ip\030\002 \002(\t\"\\\n\021Joi"
-    "nMeetingReturn\022\036\n\njoin_state\030\001 \002(\0162\n.Joi"
-    "nState\022\'\n\013server_info\030\002 \001(\0132\022.MeetingSer"
-    "verInfo\"H\n\004User\022\021\n\tuser_name\030\001 \002(\t\022\020\n\010pa"
-    "ssword\030\002 \001(\t\022\033\n\010identity\030\003 \001(\0162\t.Identit"
-    "y\"=\n\024HeartBeatSendPackage\022\021\n\tuser_name\030\001"
-    " \002(\t\022\022\n\nmeeting_id\030\002 \002(\t\"1\n\022HeartReturnP"
-    "ackage\022\033\n\010identity\030\001 \002(\0162\t.Identity\" \n\010U"
-    "serList\022\024\n\005users\030\001 \003(\0132\005.User*5\n\010Identit"
-    "y\022\010\n\004HOST\020\001\022\r\n\tCANDIDATE\020\002\022\020\n\014PARTICIPAN"
-    "TS\020\003*>\n\tJoinState\022\013\n\007SUCCESS\020\001\022\010\n\004FAIL\020\002"
-    "\022\020\n\014NOTAVAILABLE\020\003\022\010\n\004DEAD\020\004", 1388);
+    "\r\n\005angle\030\007 \001(\002\022\t\n\001a\030\010 \001(\002\022\t\n\001b\030\t \001(\002\0227\n\017"
+    "top_left_corner\030\n \001(\0132\036.Operation.Operat"
+    "ionData.Point\022;\n\023bottom_right_corner\030\013 \001"
+    "(\0132\036.Operation.OperationData.Point\0220\n\010po"
+    "sition\030\014 \001(\0132\036.Operation.OperationData.P"
+    "oint\022\020\n\010is_start\030\017 \001(\010\022\014\n\004fill\030\r \001(\010\022\r\n\005"
+    "alpha\030\016 \001(\002\032\035\n\005Point\022\t\n\001x\030\001 \002(\005\022\t\n\001y\030\002 \002"
+    "(\005\"O\n\021OperationDataType\022\010\n\004LINE\020\000\022\013\n\007ELL"
+    "IPSE\020\001\022\014\n\010RECTANGE\020\002\022\t\n\005POINT\020\003\022\n\n\006ERASE"
+    "R\020\004\"\263\001\n\nOperations\022;\n\023operation_avaliabl"
+    "e\030\001 \002(\0162\036.Operations.OperationAvaliable\022"
+    "\036\n\noperations\030\002 \003(\0132\n.Operation\"H\n\022Opera"
+    "tionAvaliable\022\021\n\rNOT_AVALIABLE\020\001\022\021\n\rLOAD"
+    "_DOCUMENT\020\002\022\014\n\010AVALIBLE\020\003\"B\n\010Document\022\025\n"
+    "\rserial_number\030\001 \002(\r\022\014\n\004data\030\002 \002(\014\022\021\n\tus"
+    "er_name\030\003 \001(\t\"3\n\014DocumentList\022#\n\020history"
+    "_document\030\001 \003(\0132\t.Document\"4\n\021MeetingSer"
+    "verInfo\022\014\n\004port\030\001 \002(\005\022\021\n\tserver_ip\030\002 \002(\t"
+    "\"\\\n\021JoinMeetingReturn\022\036\n\njoin_state\030\001 \002("
+    "\0162\n.JoinState\022\'\n\013server_info\030\002 \001(\0132\022.Mee"
+    "tingServerInfo\"H\n\004User\022\021\n\tuser_name\030\001 \002("
+    "\t\022\020\n\010password\030\002 \001(\t\022\033\n\010identity\030\003 \001(\0162\t."
+    "Identity\"=\n\024HeartBeatSendPackage\022\021\n\tuser"
+    "_name\030\001 \002(\t\022\022\n\nmeeting_id\030\002 \002(\t\"1\n\022Heart"
+    "ReturnPackage\022\033\n\010identity\030\001 \002(\0162\t.Identi"
+    "ty\" \n\010UserList\022\024\n\005users\030\001 \003(\0132\005.User*5\n\010"
+    "Identity\022\010\n\004HOST\020\001\022\r\n\tCANDIDATE\020\002\022\020\n\014PAR"
+    "TICIPANTS\020\003*>\n\tJoinState\022\013\n\007SUCCESS\020\001\022\010\n"
+    "\004FAIL\020\002\022\020\n\014NOTAVAILABLE\020\003\022\010\n\004DEAD\020\004", 1515);
   ::google::protobuf::MessageFactory::InternalRegisterGeneratedFile(
     "message.proto", &protobuf_RegisterTypes);
   Operation::default_instance_ = new Operation();
@@ -731,12 +737,13 @@ const int Operation_OperationData::kColorFieldNumber;
 const int Operation_OperationData::kStartPointFieldNumber;
 const int Operation_OperationData::kEndPointFieldNumber;
 const int Operation_OperationData::kCenterFieldNumber;
-const int Operation_OperationData::kAxeFieldNumber;
+const int Operation_OperationData::kAngleFieldNumber;
 const int Operation_OperationData::kAFieldNumber;
 const int Operation_OperationData::kBFieldNumber;
 const int Operation_OperationData::kTopLeftCornerFieldNumber;
 const int Operation_OperationData::kBottomRightCornerFieldNumber;
 const int Operation_OperationData::kPositionFieldNumber;
+const int Operation_OperationData::kIsStartFieldNumber;
 const int Operation_OperationData::kFillFieldNumber;
 const int Operation_OperationData::kAlphaFieldNumber;
 #endif  // !_MSC_VER
@@ -769,12 +776,13 @@ void Operation_OperationData::SharedCtor() {
   start_point_ = NULL;
   end_point_ = NULL;
   center_ = NULL;
-  axe_ = 0;
+  angle_ = 0;
   a_ = 0;
   b_ = 0;
   top_left_corner_ = NULL;
   bottom_right_corner_ = NULL;
   position_ = NULL;
+  is_start_ = false;
   fill_ = false;
   alpha_ = 0;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -829,7 +837,7 @@ void Operation_OperationData::Clear() {
     if (has_center()) {
       if (center_ != NULL) center_->::Operation_OperationData_Point::Clear();
     }
-    axe_ = 0;
+    angle_ = 0;
     a_ = 0;
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
@@ -843,6 +851,7 @@ void Operation_OperationData::Clear() {
     if (has_position()) {
       if (position_ != NULL) position_->::Operation_OperationData_Point::Clear();
     }
+    is_start_ = false;
     fill_ = false;
     alpha_ = 0;
   }
@@ -946,49 +955,49 @@ bool Operation_OperationData::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(61)) goto parse_axe;
+        if (input->ExpectTag(61)) goto parse_angle;
         break;
       }
       
-      // optional float axe = 7;
+      // optional float angle = 7;
       case 7: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
-         parse_axe:
+         parse_angle:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
                    float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
-                 input, &axe_)));
-          set_has_axe();
+                 input, &angle_)));
+          set_has_angle();
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(64)) goto parse_a;
+        if (input->ExpectTag(69)) goto parse_a;
         break;
       }
       
-      // optional int32 a = 8;
+      // optional float a = 8;
       case 8: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
          parse_a:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &a_)));
           set_has_a();
         } else {
           goto handle_uninterpreted;
         }
-        if (input->ExpectTag(72)) goto parse_b;
+        if (input->ExpectTag(77)) goto parse_b;
         break;
       }
       
-      // optional int32 b = 9;
+      // optional float b = 9;
       case 9: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
-            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_FIXED32) {
          parse_b:
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   ::google::protobuf::int32, ::google::protobuf::internal::WireFormatLite::TYPE_INT32>(
+                   float, ::google::protobuf::internal::WireFormatLite::TYPE_FLOAT>(
                  input, &b_)));
           set_has_b();
         } else {
@@ -1068,6 +1077,22 @@ bool Operation_OperationData::MergePartialFromCodedStream(
         } else {
           goto handle_uninterpreted;
         }
+        if (input->ExpectTag(120)) goto parse_is_start;
+        break;
+      }
+      
+      // optional bool is_start = 15;
+      case 15: {
+        if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
+            ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+         parse_is_start:
+          DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
+                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
+                 input, &is_start_)));
+          set_has_is_start();
+        } else {
+          goto handle_uninterpreted;
+        }
         if (input->ExpectAtEnd()) return true;
         break;
       }
@@ -1124,19 +1149,19 @@ void Operation_OperationData::SerializeWithCachedSizes(
       6, this->center(), output);
   }
   
-  // optional float axe = 7;
-  if (has_axe()) {
-    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->axe(), output);
+  // optional float angle = 7;
+  if (has_angle()) {
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(7, this->angle(), output);
   }
   
-  // optional int32 a = 8;
+  // optional float a = 8;
   if (has_a()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(8, this->a(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(8, this->a(), output);
   }
   
-  // optional int32 b = 9;
+  // optional float b = 9;
   if (has_b()) {
-    ::google::protobuf::internal::WireFormatLite::WriteInt32(9, this->b(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteFloat(9, this->b(), output);
   }
   
   // optional .Operation.OperationData.Point top_left_corner = 10;
@@ -1165,6 +1190,11 @@ void Operation_OperationData::SerializeWithCachedSizes(
   // optional float alpha = 14;
   if (has_alpha()) {
     ::google::protobuf::internal::WireFormatLite::WriteFloat(14, this->alpha(), output);
+  }
+  
+  // optional bool is_start = 15;
+  if (has_is_start()) {
+    ::google::protobuf::internal::WireFormatLite::WriteBool(15, this->is_start(), output);
   }
   
   if (!unknown_fields().empty()) {
@@ -1212,19 +1242,19 @@ void Operation_OperationData::SerializeWithCachedSizes(
         6, this->center(), target);
   }
   
-  // optional float axe = 7;
-  if (has_axe()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->axe(), target);
+  // optional float angle = 7;
+  if (has_angle()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(7, this->angle(), target);
   }
   
-  // optional int32 a = 8;
+  // optional float a = 8;
   if (has_a()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(8, this->a(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(8, this->a(), target);
   }
   
-  // optional int32 b = 9;
+  // optional float b = 9;
   if (has_b()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteInt32ToArray(9, this->b(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(9, this->b(), target);
   }
   
   // optional .Operation.OperationData.Point top_left_corner = 10;
@@ -1256,6 +1286,11 @@ void Operation_OperationData::SerializeWithCachedSizes(
   // optional float alpha = 14;
   if (has_alpha()) {
     target = ::google::protobuf::internal::WireFormatLite::WriteFloatToArray(14, this->alpha(), target);
+  }
+  
+  // optional bool is_start = 15;
+  if (has_is_start()) {
+    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(15, this->is_start(), target);
   }
   
   if (!unknown_fields().empty()) {
@@ -1310,25 +1345,21 @@ int Operation_OperationData::ByteSize() const {
           this->center());
     }
     
-    // optional float axe = 7;
-    if (has_axe()) {
+    // optional float angle = 7;
+    if (has_angle()) {
       total_size += 1 + 4;
     }
     
-    // optional int32 a = 8;
+    // optional float a = 8;
     if (has_a()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->a());
+      total_size += 1 + 4;
     }
     
   }
   if (_has_bits_[8 / 32] & (0xffu << (8 % 32))) {
-    // optional int32 b = 9;
+    // optional float b = 9;
     if (has_b()) {
-      total_size += 1 +
-        ::google::protobuf::internal::WireFormatLite::Int32Size(
-          this->b());
+      total_size += 1 + 4;
     }
     
     // optional .Operation.OperationData.Point top_left_corner = 10;
@@ -1350,6 +1381,11 @@ int Operation_OperationData::ByteSize() const {
       total_size += 1 +
         ::google::protobuf::internal::WireFormatLite::MessageSizeNoVirtual(
           this->position());
+    }
+    
+    // optional bool is_start = 15;
+    if (has_is_start()) {
+      total_size += 1 + 1;
     }
     
     // optional bool fill = 13;
@@ -1407,8 +1443,8 @@ void Operation_OperationData::MergeFrom(const Operation_OperationData& from) {
     if (from.has_center()) {
       mutable_center()->::Operation_OperationData_Point::MergeFrom(from.center());
     }
-    if (from.has_axe()) {
-      set_axe(from.axe());
+    if (from.has_angle()) {
+      set_angle(from.angle());
     }
     if (from.has_a()) {
       set_a(from.a());
@@ -1426,6 +1462,9 @@ void Operation_OperationData::MergeFrom(const Operation_OperationData& from) {
     }
     if (from.has_position()) {
       mutable_position()->::Operation_OperationData_Point::MergeFrom(from.position());
+    }
+    if (from.has_is_start()) {
+      set_is_start(from.is_start());
     }
     if (from.has_fill()) {
       set_fill(from.fill());
@@ -1481,12 +1520,13 @@ void Operation_OperationData::Swap(Operation_OperationData* other) {
     std::swap(start_point_, other->start_point_);
     std::swap(end_point_, other->end_point_);
     std::swap(center_, other->center_);
-    std::swap(axe_, other->axe_);
+    std::swap(angle_, other->angle_);
     std::swap(a_, other->a_);
     std::swap(b_, other->b_);
     std::swap(top_left_corner_, other->top_left_corner_);
     std::swap(bottom_right_corner_, other->bottom_right_corner_);
     std::swap(position_, other->position_);
+    std::swap(is_start_, other->is_start_);
     std::swap(fill_, other->fill_);
     std::swap(alpha_, other->alpha_);
     std::swap(_has_bits_[0], other->_has_bits_[0]);
@@ -1762,6 +1802,29 @@ void Operation::Swap(Operation* other) {
 
 // ===================================================================
 
+const ::google::protobuf::EnumDescriptor* Operations_OperationAvaliable_descriptor() {
+  protobuf_AssignDescriptorsOnce();
+  return Operations_OperationAvaliable_descriptor_;
+}
+bool Operations_OperationAvaliable_IsValid(int value) {
+  switch(value) {
+    case 1:
+    case 2:
+    case 3:
+      return true;
+    default:
+      return false;
+  }
+}
+
+#ifndef _MSC_VER
+const Operations_OperationAvaliable Operations::NOT_AVALIABLE;
+const Operations_OperationAvaliable Operations::LOAD_DOCUMENT;
+const Operations_OperationAvaliable Operations::AVALIBLE;
+const Operations_OperationAvaliable Operations::OperationAvaliable_MIN;
+const Operations_OperationAvaliable Operations::OperationAvaliable_MAX;
+const int Operations::OperationAvaliable_ARRAYSIZE;
+#endif  // _MSC_VER
 #ifndef _MSC_VER
 const int Operations::kOperationAvaliableFieldNumber;
 const int Operations::kOperationsFieldNumber;
@@ -1783,7 +1846,7 @@ Operations::Operations(const Operations& from)
 
 void Operations::SharedCtor() {
   _cached_size_ = 0;
-  operation_avaliable_ = false;
+  operation_avaliable_ = 1;
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
 }
 
@@ -1818,7 +1881,7 @@ Operations* Operations::New() const {
 
 void Operations::Clear() {
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    operation_avaliable_ = false;
+    operation_avaliable_ = 1;
   }
   operations_.Clear();
   ::memset(_has_bits_, 0, sizeof(_has_bits_));
@@ -1831,14 +1894,19 @@ bool Operations::MergePartialFromCodedStream(
   ::google::protobuf::uint32 tag;
   while ((tag = input->ReadTag()) != 0) {
     switch (::google::protobuf::internal::WireFormatLite::GetTagFieldNumber(tag)) {
-      // required bool operation_avaliable = 1;
+      // required .Operations.OperationAvaliable operation_avaliable = 1;
       case 1: {
         if (::google::protobuf::internal::WireFormatLite::GetTagWireType(tag) ==
             ::google::protobuf::internal::WireFormatLite::WIRETYPE_VARINT) {
+          int value;
           DO_((::google::protobuf::internal::WireFormatLite::ReadPrimitive<
-                   bool, ::google::protobuf::internal::WireFormatLite::TYPE_BOOL>(
-                 input, &operation_avaliable_)));
-          set_has_operation_avaliable();
+                   int, ::google::protobuf::internal::WireFormatLite::TYPE_ENUM>(
+                 input, &value)));
+          if (::Operations_OperationAvaliable_IsValid(value)) {
+            set_operation_avaliable(static_cast< ::Operations_OperationAvaliable >(value));
+          } else {
+            mutable_unknown_fields()->AddVarint(1, value);
+          }
         } else {
           goto handle_uninterpreted;
         }
@@ -1879,9 +1947,10 @@ bool Operations::MergePartialFromCodedStream(
 
 void Operations::SerializeWithCachedSizes(
     ::google::protobuf::io::CodedOutputStream* output) const {
-  // required bool operation_avaliable = 1;
+  // required .Operations.OperationAvaliable operation_avaliable = 1;
   if (has_operation_avaliable()) {
-    ::google::protobuf::internal::WireFormatLite::WriteBool(1, this->operation_avaliable(), output);
+    ::google::protobuf::internal::WireFormatLite::WriteEnum(
+      1, this->operation_avaliable(), output);
   }
   
   // repeated .Operation operations = 2;
@@ -1898,9 +1967,10 @@ void Operations::SerializeWithCachedSizes(
 
 ::google::protobuf::uint8* Operations::SerializeWithCachedSizesToArray(
     ::google::protobuf::uint8* target) const {
-  // required bool operation_avaliable = 1;
+  // required .Operations.OperationAvaliable operation_avaliable = 1;
   if (has_operation_avaliable()) {
-    target = ::google::protobuf::internal::WireFormatLite::WriteBoolToArray(1, this->operation_avaliable(), target);
+    target = ::google::protobuf::internal::WireFormatLite::WriteEnumToArray(
+      1, this->operation_avaliable(), target);
   }
   
   // repeated .Operation operations = 2;
@@ -1921,9 +1991,10 @@ int Operations::ByteSize() const {
   int total_size = 0;
   
   if (_has_bits_[0 / 32] & (0xffu << (0 % 32))) {
-    // required bool operation_avaliable = 1;
+    // required .Operations.OperationAvaliable operation_avaliable = 1;
     if (has_operation_avaliable()) {
-      total_size += 1 + 1;
+      total_size += 1 +
+        ::google::protobuf::internal::WireFormatLite::EnumSize(this->operation_avaliable());
     }
     
   }

@@ -107,10 +107,17 @@ std::string HashTable<Value>::Iterator::GetKey() {
 
 template<typename Value>
 HashTable<Value>::Iterator::Iterator(HashTable<Value>* hash_table) :
-index_(0), table_(hash_table), current_(hash_table->array_[0].NodeList()), next_(NULL) {}
+index_(-1), table_(hash_table), current_(hash_table->array_[0].NodeList()), next_(NULL) {}
 
 template<typename Value>
 bool HashTable<Value>::Iterator::next() {
+  if (index_ == -1 && current_ != NULL) {
+    next_ = current_ -> next;
+    index_++;
+    return true;
+  } else {
+    index_++;
+  }
   if (current_ != NULL && next_ != NULL) {
     current_ = next_;
     next_ = current_ -> next;

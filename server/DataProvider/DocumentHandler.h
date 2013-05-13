@@ -12,6 +12,8 @@
 #define DBMANAGER Kingslanding::OnlineWhiteBoard::Server::DBManager
 
 #include <math.h>
+#include <fstream>
+#include <iostream>
 #include "../DBManager/DBManager.h"
 #include "../message.pb.h"
 #include "../Monitor/Handler.h"
@@ -37,7 +39,7 @@ private:
     FRIEND_TEST(DocumentHandlerTest, GetHistorySnapshots);
     FRIEND_TEST(DocumentHandlerTest, GetDocument);
 #endif
-    IplImage* zoom(IplImage*, int, int); 
+    //IplImage* zoom(IplImage*, int, int); 
     Kingslanding::OnlineWhiteBoard::Server::Monitor::MeetingHandler* meeting_handler;
 };
 }  // DataProvider

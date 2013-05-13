@@ -52,6 +52,7 @@ HeartReturnPackage MonitorImp::HeartBeat(const HeartBeatSendPackage& msg) {
 }
 
 UserList MonitorImp::GetCurrentUserList(const std::string& meeting_id) {
+  //LOG(ERROR) << "get user list: " << meeting_id;
   return user_handler_->GetCurrentUserList(meeting_id);
 }
 }  // Monitor

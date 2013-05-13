@@ -19,6 +19,8 @@ ProviderImp::ProviderImp(DocumentHandler* document_handler) {
 
 Operations ProviderImp::GetOperations(const std::string& meeting_id,
                                                  uint32_t latest_id) {
+  //LOG(ERROR) << "Get Operations:" << meeting_id;
+  //LOG(ERROR) << "last id: "<< latest_id;
   int64_t ret= db_instance_ ->GetDataRef(meeting_id);
   if (ret == -1) {
     Operations opers;

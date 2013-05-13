@@ -44,7 +44,8 @@ void DrawTransEclipse::Draw(cv::Mat& m) {
   cv::Scalar c = SetColor(color_);
   cv::Point center = cv::Point(xa_, ya_);
   cvEllipse(pTemp, center, cv::Size(a_, b_), 0, 0, 360, c, -1);
-  cvAddWeighted(pImage, alpha_, pTemp, 1-alpha_, 0.0, pImage);
+  //cvAddWeighted(pImage, alpha_, pTemp, 1-alpha_, 0.0, pImage);
+  cvAddWeighted(pImage, 1-alpha_, pTemp, alpha_, 0.0, pImage);
   cvReleaseImage(&pTemp);
 }
 }  // DrawOperation

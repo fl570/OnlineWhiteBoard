@@ -15,7 +15,14 @@ namespace Check {
 CheckHandler::CheckHandler() : MsgHandler() {
   int size;
   db_manager_->DeleteDeadUser();
-  db_manager_->GetDeadMeeting(size);
+  std::string* meeting = db_manager_->GetDeadMeeting(size);
+  if (NULL != meeting && size != 0) {
+    try {
+      delete []meeting;
+    } catch (...) {
+      LOG(ERROR) << "check handler delete failed";
+    }
+  }
 }
 
 std::string* CheckHandler::CheckHost(int& size) {

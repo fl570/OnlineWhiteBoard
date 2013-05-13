@@ -30,6 +30,7 @@ private:
   MEMCACHE *mem_cache_;
   DRAWOP* draw_op_;
   unsigned int lastest_id_;
+  bool new_operation_;
 };
 }  // DataUpdater
 }  // Server

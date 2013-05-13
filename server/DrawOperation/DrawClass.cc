@@ -19,19 +19,19 @@ namespace DrawOperation {
 
 cv::Scalar DrawClass::SetColor(int color) {
   switch (color) {
-    case 1:
+    case 0:
       return cv::Scalar(0, 0, 0);  // 颜色为黑色
       break;
     case 2:
       return cv::Scalar(255, 0, 0);  // 颜色为蓝色
       break;
-    case 3:
+    case 4:
       return cv::Scalar(0, 255, 0);  // 颜色为绿色
       break;
-    case 4:
+    case 1:
       return cv::Scalar(0, 0, 255);  // 颜色为红色
       break;
-    case 5:
+    case 3:
       return cv::Scalar(0, 255, 255); //颜色为黄色
       break;
   }

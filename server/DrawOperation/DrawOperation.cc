@@ -19,24 +19,34 @@ namespace Server {
 namespace DrawOperation {
 
 DEFINE_string(picture_store_address, "/root/picture/", "the address where pictures store");
+DEFINE_int32(size_of_screen, 3, "the size of screen");
 
 DrawOperation::DrawOperation(std::string meeting_id) {
   meeting_id_ = meeting_id;
+  is_start_ = true;
   a_ = 0;
   b_ = 0;
   color_ = 0;
   thinkness_ = 0;
   alpha_ = 0;
+  temp_xa_ = 0;
+  temp_ya_ = 0;
+  temp_xb_ = 0;
+  temp_yb_ = 0;
+  temp_xc_ = 0;
+  temp_yc_ = 0;
   xa_ = 0;
   ya_ = 0;
   xb_ = 0;
   yb_ = 0;
   serial_num_ = 0;
-  picture_ = cv::Mat(500, 500, CV_8UC3, cv::Scalar(255, 255, 255));
+  width_ = 1024*FLAGS_size_of_screen;
+  height_ =728*FLAGS_size_of_screen;
+  picture_ = cv::Mat(height_, width_, CV_8UC3, cv::Scalar(255, 255, 255));
 }
 
 DrawOperation::~DrawOperation(){
-  std::string str = "rm -f "+FLAGS_picture_store_address+"temp/*"+meeting_id_+"-*.bmp";
+  std::string str = "rm -f "+FLAGS_picture_store_address+"temp/*"+meeting_id_+"-*.jpg";
   system(str.c_str());
 }
 
@@ -66,6 +76,7 @@ void DrawOperation::Draw(Operation op, unsigned int number) {
         }
       } else {
         if (data->fill()) {
+	  LOG(ERROR)<<"a"<<data->fill();
           alpha_  = data->alpha();
           transEclipse.set(color_, thinkness_, xa_, ya_, a_, b_, alpha_);
 	  boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
@@ -98,6 +109,7 @@ void DrawOperation::Draw(Operation op, unsigned int number) {
       ya_ = data->mutable_top_left_corner()->y();
       xb_ = data->mutable_bottom_right_corner()->x();
       yb_ = data->mutable_bottom_right_corner()->y();
+      LOG(ERROR)<<"data->fill"<<data->fill();
       if (data->fill()) {
         alpha_ = data->alpha();
         transRect.set(color_, thinkness_, xa_, ya_, xb_, yb_, alpha_);
@@ -111,29 +123,118 @@ void DrawOperation::Draw(Operation op, unsigned int number) {
       break;
     }
     case Operation_OperationData_OperationDataType_POINT: {
-      color_ = data->color();
-      thinkness_ = data->thinkness();
-      xa_ = data->mutable_position()->x();
-      ya_ = data->mutable_position()->y();
-      point.set(color_, thinkness_, xa_, ya_);
-      boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
-      point.Draw(picture_);
-      lock.unlock();
-      lock.release();
+      is_start_ = data->is_start();
+      if (is_start_) {
+        color_ = data->color();
+        thinkness_ = data->thinkness();
+        xa_ = data->mutable_position()->x();
+        ya_ = data->mutable_position()->y();
+        point.set(color_, thinkness_, xa_, ya_);
+        temp_xa_ = xa_;
+        temp_ya_ = ya_;
+	temp_xb_ = xa_;
+	temp_yb_ = ya_;
+	temp_xc_ = xa_;
+	temp_yc_ = ya_;
+        boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
+        point.Draw(picture_);
+        lock.unlock();
+        lock.release();
+      }else {
+	temp_xa_ = temp_xb_;
+	temp_ya_ = temp_yb_;
+	temp_xb_ = temp_xc_;
+	temp_yb_ = temp_yc_;
+        color_ = data->color();
+	thinkness_ = data->thinkness();
+	temp_xc_ = data->mutable_position()->x();
+	temp_yc_ = data->mutable_position()->y();
+	point.set1(color_, thinkness_, temp_xa_, temp_ya_, temp_xb_, temp_yb_, temp_xc_, temp_yc_);
+	boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
+	point.DrawLine(picture_);
+	lock.unlock();
+	lock.release();
+      }
       break;
     }
     case Operation_OperationData_OperationDataType_ERASER: {
+      is_start_ = data->is_start();
+      if(is_start_) {
       thinkness_ = data->thinkness();
       xa_ = data->mutable_position()->x();
       ya_ = data->mutable_position()->y();
       eraser.set(thinkness_, xa_, ya_);
+      temp_xa_ = xa_;
+      temp_ya_ = ya_;
+      temp_xb_ = xa_;
+      temp_yb_ = ya_;
+      temp_xc_ = xa_;
+      temp_yc_ = ya_;
       boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
       eraser.Draw(picture_);
       lock.unlock();
       lock.release();
+      }else {
+	temp_xa_ = temp_xb_;
+	temp_ya_ = temp_yb_;
+	temp_xb_ = temp_xc_;
+	temp_yb_ = temp_yc_;
+	thinkness_ = data->thinkness();
+	temp_xc_ = data->mutable_position()->x();
+	temp_yc_ = data->mutable_position()->y();
+	eraser.set1(thinkness_, temp_xa_, temp_ya_, temp_xb_, temp_yb_, temp_xc_, temp_yc_);
+	boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
+	eraser.DrawLine(picture_);
+	lock.unlock();
+	lock.release();
+      }
       break;
     }
   }
+}
+
+IplImage* DrawOperation::zoom(IplImage* image, int rows , int cols ){
+  IplImage* pImage = cvCreateImage(cvSize(cols,rows),image->depth,image->nChannels);
+  float scaleFactorRow = ((float)rows)/image->height;
+  float scaleFactorCol = ((float)cols)/image->width;
+  int i_out, j_out, i_in, j_in;
+  float i_in_f, j_in_f;
+  float u, v;
+  float pixel,pixel1,pixel2;
+  u=v=0.0;
+  for (i_out = 0; i_out<rows;++i_out) {
+    for (j_out =0;j_out<cols;++j_out) {
+      CvScalar sa =cvGet2D(pImage, i_out, j_out);
+      i_in_f=((float)i_out)/scaleFactorRow;
+      j_in_f=((float)j_out)/scaleFactorCol;
+      u=i_in_f-cvFloor(i_in_f);
+      v=j_in_f-cvFloor(j_in_f);
+      i_in =cvFloor(i_in_f);
+      j_in=cvFloor(j_in_f);
+      CvScalar s = cvGet2D(image,i_in,j_in);
+      CvScalar s1= cvGet2D(image,i_in,j_in+1);
+      CvScalar s2=cvGet2D(image, i_in+1, j_in);
+      CvScalar s3 =cvGet2D(image,i_in+1,j_in+1);
+      if(image->height==i_in ||image->width ==j_in || 0==i_in ||0 ==j_in)
+        continue;
+       pixel=(1-u)*(1-v)*CV_IMAGE_ELEM(image,uchar,i_in,3*j_in)+
+       (1-u)*v*CV_IMAGE_ELEM(image,uchar,i_in,3*(j_in+1))+
+       u*(1-v)*CV_IMAGE_ELEM(image,uchar,i_in+1,3*j_in)+
+       u*v*CV_IMAGE_ELEM(image, uchar, i_in+1,3*(j_in+1));
+       pixel1=(1-u)*(1-v)*CV_IMAGE_ELEM(image,uchar,i_in,3*j_in+1)+
+       (1-u)*v*CV_IMAGE_ELEM(image,uchar,i_in,3*(j_in+1)+1)+
+       u*(1-v)*CV_IMAGE_ELEM(image,uchar,i_in+1,3*j_in+1)+
+       u*v*CV_IMAGE_ELEM(image, uchar, i_in+1,3*(j_in+1)+1);
+       pixel2=(1-u)*(1-v)*CV_IMAGE_ELEM(image,uchar,i_in,3*j_in+2)+
+       (1-u)*v*CV_IMAGE_ELEM(image,uchar,i_in,3*(j_in+1)+2)+
+       u*(1-v)*CV_IMAGE_ELEM(image,uchar,i_in+1,3*j_in+2)+
+       u*v*CV_IMAGE_ELEM(image, uchar, i_in+1,3*(j_in+1)+2);
+       CV_IMAGE_ELEM(pImage,uchar,i_out,3*j_out)=cvFloor(pixel);
+       CV_IMAGE_ELEM(pImage,uchar,i_out,3*j_out+1)=cvFloor(pixel1);
+       CV_IMAGE_ELEM(pImage,uchar,i_out,3*j_out+2)=cvFloor(pixel2);
+    }
+  }
+  return pImage;
 }
 
 void DrawOperation::Show() {
@@ -141,8 +242,9 @@ void DrawOperation::Show() {
   cv::waitKey(0);
 }
 
-bool DrawOperation::Load(const std::string& path) {
+bool DrawOperation::Load(const std::string& path, unsigned int serial_num) {
   boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
+  serial_num_ = serial_num;
   IplImage img = IplImage(picture_);
   IplImage* pImage = &img;
   pImage = cvLoadImage(path.c_str(), 1);
@@ -159,17 +261,22 @@ PathInfo DrawOperation::SaveAsBmp(int i) {
   bufstr << now;
   std::string now_time = bufstr.str();
   std::string path;
+  IplImage  img = IplImage(picture_);
+  IplImage *pImage = &img;
   if (i == 1) {
-    path = FLAGS_picture_store_address+meeting_id_+"-"+now_time+".bmp";
+    path = FLAGS_picture_store_address+meeting_id_+"-"+now_time+".jpg";
+    IplImage *history_image = zoom(pImage, 90, 120);
+    cvSaveImage((path+".jpg").c_str(), history_image);
   } else if (i == 2) {
-    path = FLAGS_picture_store_address+"/temp"+meeting_id_+"-"+now_time+".bmp";
+    path = FLAGS_picture_store_address+"/temp/"+meeting_id_+"-"+now_time+".jpg";
   }
-  bool temp = cv::imwrite(path, picture_);
+  cvSaveImage(path.c_str(), pImage);
+  //cvReleaseImage(&pImage);
   PathInfo path_info;
   path_info.number = serial_num_;
   path_info.path = path;
-  if(!temp)
-    path_info.path = "";
+  //if(!temp)
+    //path_info.path = "";
   return path_info;
 }
 

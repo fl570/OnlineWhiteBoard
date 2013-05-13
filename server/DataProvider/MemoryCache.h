@@ -34,6 +34,7 @@ public:
       bool SetState();
       Operations GetOperationAfter(unsigned int);
       Operations GetOperationFromStoreAfter(unsigned int);
+      bool SetSwitch();
 
 private:
       bool IsEmpty() const;
@@ -52,12 +53,15 @@ private:
 #endif
       int capacity_;
       bool state_;
+      bool changed_;
+      unsigned int changed_id_;
       int front_[2];
       int rear_[2];
       int size_[2];
       unsigned int front_id_[2];
       unsigned int rear_id_[2];
       unsigned int index_;
+      unsigned int switch_id_;
       boost::shared_mutex g_mutex;
       const Operation** operation_[2];
 };

@@ -24,13 +24,29 @@ Document DocumentHandler::GetDocument(const std::string& meeting_id, int documen
 {
   DBManager::DocumentInfo document;
   document = db_manager_->GetDocument(meeting_id, document_id);
-  IplImage* img;
-  img = cvLoadImage(document.path, 1);
-  uchar* data = (uchar*)img->imageData;
+  std::string str_data;
+  std::ifstream in(document.path, std::ios::binary|std::ios::in);
+  std::istream::pos_type current_pos = in.tellg();
+  in.seekg(0,std::ios_base::end);
+  std::istream::pos_type file_size = in.tellg();
+  in.seekg(current_pos);
+
+  char* data = new char[file_size];  
+  memset(data, 0, file_size);  
+
+  in.read(data, file_size);  
+  in.close();
+  str_data = "";
+  str_data.append(data,file_size);
+  delete data;
+  //IplImage* img;
+  //img = cvLoadImage(document.path, 1);
+  //uchar* data = (uchar*)img->imageData;
   Document document1;
   document1.set_serial_number(document.serial_number);
-  document1.set_data((char*)data);
-  cvReleaseImage(&img);
+  //document1.set_data((char*)data);
+  document1.set_data(str_data);
+  //cvReleaseImage(&img);
   return document1;
 }
 
@@ -38,13 +54,28 @@ Document DocumentHandler::GetCurrentDocument(const std::string& meeting_id) {
   Kingslanding::OnlineWhiteBoard::Server::DrawOperation::DrawOperation* draw_operation =
   meeting_handler->GetDrawOperation(meeting_id);
   DrawOperation::PathInfo path_info = draw_operation->SaveAsBmp(2);
-  IplImage* img;
-  img = cvLoadImage(path_info.path.c_str(), 1);
-  uchar* data =(uchar*) img->imageData;
+  std::string str_data;
+  std::ifstream in(path_info.path.c_str(),std::ios::binary|std::ios::in);
+  std::istream::pos_type current_pos = in.tellg();
+  in.seekg(0,std::ios_base::end);
+  std::istream::pos_type file_size = in.tellg();
+  in.seekg(current_pos);
+  
+  char* data = new char[file_size];  
+  memset(data, 0, file_size);  
+  
+  in.read(data, file_size);  
+  in.close();
+  str_data = "";
+  str_data.append(data,file_size);
+  delete data;
+  //IplImage* img;
+  //img = cvLoadImage(path_info.path.c_str(), 1);
+  //uchar* data =(uchar*) img->imageData;
   Document document;
   document.set_serial_number(path_info.number);
-  document.set_data((char*)data);
-  cvReleaseImage(&img);
+  document.set_data(str_data);
+  //cvReleaseImage(&img);
   return document;
 }
 
@@ -52,26 +83,37 @@ DocumentList DocumentHandler::GetHistorySnapshots(const std::string& meeting_id)
 {
   DocumentList list;
   int size;
-  IplImage* img;
-  IplImage* history_img;
   DBManager::DocumentInfo *res = db_manager_->GetHistoryDocuments(meeting_id, size);
   for(int i = 0; i < size; i++) {
     Document* history_document = list.add_history_document();
-    img = cvLoadImage(res[i].path, 1);
-    history_img = zoom(img, 200, 200);
-    uchar* data =(uchar*) history_img->imageData;
+    std::string str_data;
+    std::string path = res[i].path;
+    std::ifstream in((path+".jpg").c_str(),std::ios::binary|std::ios::in);
+    std::istream::pos_type current_pos = in.tellg();
+    in.seekg(0,std::ios_base::end);
+    std::istream::pos_type file_size = in.tellg();
+    in.seekg(current_pos);
+    char* data = new char[file_size];  
+    memset(data, 0, file_size);  
+    in.read(data, file_size);  
+    in.close();
+    str_data = "";
+    str_data.append(data,file_size);
+    delete data;
     history_document->set_serial_number(res[i].serial_number);
-    history_document->set_data((char*)data);
+    history_document->set_data(str_data);
   }
-  if (res != NULL) {
-    delete []res;
+  if (res != NULL && size != 0) {
+    try {
+      delete []res;
+    } catch (...) {
+      LOG(ERROR) << "document handler delete failed";
+    }
   }
-  cvReleaseImage(&img);
-  cvReleaseImage(&history_img);
   return list;
 }
 
-IplImage* DocumentHandler::zoom(IplImage* image, int rows , int cols ){
+/*IplImage* DocumentHandler::zoom(IplImage* image, int rows , int cols ){
   IplImage* pImage = cvCreateImage(cvSize(cols,rows),image->depth,image->nChannels);
   float scaleFactorRow = ((float)rows)/image->height;
   float scaleFactorCol = ((float)cols)/image->width;
@@ -113,7 +155,7 @@ IplImage* DocumentHandler::zoom(IplImage* image, int rows , int cols ){
     }
   }
   return pImage;
-}
+}*/
 }  // DataProvider
 }  // Server
 }  // OnlineWhiteBoard

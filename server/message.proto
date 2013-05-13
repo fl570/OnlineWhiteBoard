@@ -33,9 +33,9 @@ message Operation {
 
         //对于椭圆
         optional Point center = 6;
-        optional float axe = 7;
-        optional int32 a = 8;
-        optional int32 b = 9;
+        optional float angle = 7;
+        optional float a = 8;
+        optional float b = 9;
         
         //对于长方形
         optional Point top_left_corner = 10;
@@ -43,6 +43,7 @@ message Operation {
 
         //对于点和橡皮
         optional Point position = 12;
+        optional bool is_start = 15;
 
         //对于椭圆和长方形
         optional bool fill = 13;
@@ -57,7 +58,12 @@ message Operation {
 
 message Operations {
     //operation是否有效
-    required bool operation_avaliable = 1;
+    enum OperationAvaliable {
+        NOT_AVALIABLE = 1;
+        LOAD_DOCUMENT = 2;
+        AVALIBLE = 3;
+    }
+    required OperationAvaliable operation_avaliable = 1;
     repeated Operation operations = 2;
 }
 

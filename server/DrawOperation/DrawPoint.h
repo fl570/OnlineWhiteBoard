@@ -24,8 +24,13 @@ class DrawPoint : public DrawClass {
 public:
     DrawPoint();
     void set(int color, int thinkness, int xa, int ya);
+    void set1(int color, int thinkness, int xa, int ya, int xb, int yb,int xc, int yc);
+    void DrawLine(cv::Mat &m);
     void Draw(cv::Mat &m);
 private:
+    CvPoint3D32f pointAdd(CvPoint3D32f p, CvPoint3D32f q);
+    CvPoint3D32f pointTimes(float c, CvPoint3D32f p);
+    CvPoint3D32f Bernstein(float u, CvPoint3D32f *p);
 #ifdef DEBUG
     FRIEND_TEST(DrawPointTest, set);
     FRIEND_TEST(DrawPointTest, Draw);
@@ -34,6 +39,10 @@ private:
     int thinkness_;
     int xa_;
     int ya_;
+    int xb_;
+    int yb_;
+    int xc_;
+    int yc_;
 };
 }  // DrawOperation
 }  // Server

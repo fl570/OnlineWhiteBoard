@@ -35,26 +35,25 @@ static char *server_groups[] = {
 };
 
 MYSQL* DBManager::InitConnection() {
-  if (mysql_server_init(sizeof(server_args) / sizeof(char *),
-  server_args, server_groups)) {
-    LOG(ERROR) << "cannot init mysql server";
-    exit(1);
-  }
   MYSQL *conn;
   conn = mysql_init(NULL);
   /* Connect to database */
+  lock.lock();
   if (!mysql_real_connect(conn, FLAGS_mysql_server_ip.c_str(),
         FLAGS_mysql_user.c_str(), FLAGS_mysql_password.c_str(),
                      FLAGS_mysql_database.c_str(), 0, NULL, 0)) {
      LOG(ERROR) << mysql_error(conn);
      exit(1);
   }
+  lock.unlock();
   return conn;
 }
 
 bool DBManager::DestoryConnection(MYSQL *conn) {
   // close connection
+  lock.lock();
   mysql_close(conn);
+  lock.unlock();
   // Use any MySQL API functions here
   mysql_server_end();
   return true;
@@ -67,7 +66,13 @@ DBManager* DBManager::GetInstance() {
     return db_manager_instance_;
 }
 
-DBManager::DBManager::DBManager() {}
+DBManager::DBManager::DBManager() {
+  if (mysql_server_init(sizeof(server_args) / sizeof(char *),
+  server_args, server_groups)) {
+    LOG(ERROR) << "cannot init mysql server";
+    exit(1);
+  }
+}
 DBManager::~DBManager() {}
 
 int DBManager::AddMeeting() {
@@ -79,7 +84,7 @@ int DBManager::AddMeeting() {
   if (mysql_query(conn, sql.c_str())) {
     LOG(ERROR) << mysql_error(conn);
   } else {
-      res = mysql_insert_id(conn);
+    res = mysql_insert_id(conn);
   }
   DestoryConnection(conn);
   return res;
@@ -353,7 +358,6 @@ int DBManager::AddMeetingUser(const std::string& meeting_id,
     if (0 != mysql_num_rows(res_)) {
       row_ = mysql_fetch_row(res_);
       sscanf(row_[0], "%d", &meeting_sta);
-      mysql_free_result(res_);
       switch (meeting_sta) {
         case 0:
           if (!SetMeetingState(meeting_id, 1)) {
@@ -362,15 +366,28 @@ int DBManager::AddMeetingUser(const std::string& meeting_id,
             break;
           }
         case 1:
-         snprintf(sql, sizeof(sql), "insert into MeetingUser(MeetingID, UserID,\
-         State, HBTime)  values('%s', '%s', %d, %ld)",
-         meeting_id.c_str(), user_id.c_str(), state, now);
-	 LOG(INFO) << sql;
-          if (mysql_query(conn, sql)) {
+         snprintf(sql, sizeof(sql), "update MeetingUser set HBTime = %ld where \
+         MeetingID = '%s' and UserID = '%s'",
+         now, meeting_id.c_str(), user_id.c_str());
+         LOG(INFO) << sql;
+         if (mysql_query(conn, sql)) {
             LOG(ERROR) << mysql_error(conn);
             result = 0;
-          } else {
-            result = 1;
+         } else {
+            if (conn -> affected_rows == 0) {
+              snprintf(sql, sizeof(sql), "insert into MeetingUser(MeetingID, UserID,\
+              State, HBTime)  values('%s', '%s', %d, %ld)",
+              meeting_id.c_str(), user_id.c_str(), state, now);
+              LOG(INFO) << sql;
+              if (mysql_query(conn, sql)) {
+                LOG(ERROR) << mysql_error(conn);
+                result = 0;
+              } else {
+                result = 1;
+              }
+            } else {
+              result = 1;
+            }
           }
           break;
         default:
@@ -381,6 +398,7 @@ int DBManager::AddMeetingUser(const std::string& meeting_id,
     } else {
       result = 2;  //  the meeting id doesn't exists
     }
+    mysql_free_result(res_);
   }
   DestoryConnection(conn);
   return result;
@@ -614,26 +632,32 @@ std::string* DBManager::GetDeadHostMeeting(int& size) {
            case -3:
              snprintf(sql, sizeof(sql), "update MeetingUser set State = 1 where \
              State = 4 and MeetingID = '%s'", row_[0]);
-	     LOG(INFO) << sql;
+             LOG(INFO) << sql;
              if (mysql_query(conn, sql)) {
                 LOG(ERROR) << "transferAuth" << mysql_error(conn);
+                break;
              }
+             res[index] = row_[0];
+             index++;
              break;
            case -4:
              snprintf(sql, sizeof(sql), "update MeetingUser set State = 3 where \
              State = 4 and MeetingID = '%s'", row_[0]);
-	     LOG(INFO) << sql;
+             LOG(INFO) << sql;
               if (mysql_query(conn, sql)) {
                  LOG(ERROR) << "transferAuth" << mysql_error(conn);
+                 break;
               }
+           case 1:
+              res[index] = row_[0];
+              index++;
               break;
-	   case 1:
-	      res[index] = row_[0];
-	      index++;
-	      break;
            default:
               break;
          }
+      }
+      for (int i = index; i < size; i++) {
+	res[i] = "";
       }
       size = index;
     }

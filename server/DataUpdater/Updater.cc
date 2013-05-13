@@ -13,7 +13,8 @@ namespace Kingslanding {
 namespace OnlineWhiteBoard {
 namespace Server {
 namespace DataUpdater {
-UpdaterImp::UpdaterImp(MEMCACHE* mem_cache, DRAWOP* draw_op):lastest_id_(0) {
+UpdaterImp::UpdaterImp(MEMCACHE* mem_cache, DRAWOP* draw_op):lastest_id_(0),
+                                                       new_operation_(false) {
   mem_cache_ = mem_cache;
   draw_op_ = draw_op;
 }
@@ -25,6 +26,9 @@ UpdaterImp::~UpdaterImp() {
 
 bool UpdaterImp::WriteOperationToPool(const Operation& oper) {
  lastest_id_++;
+ if (!new_operation_) {
+   new_operation_ = true;
+ }
  mem_cache_ -> AddOperation(oper, lastest_id_); 
  draw_op_ ->  Draw(oper, lastest_id_);
  return true;
@@ -32,11 +36,17 @@ bool UpdaterImp::WriteOperationToPool(const Operation& oper) {
 
 bool UpdaterImp::SetDocument(const std::string& meeting_id, 
                                          uint32_t document_id) {
-  lastest_id_ = 0;
-  mem_cache_ -> SetState();
+  LOG(ERROR) << "set document";
+  lastest_id_++;
   DBManager::DBManager *db_instance = DBManager::DBManager::GetInstance();
+  if (new_operation_) {
+    DrawOperation::PathInfo info = draw_op_->SaveAsBmp(1);
+    db_instance->AddDocument(meeting_id, info.path);
+    new_operation_ = false;
+  }
+  mem_cache_ -> SetSwitch();
   DBManager::DocumentInfo info = db_instance->GetDocument(meeting_id, document_id);
-  draw_op_ -> Load(info.path);
+  draw_op_ -> Load(info.path, lastest_id_);
   return true;
 }
 
