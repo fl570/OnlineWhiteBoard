@@ -1,5 +1,0 @@
-Log file created at: 2013/05/03 18:24:05
-Running on machine: ubuntu
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-E0503 18:24:05.744880 14245 MeetingHandler.cc:78] create meeting updater
-E0503 18:24:05.760678 14245 MeetingHandler.cc:98] join msg return

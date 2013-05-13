@@ -1,7 +1,0 @@
-Log file created at: 2013/05/04 21:57:16
-Running on machine: ubuntu
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0504 21:57:16.218780 11079 DBManager.cc:540] delete from MeetingUser where   HBTime < 1367675536
-E0504 21:57:16.220978 11078 DBManager.cc:49] Can't initialize character set latin1 (path: /usr/share/mysql/charsets/)
-I0504 21:57:16.222084 11079 DBManager.cc:561] select m.MeetingID from Meeting m where   m.state = 1 and m.MeetingID not in (select MeetingID from MeetingUser  group by MeetingID) order by id
-I0504 21:57:16.222671 11079 DBManager.cc:579] update Meeting set state = 2,    DataRef = NULL where state = 1 and MeetingID not in (select     MeetingID from MeetingUser group by MeetingID)

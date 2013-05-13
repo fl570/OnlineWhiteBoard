@@ -1,4 +1,0 @@
-Log file created at: 2013/05/04 21:38:26
-Running on machine: ubuntu
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0504 21:38:26.565120  8967 DBManager.cc:600] select MeetingID from MeetingUser where   State = 3 and HBTime < 1367674701 order by id

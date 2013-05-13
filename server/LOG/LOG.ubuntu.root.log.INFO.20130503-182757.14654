@@ -1,4 +1,0 @@
-Log file created at: 2013/05/03 18:27:57
-Running on machine: ubuntu
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-I0503 18:27:57.663842 14657 DBManager.cc:77] insert into Meeting (state) values (0)

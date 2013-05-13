@@ -1,4 +1,0 @@
-Log file created at: 2013/05/03 23:40:52
-Running on machine: ubuntu
-Log line format: [IWEF]mmdd hh:mm:ss.uuuuuu threadid file:line] msg
-E0503 23:40:52.281271 28629 DBManager.cc:49] Can't connect to MySQL server on '127.0.0.1' (111)
