@@ -62,7 +62,7 @@ private:
       unsigned int rear_id_[2];
       unsigned int index_;
       unsigned int switch_id_;
-      boost::shared_mutex g_mutex;
+      boost::shared_mutex g_mutex[2];
       const Operation** operation_[2];
 };
 }  // DataProvider
