@@ -60,7 +60,7 @@ MemoryCache::~MemoryCache() {
             index_ = front_[1];
             delete operation_[1][index_];
             front_[1]++;
-            front_[0] %= capacity_;
+            front_[1] %= capacity_;
         }
         delete []operation_[1];
     }
@@ -80,11 +80,12 @@ bool MemoryCache::IsFull() const {
 
 bool MemoryCache::SetState() {
     if (state_) {
-        g_mutex[0].lock();
+        boost::unique_lock<boost::shared_mutex> lock(g_mutex[0]);
         for (int i = 0; i < size_[0]; i++) {
             index_ = front_[0];
             delete operation_[0][index_];
             front_[0]++;
+	    front_[0] %= capacity_;
         }
         rear_[0] = 0;
         front_[0] = 0;
@@ -94,13 +95,13 @@ bool MemoryCache::SetState() {
         changed_id_ = rear_id_[1];
 	state_ = false;
 	changed_ = true;
-	g_mutex[0].unlock();
     } else {
-        g_mutex[1].lock();
+        boost::unique_lock<boost::shared_mutex> lock(g_mutex[1]);
         for (int i = 0; i < size_[1]; i++) {
             index_ = front_[1];
             delete operation_[1][index_];
             front_[1]++;
+	    front_[1] %= capacity_;
         }
         rear_[1] = 0;
         front_[1] = 0;
@@ -110,7 +111,6 @@ bool MemoryCache::SetState() {
         changed_id_ = rear_id_[0];
 	state_ = true;
 	changed_ = true;
-	g_mutex[1].unlock();
     }
     return true;
 }
@@ -119,8 +119,10 @@ bool MemoryCache::SetState() {
 bool MemoryCache::AddOperation(const Operation& oper,
                                unsigned int latest_id) {
     if (state_) {
+        boost::unique_lock<boost::shared_mutex> lock(g_mutex[1]);
         AddOperationToSet(1, oper, latest_id);
     } else {
+        boost::unique_lock<boost::shared_mutex> lock(g_mutex[0]);
         AddOperationToSet(0, oper, latest_id);
     }
     return true;
@@ -128,10 +130,7 @@ bool MemoryCache::AddOperation(const Operation& oper,
 
 bool MemoryCache::AddOperationToSet(int set, const Operation& oper,
                                     unsigned int lastest_id) {
-    if (set == 1)
-        g_mutex[1].lock();
-    else
-        g_mutex[0].lock();
+    LOG(ERROR) << "add operation to pool:" << set << ": " << lastest_id;
 
     if (IsEmpty()) {
         rear_[set] = -1;
@@ -150,9 +149,6 @@ bool MemoryCache::AddOperationToSet(int set, const Operation& oper,
         front_[set] %= capacity_;
         index_ = front_[set];
         front_id_[set] = operation_[set][index_] -> serial_number();
-
-        //LOG(ERROR) << tmp -> serial_number();
-        //LOG(ERROR) << tmp -> data().data_type();
     } else {
         size_[set]++;
         rear_[set]++;
@@ -161,22 +157,15 @@ bool MemoryCache::AddOperationToSet(int set, const Operation& oper,
         Operation *tmp = new Operation(oper);
         tmp -> set_serial_number(lastest_id);
         operation_[set][index_] = tmp;
-
-        //LOG(ERROR) << tmp -> serial_number();
-        //LOG(ERROR) << tmp -> data().data_type();
     }
     rear_id_[set] = lastest_id;
-    if (set == 1)
-      g_mutex[1].unlock();
-    else
-      g_mutex[0].unlock();
     return true;
 }
 
 Operations MemoryCache::GetOperationAfter(unsigned int operation_id) {
     Operations result;
     if (0 != switch_id_ && operation_id <= switch_id_) {
-        LOG(ERROR) << "load document";
+        LOG(ERROR) << "load document:" << operation_id;
         result.set_operation_avaliable(Operations_OperationAvaliable_LOAD_DOCUMENT);
     } else {
         if (state_) {
@@ -184,8 +173,10 @@ Operations MemoryCache::GetOperationAfter(unsigned int operation_id) {
                 changed_ = false;
             }
             if (changed_ && operation_id < changed_id_) {
+	        boost::shared_lock<boost::shared_mutex> lock(g_mutex[0]);
                 result = GetOperationFromSet(0, operation_id);
             } else {
+	        boost::shared_lock<boost::shared_mutex> lock(g_mutex[1]);
                 result = GetOperationFromSet(1, operation_id);
             }
         } else {
@@ -193,8 +184,10 @@ Operations MemoryCache::GetOperationAfter(unsigned int operation_id) {
                 changed_ = false;
             }
             if (changed_ && operation_id < changed_id_) {
+	        boost::shared_lock<boost::shared_mutex> lock(g_mutex[1]);
                 result = GetOperationFromSet(1, operation_id);
             } else {
+	        boost::shared_lock<boost::shared_mutex> lock(g_mutex[0]);
                 result = GetOperationFromSet(0, operation_id);
             }
         }
@@ -204,50 +197,74 @@ Operations MemoryCache::GetOperationAfter(unsigned int operation_id) {
 }
 
 Operations MemoryCache::GetOperationFromStoreAfter(unsigned int operation_id) {
-    return state_ ? GetOperationFromSet(0, operation_id) :
-           GetOperationFromSet(1, operation_id);
+    Operations result;
+    if (state_) {
+      boost::shared_lock<boost::shared_mutex> lock(g_mutex[0]);
+      result = GetOperationFromSet(0, operation_id);
+    } else {
+      boost::shared_lock<boost::shared_mutex> lock(g_mutex[1]);
+      result = GetOperationFromSet(1, operation_id);
+    }
+    return result;
 }
 
 
 Operations MemoryCache::GetOperationFromSet(int set,
         unsigned int operation_id) {
     //LOG(ERROR) << "get operation from set:" << set;
-    if (set == 1)
-        g_mutex[1].lock_shared();
-    else
-        g_mutex[0].lock_shared();
     Operations opers;
     Operation *oper;
+    unsigned int index;
     if ((operation_id+1) < front_id_[set]) {
         opers.set_operation_avaliable(Operations_OperationAvaliable_NOT_AVALIABLE);
     } else {
         opers.set_operation_avaliable(Operations_OperationAvaliable_AVALIBLE);
-        index_ = operation_id + 1 - front_id_[set] + front_[set];
-        index_ %= capacity_;
+	if (operation_id >= rear_id_[set]) {
+	  return opers;
+	}
+        index = operation_id + 1 - front_id_[set] + front_[set];
+        index %= capacity_;
         for (unsigned int i = 0; i < rear_id_[set]-operation_id; i++) {
             oper = opers.add_operations();
-            *oper = *operation_[set][index_];
-            index_++;
-            index_ %= capacity_;
+            *oper = *operation_[set][index];
+            index++;
+            index %= capacity_;
+	    LOG(ERROR) << oper->serial_number();
         }
     }
-    //LOG(ERROR) << opers.operations_size();
-    if (set == 1)
-        g_mutex[1].unlock_shared();
-    else
-        g_mutex[0].unlock_shared();
+    LOG(ERROR) << opers.operations_size();
     return opers;
 }
 
 bool MemoryCache::SetSwitch() {
     if (state_) {
-        g_mutex[1].lock();
+        boost::unique_lock<boost::shared_mutex> lock(g_mutex[1]);
 	switch_id_ = rear_id_[1];
-	g_mutex[1].unlock();
+	for (int i = 0; i < size_[1]; i++) {
+            index_ = front_[1];
+            delete operation_[1][index_];
+            front_[1]++;
+	    front_[1] %= capacity_;
+        }
+        front_id_[1] = switch_id_ + 1;
+	rear_id_[1] = front_id_[1];
+	front_[1] = 0;
+	rear_[1] = 0;
+	size_[1] = 0;
     } else {
-        g_mutex[0].lock();
+        boost::unique_lock<boost::shared_mutex> lock(g_mutex[0]);
 	switch_id_ = rear_id_[0];
-	g_mutex[0].unlock();
+	for (int i = 0; i < size_[0]; i++) {
+            index_ = front_[0];
+            delete operation_[0][index_];
+            front_[0]++;
+	    front_[0] %= capacity_;
+        }
+        front_id_[0] = switch_id_ + 1;
+	rear_id_[0] = front_id_[0];
+	front_[0] = 0;
+	rear_[0] = 0;
+	size_[0] = 0;
     }
     return true;
 }

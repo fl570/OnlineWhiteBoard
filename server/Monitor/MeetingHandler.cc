@@ -160,6 +160,7 @@ bool MeetingHandler::ResumeUpdater(const std::string& meeting_id) {
   info->server = new RCF::RcfServer( RCF::TcpEndpoint("0.0.0.0", port) );
   info->server -> bind<Updater>(*info -> up_ref);
   info->server -> start();
+  LOG(ERROR) << "resume updater";
   return true;
 }
 

@@ -36,6 +36,7 @@ bool MonitorImp::Login(const User& user) {
 }
 
 bool MonitorImp::ResumeUpdater(const std::string& meeting_id) {
+  LOG(ERROR) << "resume updater";
   return meeting_handler_ -> ResumeUpdater(meeting_id);
 }
 

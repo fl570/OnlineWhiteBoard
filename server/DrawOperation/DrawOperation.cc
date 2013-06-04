@@ -244,11 +244,15 @@ void DrawOperation::Show() {
 
 bool DrawOperation::Load(const std::string& path, unsigned int serial_num) {
   boost::unique_lock<boost::shared_mutex> lock(draw_mutex_);
+  //picture_ = cv::Mat(height_, width_, CV_8UC3, cv::Scalar(255, 255, 255));
   serial_num_ = serial_num;
-  IplImage img = IplImage(picture_);
+  /*IplImage img = IplImage(picture_);
   IplImage* pImage = &img;
-  pImage = cvLoadImage(path.c_str(), 1);
-  cvReleaseImage(&pImage);
+  LOG(ERROR)<<path.c_str();
+  pImage = cvLoadImage(path.c_str(),1);
+  cv::Mat picture_(pImage, 0);
+  cvReleaseImage(&pImage);*/
+  picture_ = cv::imread(path.c_str());
   return true;
 }
 

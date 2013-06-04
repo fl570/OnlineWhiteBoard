@@ -26,6 +26,7 @@ UpdaterImp::~UpdaterImp() {
 
 bool UpdaterImp::WriteOperationToPool(const Operation& oper) {
  lastest_id_++;
+ LOG(ERROR) << "write Operation to pool:" << lastest_id_;
  if (!new_operation_) {
    new_operation_ = true;
  }
@@ -36,17 +37,18 @@ bool UpdaterImp::WriteOperationToPool(const Operation& oper) {
 
 bool UpdaterImp::SetDocument(const std::string& meeting_id, 
                                          uint32_t document_id) {
-  LOG(ERROR) << "set document";
   lastest_id_++;
+  LOG(ERROR) << "set document:" << lastest_id_;
   DBManager::DBManager *db_instance = DBManager::DBManager::GetInstance();
   if (new_operation_) {
-    DrawOperation::PathInfo info = draw_op_->SaveAsBmp(1);
-    db_instance->AddDocument(meeting_id, info.path);
+    DrawOperation::PathInfo path_info = draw_op_->SaveAsBmp(1);
+    db_instance->AddDocument(meeting_id, path_info.path);
     new_operation_ = false;
   }
   mem_cache_ -> SetSwitch();
-  DBManager::DocumentInfo info = db_instance->GetDocument(meeting_id, document_id);
-  draw_op_ -> Load(info.path, lastest_id_);
+  DBManager::DocumentInfo document_info = db_instance->GetDocument(meeting_id, document_id);
+  LOG(ERROR) << document_info.path;
+  draw_op_ -> Load(document_info.path, lastest_id_);
   return true;
 }
 
